@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Dan Gentry — Speaking & Consulting Inquiries",
@@ -44,13 +45,7 @@ export default function Contact() {
             </div>
 
             {/* Right - Form */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-              <form
-                action={`mailto:info@ThirdPowerPerformance.com`}
-                method="POST"
-                encType="text/plain"
-                className="space-y-5"
-              >
+            <ContactForm />
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
                   <input
@@ -120,17 +115,6 @@ export default function Contact() {
                     <option value="25k+">$25,000+</option>
                   </select>
                 </div>
-                <button
-                  type="submit"
-                  className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
-                >
-                  Send Message
-                </button>
-                <p className="text-xs text-gray-500 text-center">
-                  I typically respond within 24 hours.
-                </p>
-              </form>
-            </div>
           </div>
         </div>
       </section>
