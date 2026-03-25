@@ -11,9 +11,26 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.thirdpowerlife.ai"),
   title: "Dan Gentry — Your Personal Chief AI Officer | Third Power Life",
   description:
     "TEDx Speaker, AI Strategist, and Fractional Chief AI Officer. Dan Gentry helps entrepreneurs leverage AI to grow their business without losing their humanity.",
+  openGraph: {
+    siteName: "Third Power Life",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

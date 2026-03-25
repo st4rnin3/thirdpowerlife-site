@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
 import CTASection from "@/components/CTASection";
 import NewsletterForm from "@/components/NewsletterForm";
+
+export const metadata: Metadata = {
+  openGraph: {
+    title: "Dan Gentry — Your Personal Chief AI Officer | Third Power Life",
+    description:
+      "TEDx Speaker, AI Strategist, and Fractional Chief AI Officer. Dan Gentry helps entrepreneurs leverage AI to grow their business without losing their humanity.",
+    url: "https://www.thirdpowerlife.ai",
+  },
+};
 
 /* ------------------------------------------------------------------ */
 /*  Data constants — keep markup clean                                 */
@@ -75,9 +85,37 @@ const TESTIMONIALS = [
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
 
+/* ------------------------------------------------------------------ */
+/*  JSON-LD: Person structured data for search engines                  */
+/* ------------------------------------------------------------------ */
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Dan Gentry",
+  jobTitle: "TEDx Speaker, AI Strategist, Fractional Chief AI Officer",
+  url: "https://www.thirdpowerlife.ai",
+  sameAs: [
+    "https://www.linkedin.com/in/daniel-gentry/",
+    "https://www.youtube.com/channel/UCLoq_zdO_H37-VV2GttNP6g",
+    "https://podcasts.apple.com/us/podcast/third-power-life/id1440527025",
+  ],
+  worksFor: {
+    "@type": "Organization",
+    name: "Third Power Performance, LLC",
+    url: "https://www.thirdpowerperformance.com",
+  },
+  description:
+    "TEDx Speaker, AI Strategist, and Fractional Chief AI Officer helping entrepreneurs leverage AI to grow their business without losing their humanity.",
+};
+
 export default function Home() {
   return (
     <div className="pt-20">
+      {/* Structured data for search engines */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       {/* ============================================================ */}
       {/* 1. Hero Section                                              */}
       {/* ============================================================ */}
