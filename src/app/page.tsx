@@ -98,7 +98,7 @@ export default function Home() {
               {/* Cold blue glow */}
               <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-accent/10 rounded-full blur-[80px] group-hover:bg-accent/20 transition-all duration-500" />
               <div className="relative z-10">
-                <div className="text-5xl mb-5">🤖</div>
+                <div className="text-4xl mb-5 font-heading font-bold text-accent/40 tracking-tight">⚙️</div>
                 <h3 className="text-2xl font-heading font-bold text-white mb-4">
                   Machine Work
                 </h3>
@@ -129,7 +129,7 @@ export default function Home() {
               <div className="absolute -top-16 -right-16 w-72 h-72 bg-electric/15 rounded-full blur-[100px] group-hover:bg-electric/25 transition-all duration-500" />
               <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#FFB800]/10 rounded-full blur-[60px]" />
               <div className="relative z-10">
-                <div className="text-5xl mb-5">💡</div>
+                <div className="text-4xl mb-5 font-heading font-bold text-electric/60 tracking-tight">✦</div>
                 <h3 className="text-2xl font-heading font-bold text-white mb-4">
                   Meaning Work
                 </h3>
@@ -141,7 +141,7 @@ export default function Home() {
                 </ul>
                 <div className="border-t border-electric/20 pt-4">
                   <p className="text-sm font-heading font-bold text-electric tracking-wide uppercase">
-                    ✊ Fiercely protect this
+                    Fiercely protect this.
                   </p>
                 </div>
               </div>
