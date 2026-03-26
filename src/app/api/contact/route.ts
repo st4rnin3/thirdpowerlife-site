@@ -26,9 +26,8 @@ export async function POST(request: Request) {
         Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Third Power Life <onboarding@resend.dev>",
-        // TODO: switch to info@ThirdPowerPerformance.com after domain verification on Resend
-        to: ["st4rnin3@hotmail.com"],
+        from: "Third Power Life <contact@thirdpowerlife.ai>",
+        to: ["info@ThirdPowerPerformance.com"],
         subject: `New inquiry from ${name} — ${interestLabels[interest] || interest}`,
         html: `
           <h2>New Contact Form Submission</h2>
