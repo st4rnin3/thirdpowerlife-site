@@ -1,1 +1,113 @@
 @import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Theme tokens — Tailwind CSS v4 @theme directive                    */
+/* These register as utility classes: bg-navy, text-electric, etc.    */
+/* ------------------------------------------------------------------ */
+@theme {
+  --color-navy: #001433;
+  --color-midnight: #00266E;
+  --color-accent: #0057FF;
+  --color-electric: #00D2FF;
+  --color-periwinkle: #7FA2FF;
+  --color-light: #E6E8EA;
+  --color-success: #009600;
+  --color-danger: #960000;
+
+  --font-heading: var(--font-montserrat), sans-serif;
+  --font-body: var(--font-open-sans), sans-serif;
+}
+
+/* ------------------------------------------------------------------ */
+/* Base styles                                                        */
+/* ------------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-navy);
+  color: var(--color-light);
+  font-family: var(--font-body);
+}
+
+/* Text selection */
+::selection {
+  background-color: var(--color-electric);
+  color: var(--color-navy);
+}
+
+/* ------------------------------------------------------------------ */
+/* Custom scrollbar — dark theme                                      */
+/* ------------------------------------------------------------------ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-midnight);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-midnight) var(--color-navy);
+}
+
+/* ------------------------------------------------------------------ */
+/* Scroll-reveal animation                                            */
+/* ------------------------------------------------------------------ */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+/* ------------------------------------------------------------------ */
+/* Glow hover effect for buttons / interactive elements               */
+/* Uses Electric Cyan for a subtle pulsing box-shadow                 */
+/* ------------------------------------------------------------------ */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 8px rgba(0, 210, 255, 0.3),
+      0 0 20px rgba(0, 210, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(0, 210, 255, 0.5),
+      0 0 40px rgba(0, 210, 255, 0.2);
+  }
+}
+
+.animate-glow {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* ------------------------------------------------------------------ */
+/* Glassmorphism utility                                              */
+/* ------------------------------------------------------------------ */
+.glass {
+  background: rgba(0, 38, 110, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 210, 255, 0.15);
+}

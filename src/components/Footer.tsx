@@ -49,22 +49,23 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-navy text-brand-white">
+    <footer className="bg-navy border-t border-white/10">
       <div className="mx-auto max-w-7xl px-6 py-16">
         {/* Top section: brand + nav + social */}
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand Column */}
           <div>
-            <Link href="/" className="text-xl font-bold tracking-tight">
-              Third Power Life
+            <Link href="/" className="font-heading font-bold text-xl tracking-tight">
+              <span className="text-white">Third Power</span>
+              <span className="text-electric"> Life</span>
             </Link>
-            <p className="mt-2 text-sm text-gray-400">
+            <p className="mt-2 text-sm text-light/50">
               Your Personal Chief AI Officer
             </p>
-            <p className="mt-4 text-sm text-gray-400">
+            <p className="mt-4 text-sm text-light/50">
               <a
                 href="mailto:info@ThirdPowerPerformance.com"
-                className="transition-colors hover:text-brand-gold"
+                className="transition-colors hover:text-electric"
               >
                 info@ThirdPowerPerformance.com
               </a>
@@ -73,7 +74,7 @@ export default function Footer() {
 
           {/* Navigation Column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-light/50">
               Navigate
             </h3>
             <ul className="mt-4 space-y-3">
@@ -81,7 +82,7 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-sm text-gray-300 transition-colors hover:text-brand-gold"
+                    className="text-sm text-light/60 transition-colors hover:text-electric"
                   >
                     {label}
                   </Link>
@@ -92,7 +93,7 @@ export default function Footer() {
 
           {/* Social Column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-light/50">
               Connect
             </h3>
             <div className="mt-4 flex gap-4">
@@ -102,7 +103,7 @@ export default function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 transition-colors hover:text-brand-gold"
+                  className="text-light/40 transition-colors hover:text-electric"
                   aria-label={label}
                 >
                   {icon}
@@ -113,9 +114,9 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="mt-12 border-t border-gray-700 pt-8">
+        <div className="mt-12 border-t border-white/10 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-light/40">
               &copy; 2026 Third Power Performance, LLC
             </p>
             <div className="flex gap-6">
@@ -123,7 +124,7 @@ export default function Footer() {
                 href="https://www.thirdpowerperformance.com/terms"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-gray-400 transition-colors hover:text-brand-gold"
+                className="text-sm text-light/40 transition-colors hover:text-electric"
               >
                 Terms
               </a>
@@ -131,7 +132,7 @@ export default function Footer() {
                 href="https://www.thirdpowerperformance.com/privacy-policy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-gray-400 transition-colors hover:text-brand-gold"
+                className="text-sm text-light/40 transition-colors hover:text-electric"
               >
                 Privacy
               </a>

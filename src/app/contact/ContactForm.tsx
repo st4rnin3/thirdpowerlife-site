@@ -39,14 +39,14 @@ export default function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex items-center justify-center min-h-[400px]">
+      <div className="glass rounded-2xl p-8 flex items-center justify-center min-h-[400px]">
         <div className="text-center">
           <div className="text-4xl mb-4">✅</div>
-          <h3 className="text-xl font-bold text-gray-900 mb-2">Message Sent!</h3>
-          <p className="text-gray-600">Thanks for reaching out. Dan typically responds within 24 hours.</p>
+          <h3 className="text-xl font-heading font-bold text-white mb-2">Message Sent!</h3>
+          <p className="text-light/60">Thanks for reaching out. Dan typically responds within 24 hours.</p>
           <button
             onClick={() => setStatus("idle")}
-            className="mt-4 text-blue-600 font-medium hover:underline"
+            className="mt-4 text-electric font-medium hover:underline"
           >
             Send another message
           </button>
@@ -56,33 +56,33 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+    <div className="glass rounded-2xl p-8">
       <form onSubmit={handleSubmit} className="space-y-5">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+          <label className="block text-light/80 text-sm font-medium mb-1">Name</label>
           <input
             type="text"
             name="name"
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-light placeholder-light/30 focus:ring-2 focus:ring-electric focus:border-transparent transition"
             placeholder="Your name"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+          <label className="block text-light/80 text-sm font-medium mb-1">Email</label>
           <input
             type="email"
             name="email"
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-light placeholder-light/30 focus:ring-2 focus:ring-electric focus:border-transparent transition"
             placeholder="you@company.com"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">I&apos;m interested in...</label>
+          <label className="block text-light/80 text-sm font-medium mb-1">I&apos;m interested in...</label>
           <select
             name="interest"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-light placeholder-light/30 focus:ring-2 focus:ring-electric focus:border-transparent transition"
           >
             <option value="speaking">Booking Dan to speak</option>
             <option value="consulting">Fractional CAIO consulting</option>
@@ -91,34 +91,34 @@ export default function ContactForm() {
           </select>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-light/80 text-sm font-medium mb-1">
             What&apos;s your biggest challenge with AI right now?
           </label>
           <textarea
             name="challenge"
             rows={3}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-light placeholder-light/30 focus:ring-2 focus:ring-electric focus:border-transparent transition"
             placeholder="Tell me what you're working through..."
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-light/80 text-sm font-medium mb-1">
             Why are you reaching out to Dan specifically?
           </label>
           <textarea
             name="why_dan"
             rows={2}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-light placeholder-light/30 focus:ring-2 focus:ring-electric focus:border-transparent transition"
             placeholder="What resonated with you?"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Budget range <span className="text-gray-400">(optional)</span>
+          <label className="block text-light/80 text-sm font-medium mb-1">
+            Budget range <span className="text-light/40">(optional)</span>
           </label>
           <select
             name="budget"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-light placeholder-light/30 focus:ring-2 focus:ring-electric focus:border-transparent transition"
           >
             <option value="">Prefer not to say</option>
             <option value="under-5k">Under $5,000</option>
@@ -130,16 +130,16 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-accent text-white px-6 py-3 rounded-lg font-heading font-semibold hover:shadow-[0_0_20px_rgba(0,210,255,0.3)] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {status === "sending" ? "Sending..." : "Send Message"}
         </button>
         {status === "error" && (
-          <p className="text-red-600 text-sm text-center">
+          <p className="text-danger text-sm text-center">
             Something went wrong. Please try again or email info@ThirdPowerPerformance.com directly.
           </p>
         )}
-        <p className="text-xs text-gray-500 text-center">
+        <p className="text-light/40 text-xs text-center">
           I typically respond within 24 hours.
         </p>
       </form>
