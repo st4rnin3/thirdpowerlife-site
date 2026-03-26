@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { prospects } from "@/data/prospects";
+import FAQ from "@/components/FAQ";
 
 export function generateStaticParams() {
   return Object.keys(prospects).map((slug) => ({ slug }));
@@ -318,6 +319,26 @@ export default async function ProspectPage({ params }: { params: Promise<{ slug:
               allowFullScreen
               title="Dan Gentry TEDx Talk"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================ */}
+      {/* FAQ                                                              */}
+      {/* ================================================================ */}
+      <section className="bg-gradient-to-b from-midnight/30 to-navy py-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-heading font-bold text-white text-center mb-12">
+            Frequently Asked Questions
+          </h2>
+          <FAQ />
+          <div className="text-center mt-10">
+            <a
+              href="/speaking/tech-setup"
+              className="text-electric text-sm font-medium hover:underline transition"
+            >
+              View Full Technical Requirements →
+            </a>
           </div>
         </div>
       </section>
