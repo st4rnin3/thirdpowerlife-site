@@ -170,66 +170,46 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Vertical progression with connecting line */}
-          <div className="relative max-w-4xl mx-auto">
-            {/* Connecting vertical line */}
-            <div className="absolute left-8 lg:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-white/10 via-accent/30 to-electric/60 hidden sm:block" />
-
-            {/* Level 1 — Explorer (muted) */}
-            <div className="relative flex flex-col lg:flex-row items-start lg:items-center gap-6 mb-12 group">
-              <div className="absolute left-8 lg:left-1/2 w-4 h-4 -translate-x-1/2 rounded-full bg-white/20 border-2 border-white/30 hidden sm:block z-10" />
-              <div className="lg:w-1/2 lg:pr-12 lg:text-right">
-                <span className="text-xs font-heading font-bold text-white/40 tracking-widest uppercase">Level 1</span>
-                <h3 className="text-xl font-heading font-bold text-white/70 mt-1">Explorer</h3>
-              </div>
-              <div className="lg:w-1/2 lg:pl-12">
-                <div className="bg-midnight/60 border border-white/10 rounded-xl p-5 group-hover:border-white/20 transition-all duration-300">
-                  <p className="text-sm text-light/50">Curious but scattered. Using ChatGPT occasionally with no strategy. <span className="text-white/30">~0 hours saved.</span></p>
-                </div>
-              </div>
+          {/* 4-card horizontal layout matching presentation slide */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Level 0 — Explorer */}
+            <div className="group relative bg-midnight/40 border border-white/10 rounded-2xl p-8 text-center hover:border-white/25 hover:bg-midnight/60 transition-all duration-500">
+              <div className="text-6xl font-heading font-bold text-white/20 mb-2">0</div>
+              <h3 className="text-xl font-heading font-bold text-white/70 uppercase tracking-wide mb-6">Explorer</h3>
+              <div className="text-3xl mb-6">🔭</div>
+              <p className="text-sm text-light/50 italic leading-relaxed">
+                How do I dip a toe into AI safely?
+              </p>
             </div>
 
-            {/* Level 2 — Assistant */}
-            <div className="relative flex flex-col lg:flex-row-reverse items-start lg:items-center gap-6 mb-12 group">
-              <div className="absolute left-8 lg:left-1/2 w-4 h-4 -translate-x-1/2 rounded-full bg-accent/40 border-2 border-accent/50 hidden sm:block z-10" />
-              <div className="lg:w-1/2 lg:pl-12">
-                <span className="text-xs font-heading font-bold text-accent/60 tracking-widest uppercase">Level 2</span>
-                <h3 className="text-xl font-heading font-bold text-white/80 mt-1">Assistant</h3>
-              </div>
-              <div className="lg:w-1/2 lg:pr-12">
-                <div className="bg-midnight/60 border border-accent/20 rounded-xl p-5 group-hover:border-accent/40 transition-all duration-300">
-                  <p className="text-sm text-light/60">AI handles specific tasks. You direct it for email, research, writing. <span className="text-accent/60">~5-10 hours saved/week.</span></p>
-                </div>
-              </div>
+            {/* Level 1 — Assistant */}
+            <div className="group relative bg-midnight/40 border border-accent/15 rounded-2xl p-8 text-center hover:border-accent/40 hover:bg-midnight/60 transition-all duration-500">
+              <div className="text-6xl font-heading font-bold text-accent/30 mb-2">1</div>
+              <h3 className="text-xl font-heading font-bold text-white/80 uppercase tracking-wide mb-6">Assistant</h3>
+              <div className="text-3xl mb-6">🎧</div>
+              <p className="text-sm text-light/60 italic leading-relaxed">
+                How can an AI intern lighten my workload today?
+              </p>
             </div>
 
-            {/* Level 3 — Agent */}
-            <div className="relative flex flex-col lg:flex-row items-start lg:items-center gap-6 mb-12 group">
-              <div className="absolute left-8 lg:left-1/2 w-5 h-5 -translate-x-1/2 rounded-full bg-accent/60 border-2 border-accent shadow-[0_0_12px_rgba(0,87,255,0.4)] hidden sm:block z-10" />
-              <div className="lg:w-1/2 lg:pr-12 lg:text-right">
-                <span className="text-xs font-heading font-bold text-accent tracking-widest uppercase">Level 3</span>
-                <h3 className="text-xl font-heading font-bold text-white/90 mt-1">Agent</h3>
-              </div>
-              <div className="lg:w-1/2 lg:pl-12">
-                <div className="bg-midnight/60 border border-accent/30 rounded-xl p-5 group-hover:border-accent/50 group-hover:shadow-[0_0_20px_rgba(0,87,255,0.15)] transition-all duration-300">
-                  <p className="text-sm text-light/70">AI operates autonomously on workflows. Systems, not prompts. <span className="text-accent/80">~15-25 hours saved/week.</span></p>
-                </div>
-              </div>
+            {/* Level 2 — Agent */}
+            <div className="group relative bg-midnight/40 border border-accent/25 rounded-2xl p-8 text-center hover:border-accent/50 hover:shadow-[0_0_20px_rgba(0,87,255,0.1)] hover:bg-midnight/60 transition-all duration-500">
+              <div className="text-6xl font-heading font-bold text-accent/50 mb-2">2</div>
+              <h3 className="text-xl font-heading font-bold text-white/90 uppercase tracking-wide mb-6">Agent</h3>
+              <div className="text-3xl mb-6">🤖</div>
+              <p className="text-sm text-light/70 italic leading-relaxed">
+                How do I get an agent to do a task for me end-to-end while I&apos;m away?
+              </p>
             </div>
 
-            {/* Level 4 — Commander (GLOWING pinnacle) */}
-            <div className="relative flex flex-col lg:flex-row-reverse items-start lg:items-center gap-6 group">
-              <div className="absolute left-8 lg:left-1/2 w-6 h-6 -translate-x-1/2 rounded-full bg-electric border-2 border-electric shadow-[0_0_25px_rgba(0,210,255,0.6)] hidden sm:block z-10 animate-glow" />
-              <div className="lg:w-1/2 lg:pl-12">
-                <span className="text-xs font-heading font-bold text-electric tracking-widest uppercase">Level 4</span>
-                <h3 className="text-2xl font-heading font-bold text-white mt-1">👑 Commander</h3>
-              </div>
-              <div className="lg:w-1/2 lg:pr-12">
-                <div className="bg-gradient-to-br from-midnight to-accent/20 border border-electric/50 shadow-[0_0_30px_rgba(0,210,255,0.15)] rounded-xl p-6 group-hover:shadow-[0_0_40px_rgba(0,210,255,0.3)] transition-all duration-500">
-                  <p className="text-light/80">You set strategy. AI executes. <span className="text-electric font-bold">30+ hours reclaimed weekly.</span></p>
-                  <p className="text-xs text-electric/60 mt-2 italic">This is where Dan operates. This is where you&apos;re headed.</p>
-                </div>
-              </div>
+            {/* Level 3 — Commander (GLOWING) */}
+            <div className="group relative bg-gradient-to-b from-midnight/60 to-accent/10 border border-electric/40 rounded-2xl p-8 text-center shadow-[0_0_30px_rgba(0,210,255,0.1)] hover:border-electric/60 hover:shadow-[0_0_40px_rgba(0,210,255,0.25)] transition-all duration-500">
+              <div className="text-6xl font-heading font-bold text-electric/60 mb-2">3</div>
+              <h3 className="text-xl font-heading font-bold text-white uppercase tracking-wide mb-6">Commander</h3>
+              <div className="text-3xl mb-6">👑</div>
+              <p className="text-sm text-electric/80 italic leading-relaxed">
+                How do I design an AI ecosystem that self-optimizes while I lead vision?
+              </p>
             </div>
           </div>
         </div>
