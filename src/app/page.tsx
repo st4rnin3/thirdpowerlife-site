@@ -170,46 +170,66 @@ export default function Home() {
             </p>
           </div>
 
-          {/* 4-card horizontal layout matching presentation slide */}
+          {/* 4-card horizontal layout with background images */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Level 0 — Explorer */}
-            <div className="group relative bg-midnight/40 border border-white/10 rounded-2xl p-8 text-center hover:border-white/25 hover:bg-midnight/60 transition-all duration-500">
-              <div className="text-6xl font-heading font-bold text-white/20 mb-2">0</div>
-              <h3 className="text-xl font-heading font-bold text-white/70 uppercase tracking-wide mb-6">Explorer</h3>
-              <div className="text-3xl mb-6">🔭</div>
-              <p className="text-sm text-light/50 italic leading-relaxed">
-                How do I dip a toe into AI safely?
-              </p>
+            <div className="group relative rounded-2xl overflow-hidden min-h-[360px] hover:scale-[1.03] transition-all duration-500">
+              <Image src="/images/ascension-explorer-bg.jpg" alt="" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#001433]/95 via-[#001433]/70 to-[#001433]/40 group-hover:via-[#001433]/60 transition-all duration-500" />
+              <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-white/30 transition-all duration-500" />
+              <div className="relative z-10 p-8 flex flex-col items-center justify-center h-full text-center">
+                <div className="text-6xl font-heading font-bold text-white/30 mb-1">0</div>
+                <h3 className="text-xl font-heading font-bold text-white uppercase tracking-wide mb-4">Explorer</h3>
+                <div className="text-3xl mb-4">🔭</div>
+                <p className="text-sm text-white/70 italic leading-relaxed">
+                  How do I dip a toe into AI safely?
+                </p>
+              </div>
             </div>
 
             {/* Level 1 — Assistant */}
-            <div className="group relative bg-midnight/40 border border-accent/15 rounded-2xl p-8 text-center hover:border-accent/40 hover:bg-midnight/60 transition-all duration-500">
-              <div className="text-6xl font-heading font-bold text-accent/30 mb-2">1</div>
-              <h3 className="text-xl font-heading font-bold text-white/80 uppercase tracking-wide mb-6">Assistant</h3>
-              <div className="text-3xl mb-6">🎧</div>
-              <p className="text-sm text-light/60 italic leading-relaxed">
-                How can an AI intern lighten my workload today?
-              </p>
+            <div className="group relative rounded-2xl overflow-hidden min-h-[360px] hover:scale-[1.03] transition-all duration-500">
+              <Image src="/images/ascension-assistant-bg.jpg" alt="" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#001433]/95 via-[#001433]/70 to-[#001433]/40 group-hover:via-[#001433]/60 transition-all duration-500" />
+              <div className="absolute inset-0 rounded-2xl border border-accent/15 group-hover:border-accent/40 transition-all duration-500" />
+              <div className="relative z-10 p-8 flex flex-col items-center justify-center h-full text-center">
+                <div className="text-6xl font-heading font-bold text-accent/40 mb-1">1</div>
+                <h3 className="text-xl font-heading font-bold text-white/90 uppercase tracking-wide mb-4">Assistant</h3>
+                <div className="text-3xl mb-4">🎧</div>
+                <p className="text-sm text-white/70 italic leading-relaxed">
+                  How can an AI intern lighten my workload today?
+                </p>
+              </div>
             </div>
 
             {/* Level 2 — Agent */}
-            <div className="group relative bg-midnight/40 border border-accent/25 rounded-2xl p-8 text-center hover:border-accent/50 hover:shadow-[0_0_20px_rgba(0,87,255,0.1)] hover:bg-midnight/60 transition-all duration-500">
-              <div className="text-6xl font-heading font-bold text-accent/50 mb-2">2</div>
-              <h3 className="text-xl font-heading font-bold text-white/90 uppercase tracking-wide mb-6">Agent</h3>
-              <div className="text-3xl mb-6">🤖</div>
-              <p className="text-sm text-light/70 italic leading-relaxed">
-                How do I get an agent to do a task for me end-to-end while I&apos;m away?
-              </p>
+            <div className="group relative rounded-2xl overflow-hidden min-h-[360px] hover:scale-[1.03] transition-all duration-500">
+              <Image src="/images/ascension-agent-bg.jpg" alt="" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#001433]/95 via-[#001433]/70 to-[#001433]/35 group-hover:via-[#001433]/55 transition-all duration-500" />
+              <div className="absolute inset-0 rounded-2xl border border-accent/25 group-hover:border-accent/50 group-hover:shadow-[0_0_25px_rgba(0,87,255,0.15)] transition-all duration-500" />
+              <div className="relative z-10 p-8 flex flex-col items-center justify-center h-full text-center">
+                <div className="text-6xl font-heading font-bold text-accent/60 mb-1">2</div>
+                <h3 className="text-xl font-heading font-bold text-white uppercase tracking-wide mb-4">Agent</h3>
+                <div className="text-3xl mb-4">🤖</div>
+                <p className="text-sm text-white/80 italic leading-relaxed">
+                  How do I get an agent to do a task for me end-to-end while I&apos;m away?
+                </p>
+              </div>
             </div>
 
             {/* Level 3 — Commander (GLOWING) */}
-            <div className="group relative bg-gradient-to-b from-midnight/60 to-accent/10 border border-electric/40 rounded-2xl p-8 text-center shadow-[0_0_30px_rgba(0,210,255,0.1)] hover:border-electric/60 hover:shadow-[0_0_40px_rgba(0,210,255,0.25)] transition-all duration-500">
-              <div className="text-6xl font-heading font-bold text-electric/60 mb-2">3</div>
-              <h3 className="text-xl font-heading font-bold text-white uppercase tracking-wide mb-6">Commander</h3>
-              <div className="text-3xl mb-6">👑</div>
-              <p className="text-sm text-electric/80 italic leading-relaxed">
-                How do I design an AI ecosystem that self-optimizes while I lead vision?
-              </p>
+            <div className="group relative rounded-2xl overflow-hidden min-h-[360px] hover:scale-[1.03] transition-all duration-500">
+              <Image src="/images/ascension-commander-bg.jpg" alt="" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#001433]/90 via-[#001433]/55 to-[#001433]/25 group-hover:via-[#001433]/45 transition-all duration-500" />
+              <div className="absolute inset-0 rounded-2xl border border-electric/40 shadow-[0_0_30px_rgba(0,210,255,0.15)] group-hover:border-electric/60 group-hover:shadow-[0_0_45px_rgba(0,210,255,0.3)] transition-all duration-500" />
+              <div className="relative z-10 p-8 flex flex-col items-center justify-center h-full text-center">
+                <div className="text-6xl font-heading font-bold text-electric/70 mb-1">3</div>
+                <h3 className="text-xl font-heading font-bold text-white uppercase tracking-wide mb-4">Commander</h3>
+                <div className="text-3xl mb-4">👑</div>
+                <p className="text-sm text-electric/90 italic leading-relaxed">
+                  How do I design an AI ecosystem that self-optimizes while I lead vision?
+                </p>
+              </div>
             </div>
           </div>
         </div>
