@@ -97,7 +97,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#001433]/95 via-[#001433]/80 to-[#001433]/60 group-hover:from-[#001433]/90 group-hover:via-[#001433]/70 transition-all duration-500" />
               {/* Border glow on hover */}
               <div className="absolute inset-0 rounded-2xl border border-accent/20 group-hover:border-accent/50 group-hover:shadow-[inset_0_0_30px_rgba(0,87,255,0.1)] transition-all duration-500" />
-              <div className="relative z-10 p-8 md:p-10 flex flex-col justify-end h-full">
+              <div className="relative z-10 p-10 md:p-12 flex flex-col justify-center h-full">
                 <h3 className="text-3xl font-heading font-bold text-white mb-4">
                   Machine Work
                 </h3>
@@ -135,7 +135,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#001433]/95 via-[#001433]/75 to-[#001433]/50 group-hover:from-[#001433]/90 group-hover:via-[#001433]/65 transition-all duration-500" />
               {/* Border glow on hover */}
               <div className="absolute inset-0 rounded-2xl border border-electric/20 group-hover:border-electric/50 group-hover:shadow-[inset_0_0_30px_rgba(0,210,255,0.15)] transition-all duration-500" />
-              <div className="relative z-10 p-8 md:p-10 flex flex-col justify-end h-full">
+              <div className="relative z-10 p-10 md:p-12 flex flex-col justify-center h-full">
                 <h3 className="text-3xl font-heading font-bold text-white mb-4">
                   Meaning Work
                 </h3>
