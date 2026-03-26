@@ -8,24 +8,46 @@ export const metadata: Metadata = {
 
 const milestones = [
   {
+    year: "2010",
     title: "Executive Coaching",
-    desc: "Commander vs. Drifter philosophy — intentional design over reactive drift.",
+    desc: "Commander vs. Drifter philosophy born — intentional design over reactive drift. Over a decade coaching leaders on purpose-driven performance.",
   },
   {
+    year: "2018",
     title: "Third Power Performance Founded",
-    desc: "Business success integrated with a vibrant, purposeful life.",
+    desc: "Business success integrated with a vibrant, purposeful life. The Third Power framework takes shape.",
   },
   {
+    year: "2018",
+    title: "Third Power Life Podcast Launched",
+    desc: "Conversations on leadership, purpose, and living intentionally. Now in Season 3.",
+  },
+  {
+    year: "2019",
     title: "TEDx Stage",
-    desc: "Humanity Amplified keynote — reframing AI around what matters most.",
+    desc: "\"How to Find Your Personal Purpose and Take Command of Your Life\" — the Commander vs. Drifter philosophy goes global.",
+    link: "https://www.youtube.com/watch?v=3GtpnqEbYRU",
+    linkText: "▶ Watch the Talk",
   },
   {
+    year: "2022",
+    title: "ChatGPT Launches",
+    desc: "November 30, 2022. The world changes overnight. Dan sees the potential immediately — not for speed, but for freedom.",
+  },
+  {
+    year: "2024",
+    title: "The AI Pivot",
+    desc: "AI became the first technology that could deliver escape from drift at scale. The mission evolves: protect humanity through AI, not from it.",
+  },
+  {
+    year: "2025",
     title: "IMPACT AI Community",
-    desc: "Building the movement for professionals who use AI with intention.",
+    desc: "Building the movement for professionals who use AI with intention, not just efficiency.",
   },
   {
-    title: "AI Ascension Model",
-    desc: "A practical framework for leaders: Explorer to Commander.",
+    year: "2026",
+    title: "Humanity Amplified + AI Ascension Model",
+    desc: "The signature keynote. A practical framework for leaders: Explorer → Assistant → Agent → Commander. Your Personal Chief AI Officer.",
   },
 ];
 
@@ -168,14 +190,20 @@ export default function About() {
             {milestones.map((m, i) => (
               <div
                 key={i}
-                className={`relative flex items-start mb-12 last:mb-0 ${
+                className={`relative flex items-start mb-14 last:mb-0 ${
                   i % 2 === 0
                     ? "md:flex-row"
                     : "md:flex-row-reverse"
                 }`}
               >
-                {/* Dot */}
-                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-electric ring-4 ring-navy z-10 mt-1.5" />
+                {/* Year + Dot */}
+                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 z-10 flex flex-col items-center">
+                  <div className={`w-4 h-4 rounded-full border-2 mt-0.5 ${
+                    i === milestones.length - 1
+                      ? "bg-electric border-electric shadow-[0_0_15px_rgba(0,210,255,0.5)]"
+                      : "bg-accent/40 border-accent/60"
+                  }`} />
+                </div>
 
                 {/* Content */}
                 <div
@@ -183,8 +211,21 @@ export default function About() {
                     i % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"
                   }`}
                 >
-                  <h3 className="text-white font-semibold text-lg">{m.title}</h3>
+                  <span className={`text-xs font-heading font-bold tracking-widest uppercase ${
+                    i === milestones.length - 1 ? "text-electric" : "text-accent/60"
+                  }`}>{m.year}</span>
+                  <h3 className="text-white font-semibold text-lg mt-1">{m.title}</h3>
                   <p className="text-light/70 text-sm mt-1">{m.desc}</p>
+                  {m.link && (
+                    <a
+                      href={m.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block mt-2 text-electric text-sm font-semibold hover:text-electric/80 transition"
+                    >
+                      {m.linkText} →
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
