@@ -27,7 +27,8 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         from: "Third Power Life <onboarding@resend.dev>",
-        to: ["info@ThirdPowerPerformance.com"],
+        // TODO: switch to info@ThirdPowerPerformance.com after domain verification on Resend
+        to: ["st4rnin3@hotmail.com"],
         subject: `New inquiry from ${name} — ${interestLabels[interest] || interest}`,
         html: `
           <h2>New Contact Form Submission</h2>
