@@ -83,49 +83,67 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Machine Work — cold / technical feel */}
-            <div className="relative bg-midnight/80 border border-white/10 rounded-2xl p-8 overflow-hidden">
-              {/* Subtle grid pattern overlay */}
+          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            {/* Machine Work — cold / robotic / digital */}
+            <div className="relative group bg-midnight/80 border border-white/10 rounded-2xl p-8 md:p-10 overflow-hidden hover:border-accent/40 transition-all duration-500">
+              {/* Animated grid pattern */}
               <div
-                className="absolute inset-0 opacity-5"
+                className="absolute inset-0 opacity-[0.08]"
                 style={{
                   backgroundImage:
-                    "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-                  backgroundSize: "20px 20px",
+                    "linear-gradient(rgba(0,87,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(0,87,255,0.4) 1px, transparent 1px)",
+                  backgroundSize: "24px 24px",
                 }}
               />
+              {/* Cold blue glow */}
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-accent/10 rounded-full blur-[80px] group-hover:bg-accent/20 transition-all duration-500" />
               <div className="relative z-10">
-                <div className="text-4xl mb-4">🤖</div>
-                <h3 className="text-xl font-heading font-bold text-white mb-3">
+                <div className="text-5xl mb-5">🤖</div>
+                <h3 className="text-2xl font-heading font-bold text-white mb-4">
                   Machine Work
                 </h3>
-                <p className="text-light/70 mb-6 leading-relaxed">
-                  What AI should handle — research, formatting, email triage,
-                  scheduling, data entry, meeting prep, repetitive reports.
-                </p>
-                <p className="text-sm font-semibold text-accent">
-                  Let the machines do this.
-                </p>
+                <ul className="space-y-2 text-light/60 mb-6">
+                  <li className="flex items-center gap-2"><span className="text-accent/60 text-xs">▸</span> Research &amp; data gathering</li>
+                  <li className="flex items-center gap-2"><span className="text-accent/60 text-xs">▸</span> Email triage &amp; scheduling</li>
+                  <li className="flex items-center gap-2"><span className="text-accent/60 text-xs">▸</span> Formatting &amp; meeting prep</li>
+                  <li className="flex items-center gap-2"><span className="text-accent/60 text-xs">▸</span> Repetitive reports &amp; data entry</li>
+                </ul>
+                <div className="border-t border-white/10 pt-4">
+                  <p className="text-sm font-heading font-bold text-accent tracking-wide uppercase">
+                    → Let the machines do this
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Meaning Work — warm / human feel */}
-            <div className="relative bg-gradient-to-br from-accent/20 to-midnight/80 border border-electric/20 rounded-2xl p-8 overflow-hidden">
-              {/* Subtle warm glow in the top-right corner */}
-              <div className="absolute -top-12 -right-12 w-48 h-48 bg-electric/10 rounded-full blur-3xl" />
+            {/* Center divider — VS badge */}
+            <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+              <div className="w-14 h-14 bg-navy border-2 border-electric/40 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,210,255,0.3)]">
+                <span className="text-electric font-heading font-bold text-sm">VS</span>
+              </div>
+            </div>
+
+            {/* Meaning Work — warm / human / glowing */}
+            <div className="relative group bg-gradient-to-br from-electric/15 via-midnight/80 to-accent/10 border border-electric/25 rounded-2xl p-8 md:p-10 overflow-hidden hover:border-electric/50 transition-all duration-500">
+              {/* Warm glow effect */}
+              <div className="absolute -top-16 -right-16 w-72 h-72 bg-electric/15 rounded-full blur-[100px] group-hover:bg-electric/25 transition-all duration-500" />
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#FFB800]/10 rounded-full blur-[60px]" />
               <div className="relative z-10">
-                <div className="text-4xl mb-4">💡</div>
-                <h3 className="text-xl font-heading font-bold text-white mb-3">
+                <div className="text-5xl mb-5">💡</div>
+                <h3 className="text-2xl font-heading font-bold text-white mb-4">
                   Meaning Work
                 </h3>
-                <p className="text-light/70 mb-6 leading-relaxed">
-                  What humans must protect — leadership, creativity, mentoring,
-                  family, strategic thinking, presence, purpose.
-                </p>
-                <p className="text-sm font-semibold text-electric">
-                  Fiercely protect this.
-                </p>
+                <ul className="space-y-2 text-light/70 mb-6">
+                  <li className="flex items-center gap-2"><span className="text-electric text-xs">✦</span> Leadership &amp; strategic thinking</li>
+                  <li className="flex items-center gap-2"><span className="text-electric text-xs">✦</span> Creativity &amp; mentoring</li>
+                  <li className="flex items-center gap-2"><span className="text-electric text-xs">✦</span> Family &amp; presence</li>
+                  <li className="flex items-center gap-2"><span className="text-electric text-xs">✦</span> Purpose &amp; connection</li>
+                </ul>
+                <div className="border-t border-electric/20 pt-4">
+                  <p className="text-sm font-heading font-bold text-electric tracking-wide uppercase">
+                    ✊ Fiercely protect this
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -146,59 +164,66 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Vertical progression with connecting line */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Connecting vertical line */}
+            <div className="absolute left-8 lg:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-white/10 via-accent/30 to-electric/60 hidden sm:block" />
+
             {/* Level 1 — Explorer (muted) */}
-            <div className="bg-midnight/60 border border-white/10 rounded-xl p-6 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,210,255,0.2)] transition-all duration-300">
-              <div className="text-sm font-bold text-gray-400 mb-2 font-heading">
-                Level 1
+            <div className="relative flex flex-col lg:flex-row items-start lg:items-center gap-6 mb-12 group">
+              <div className="absolute left-8 lg:left-1/2 w-4 h-4 -translate-x-1/2 rounded-full bg-white/20 border-2 border-white/30 hidden sm:block z-10" />
+              <div className="lg:w-1/2 lg:pr-12 lg:text-right">
+                <span className="text-xs font-heading font-bold text-white/40 tracking-widest uppercase">Level 1</span>
+                <h3 className="text-xl font-heading font-bold text-white/70 mt-1">Explorer</h3>
               </div>
-              <h3 className="text-lg font-heading font-bold text-white mb-2">
-                Explorer
-              </h3>
-              <p className="text-sm text-light/60">
-                Curious but scattered. Using ChatGPT occasionally with no
-                strategy.
-              </p>
+              <div className="lg:w-1/2 lg:pl-12">
+                <div className="bg-midnight/60 border border-white/10 rounded-xl p-5 group-hover:border-white/20 transition-all duration-300">
+                  <p className="text-sm text-light/50">Curious but scattered. Using ChatGPT occasionally with no strategy. <span className="text-white/30">~0 hours saved.</span></p>
+                </div>
+              </div>
             </div>
 
-            {/* Level 2 — Assistant (slightly brighter) */}
-            <div className="bg-midnight/60 border border-accent/20 rounded-xl p-6 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,210,255,0.2)] transition-all duration-300">
-              <div className="text-sm font-bold text-accent/80 mb-2 font-heading">
-                Level 2
+            {/* Level 2 — Assistant */}
+            <div className="relative flex flex-col lg:flex-row-reverse items-start lg:items-center gap-6 mb-12 group">
+              <div className="absolute left-8 lg:left-1/2 w-4 h-4 -translate-x-1/2 rounded-full bg-accent/40 border-2 border-accent/50 hidden sm:block z-10" />
+              <div className="lg:w-1/2 lg:pl-12">
+                <span className="text-xs font-heading font-bold text-accent/60 tracking-widest uppercase">Level 2</span>
+                <h3 className="text-xl font-heading font-bold text-white/80 mt-1">Assistant</h3>
               </div>
-              <h3 className="text-lg font-heading font-bold text-white mb-2">
-                Assistant
-              </h3>
-              <p className="text-sm text-light/60">
-                AI handles specific tasks. You direct it for email, research,
-                writing.
-              </p>
+              <div className="lg:w-1/2 lg:pr-12">
+                <div className="bg-midnight/60 border border-accent/20 rounded-xl p-5 group-hover:border-accent/40 transition-all duration-300">
+                  <p className="text-sm text-light/60">AI handles specific tasks. You direct it for email, research, writing. <span className="text-accent/60">~5-10 hours saved/week.</span></p>
+                </div>
+              </div>
             </div>
 
-            {/* Level 3 — Agent (brighter) */}
-            <div className="bg-midnight/60 border border-accent/30 rounded-xl p-6 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,210,255,0.2)] transition-all duration-300">
-              <div className="text-sm font-bold text-accent mb-2 font-heading">
-                Level 3
+            {/* Level 3 — Agent */}
+            <div className="relative flex flex-col lg:flex-row items-start lg:items-center gap-6 mb-12 group">
+              <div className="absolute left-8 lg:left-1/2 w-5 h-5 -translate-x-1/2 rounded-full bg-accent/60 border-2 border-accent shadow-[0_0_12px_rgba(0,87,255,0.4)] hidden sm:block z-10" />
+              <div className="lg:w-1/2 lg:pr-12 lg:text-right">
+                <span className="text-xs font-heading font-bold text-accent tracking-widest uppercase">Level 3</span>
+                <h3 className="text-xl font-heading font-bold text-white/90 mt-1">Agent</h3>
               </div>
-              <h3 className="text-lg font-heading font-bold text-white mb-2">
-                Agent
-              </h3>
-              <p className="text-sm text-light/60">
-                AI operates autonomously on workflows. Systems, not prompts.
-              </p>
+              <div className="lg:w-1/2 lg:pl-12">
+                <div className="bg-midnight/60 border border-accent/30 rounded-xl p-5 group-hover:border-accent/50 group-hover:shadow-[0_0_20px_rgba(0,87,255,0.15)] transition-all duration-300">
+                  <p className="text-sm text-light/70">AI operates autonomously on workflows. Systems, not prompts. <span className="text-accent/80">~15-25 hours saved/week.</span></p>
+                </div>
+              </div>
             </div>
 
             {/* Level 4 — Commander (GLOWING pinnacle) */}
-            <div className="bg-gradient-to-br from-midnight to-accent/20 border border-electric/50 shadow-[0_0_30px_rgba(0,210,255,0.15)] rounded-xl p-6 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,210,255,0.2)] transition-all duration-300">
-              <div className="text-sm font-bold text-electric mb-2 font-heading">
-                Level 4
+            <div className="relative flex flex-col lg:flex-row-reverse items-start lg:items-center gap-6 group">
+              <div className="absolute left-8 lg:left-1/2 w-6 h-6 -translate-x-1/2 rounded-full bg-electric border-2 border-electric shadow-[0_0_25px_rgba(0,210,255,0.6)] hidden sm:block z-10 animate-glow" />
+              <div className="lg:w-1/2 lg:pl-12">
+                <span className="text-xs font-heading font-bold text-electric tracking-widest uppercase">Level 4</span>
+                <h3 className="text-2xl font-heading font-bold text-white mt-1">👑 Commander</h3>
               </div>
-              <h3 className="text-lg font-heading font-bold text-white mb-2">
-                Commander
-              </h3>
-              <p className="text-sm text-light/60">
-                You set strategy. AI executes. 30+ hours reclaimed weekly.
-              </p>
+              <div className="lg:w-1/2 lg:pr-12">
+                <div className="bg-gradient-to-br from-midnight to-accent/20 border border-electric/50 shadow-[0_0_30px_rgba(0,210,255,0.15)] rounded-xl p-6 group-hover:shadow-[0_0_40px_rgba(0,210,255,0.3)] transition-all duration-500">
+                  <p className="text-light/80">You set strategy. AI executes. <span className="text-electric font-bold">30+ hours reclaimed weekly.</span></p>
+                  <p className="text-xs text-electric/60 mt-2 italic">This is where Dan operates. This is where you&apos;re headed.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -82,12 +82,13 @@ export default function ContactForm() {
           <label className="block text-light/80 text-sm font-medium mb-1">I&apos;m interested in...</label>
           <select
             name="interest"
-            className="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-light placeholder-light/30 focus:ring-2 focus:ring-electric focus:border-transparent transition"
+            className="w-full bg-[#001433] border border-white/15 rounded-lg px-4 py-3 text-light focus:ring-2 focus:ring-electric focus:border-transparent transition appearance-none"
+            style={{ colorScheme: 'dark' }}
           >
-            <option value="speaking">Booking Dan to speak</option>
-            <option value="consulting">Fractional CAIO consulting</option>
-            <option value="podcast">Podcast collaboration</option>
-            <option value="other">Something else</option>
+            <option value="speaking" className="bg-[#001433] text-[#E6E8EA]">Booking Dan to speak</option>
+            <option value="consulting" className="bg-[#001433] text-[#E6E8EA]">Fractional CAIO consulting</option>
+            <option value="podcast" className="bg-[#001433] text-[#E6E8EA]">Podcast collaboration</option>
+            <option value="other" className="bg-[#001433] text-[#E6E8EA]">Something else</option>
           </select>
         </div>
         <div>
@@ -118,13 +119,14 @@ export default function ContactForm() {
           </label>
           <select
             name="budget"
-            className="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-light placeholder-light/30 focus:ring-2 focus:ring-electric focus:border-transparent transition"
+            className="w-full bg-[#001433] border border-white/15 rounded-lg px-4 py-3 text-light focus:ring-2 focus:ring-electric focus:border-transparent transition appearance-none"
+            style={{ colorScheme: 'dark' }}
           >
-            <option value="">Prefer not to say</option>
-            <option value="under-5k">Under $5,000</option>
-            <option value="5k-10k">$5,000 - $10,000</option>
-            <option value="10k-25k">$10,000 - $25,000</option>
-            <option value="25k+">$25,000+</option>
+            <option value="" className="bg-[#001433] text-[#E6E8EA]">Prefer not to say</option>
+            <option value="under-5k" className="bg-[#001433] text-[#E6E8EA]">Under $5,000</option>
+            <option value="5k-10k" className="bg-[#001433] text-[#E6E8EA]">$5,000 - $10,000</option>
+            <option value="10k-25k" className="bg-[#001433] text-[#E6E8EA]">$10,000 - $25,000</option>
+            <option value="25k+" className="bg-[#001433] text-[#E6E8EA]">$25,000+</option>
           </select>
         </div>
         <button
