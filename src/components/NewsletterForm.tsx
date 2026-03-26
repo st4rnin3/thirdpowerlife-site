@@ -33,11 +33,11 @@ export default function NewsletterForm() {
         placeholder="you@example.com"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="w-full rounded-lg px-4 py-3 text-brand-navy placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-gold sm:rounded-r-none"
+        className="w-full rounded-lg bg-white/10 border border-white/20 px-4 py-3 text-light placeholder-light/40 focus:outline-none focus:ring-2 focus:ring-electric focus:border-transparent sm:rounded-r-none"
       />
       <button
         type="submit"
-        className="rounded-lg bg-brand-gold px-6 py-3 font-semibold text-brand-navy transition-opacity hover:opacity-90 sm:rounded-l-none"
+        className="rounded-lg bg-electric px-6 py-3 font-bold text-navy transition-all hover:shadow-[0_0_20px_rgba(0,210,255,0.4)] sm:rounded-l-none"
       >
         Subscribe
       </button>

@@ -32,14 +32,15 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 right-0 left-0 z-50 bg-brand-white transition-shadow duration-300 ${
-        scrolled ? "shadow-md" : ""
+      className={`fixed top-0 right-0 left-0 z-50 bg-navy/90 backdrop-blur-md border-b border-white/5 transition-shadow duration-300 ${
+        scrolled ? "shadow-[0_4px_30px_rgba(0,0,0,0.3)]" : ""
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo / Brand */}
-        <Link href="/" className="text-xl font-bold tracking-tight text-brand-navy">
-          Third Power Life
+        <Link href="/" className="font-heading font-bold text-xl tracking-tight">
+          <span className="text-white">Third Power</span>
+          <span className="text-electric"> Life</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -48,10 +49,10 @@ export default function Header() {
             <li key={href}>
               <Link
                 href={href}
-                className={`text-sm font-medium transition-colors hover:text-brand-gold ${
+                className={`text-sm font-medium transition-colors hover:text-electric ${
                   pathname === href
-                    ? "text-brand-gold"
-                    : "text-brand-navy"
+                    ? "text-electric"
+                    : "text-light/70"
                 }`}
               >
                 {label}
@@ -61,7 +62,7 @@ export default function Header() {
           <li>
             <Link
               href="/contact"
-              className="rounded-lg bg-brand-gold px-5 py-2.5 text-sm font-semibold text-brand-navy transition-opacity hover:opacity-90"
+              className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-all hover:shadow-[0_0_20px_rgba(0,210,255,0.3)]"
             >
               Book a Call
             </Link>
@@ -71,18 +72,16 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-md p-2 text-brand-navy md:hidden"
+          className="inline-flex items-center justify-center rounded-md p-2 text-light md:hidden"
           onClick={() => setMobileMenuOpen((prev) => !prev)}
           aria-expanded={mobileMenuOpen}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
           {mobileMenuOpen ? (
-            // X icon
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           ) : (
-            // Hamburger icon
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
@@ -92,7 +91,7 @@ export default function Header() {
 
       {/* Mobile Menu Panel */}
       {mobileMenuOpen && (
-        <div className="border-t border-gray-100 bg-brand-white md:hidden">
+        <div className="bg-navy border-t border-white/10 md:hidden">
           <ul className="space-y-1 px-6 py-4">
             {NAV_LINKS.map(({ href, label }) => (
               <li key={href}>
@@ -100,8 +99,8 @@ export default function Header() {
                   href={href}
                   className={`block rounded-md px-3 py-2 text-base font-medium transition-colors ${
                     pathname === href
-                      ? "bg-brand-light text-brand-gold"
-                      : "text-brand-navy hover:bg-brand-light"
+                      ? "text-electric bg-white/5"
+                      : "text-light/70 hover:text-electric hover:bg-white/5"
                   }`}
                 >
                   {label}
@@ -111,7 +110,7 @@ export default function Header() {
             <li className="pt-2">
               <Link
                 href="/contact"
-                className="block rounded-lg bg-brand-gold px-3 py-2.5 text-center text-base font-semibold text-brand-navy transition-opacity hover:opacity-90"
+                className="block rounded-lg bg-accent px-3 py-2.5 text-center text-base font-semibold text-white transition-all hover:shadow-[0_0_20px_rgba(0,210,255,0.3)]"
               >
                 Book a Call
               </Link>

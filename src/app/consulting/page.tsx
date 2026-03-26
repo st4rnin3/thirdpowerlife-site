@@ -9,27 +9,39 @@ export default function Consulting() {
   return (
     <>
       {/* Hero */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-blue-400 font-semibold text-sm uppercase tracking-wide mb-3">fCAIO — Fractional Chief AI Officer</p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Your AI strategy deserves<br />
-            <span className="text-blue-400">more than a chatbot.</span>
+      <section className="bg-gradient-to-br from-navy via-midnight/50 to-navy min-h-[60vh] flex items-center py-24 relative overflow-hidden">
+        {/* Subtle radial glow for visual interest */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,87,255,0.15),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(0,210,255,0.08),transparent_50%)]" />
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <p className="text-electric font-heading uppercase tracking-widest text-sm mb-4">
+            fCAIO — Fractional Chief AI Officer
+          </p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">
+            Your AI strategy deserves
+            <br />
+            <span className="text-electric">more than a chatbot.</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mb-8">
+          <p className="text-xl text-light/70 max-w-2xl mb-8">
             A fractional Chief AI Officer gives your business executive-level AI leadership
             without the full-time hire. Strategy, implementation, and results.
           </p>
-          <a href="/contact" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+          <a
+            href="/contact"
+            className="inline-block bg-accent text-white px-8 py-4 rounded-lg font-heading font-semibold hover:shadow-[0_0_20px_rgba(0,210,255,0.3)] transition-all duration-300"
+          >
             Book an Intro Call
           </a>
         </div>
       </section>
 
-      {/* Who it's for */}
-      <section className="py-20 bg-white">
+      {/* Who This Is For */}
+      <section className="bg-navy py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Who This Is For</h2>
+          <h2 className="text-3xl font-heading font-bold text-white text-center mb-12">
+            Who This Is For
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -48,34 +60,62 @@ export default function Consulting() {
                 desc: "You know AI matters but don't know where to start. A fractional CAIO gives you the roadmap without the six-figure salary.",
               },
             ].map((item, i) => (
-              <div key={i} className="text-center">
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
+              <div
+                key={i}
+                className="bg-midnight/60 border border-white/10 rounded-xl p-8 text-center hover:border-electric/20 hover:shadow-[0_0_20px_rgba(0,210,255,0.1)] transition-all duration-300"
+              >
+                <div className="text-5xl mb-6">{item.icon}</div>
+                <h3 className="text-white font-heading font-bold text-xl mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-light/60">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* What you get */}
-      <section className="py-20 bg-gray-50">
+      {/* What You Get */}
+      <section className="bg-gradient-to-b from-midnight/30 to-navy py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">What You Get</h2>
+          <h2 className="text-3xl font-heading font-bold text-white text-center mb-12">
+            What You Get
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
-              { title: "AI Strategy Audit", desc: "A full Machine Work vs. Meaning Work audit of your operations — identifying the highest-ROI automation opportunities." },
-              { title: "Implementation Roadmap", desc: "A phased plan using the AI Ascension model, customized to your team's current capabilities and business goals." },
-              { title: "Tool Selection & Setup", desc: "Cut through the noise. Get recommendations based on what actually works for your use case — not vendor hype." },
-              { title: "Team Training", desc: "Get your people from Explorer to Agent. Practical workshops on the IMPACT method for AI delegation." },
-              { title: "Ongoing Advisory", desc: "Monthly strategy sessions to assess progress, adjust course, and ensure AI adoption stays aligned with business objectives." },
-              { title: "Executive Reporting", desc: "Clear metrics on hours reclaimed, workflows automated, and ROI delivered — in language the board understands." },
+              {
+                title: "AI Strategy Audit",
+                desc: "A full Machine Work vs. Meaning Work audit of your operations — identifying the highest-ROI automation opportunities.",
+              },
+              {
+                title: "Implementation Roadmap",
+                desc: "A phased plan using the AI Ascension model, customized to your team's current capabilities and business goals.",
+              },
+              {
+                title: "Tool Selection & Setup",
+                desc: "Cut through the noise. Get recommendations based on what actually works for your use case — not vendor hype.",
+              },
+              {
+                title: "Team Training",
+                desc: "Get your people from Explorer to Agent. Practical workshops on the IMPACT method for AI delegation.",
+              },
+              {
+                title: "Ongoing Advisory",
+                desc: "Monthly strategy sessions to assess progress, adjust course, and ensure AI adoption stays aligned with business objectives.",
+              },
+              {
+                title: "Executive Reporting",
+                desc: "Clear metrics on hours reclaimed, workflows automated, and ROI delivered — in language the board understands.",
+              },
             ].map((item, i) => (
-              <div key={i} className="flex gap-4">
-                <div className="text-blue-600 text-xl mt-1">→</div>
+              <div
+                key={i}
+                className="bg-midnight/40 border border-white/10 rounded-xl p-6 flex gap-4 hover:border-electric/20 transition-all duration-300"
+              >
+                <div className="text-electric text-xl mt-1">→</div>
                 <div>
-                  <h3 className="font-bold text-gray-900 mb-1">{item.title}</h3>
-                  <p className="text-sm text-gray-600">{item.desc}</p>
+                  <h3 className="text-white font-bold mb-1">{item.title}</h3>
+                  <p className="text-light/60 text-sm">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -84,40 +124,53 @@ export default function Consulting() {
       </section>
 
       {/* The Approach */}
-      <section className="py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">The Approach</h2>
-          <div className="prose prose-lg text-gray-600 mx-auto">
-            <p>
-              Most AI consulting sells you tools. Dan sells you clarity.
-            </p>
-            <p>
-              The engagement starts with understanding your business — not your tech stack.
-              What are your people spending their time on? What decisions actually move the
-              needle? Where is the Machine Work burying the Meaning Work?
-            </p>
-            <p>
-              From there, Dan builds a strategy that&apos;s specific to your operations,
-              implements the first wins within weeks (not quarters), and trains your team
-              to sustain and expand the AI advantage independently.
-            </p>
-            <p>
-              <strong>This is not a retainer where someone sends you ChatGPT prompts.</strong>{" "}
-              This is executive AI leadership embedded in your business.
-            </p>
+      <section className="bg-navy py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="glass rounded-2xl p-8 md:p-12 max-w-3xl mx-auto">
+            <h2 className="text-3xl font-heading font-bold text-white text-center mb-8">
+              The Approach
+            </h2>
+            <div className="space-y-5">
+              <p className="text-light/70 leading-relaxed">
+                Most AI consulting sells you tools. Dan sells you clarity.
+              </p>
+              <p className="text-light/70 leading-relaxed">
+                The engagement starts with understanding your business — not your tech stack.
+                What are your people spending their time on? What decisions actually move the
+                needle? Where is the{" "}
+                <span className="text-white font-semibold">Machine Work</span> burying the{" "}
+                <span className="text-white font-semibold">Meaning Work</span>?
+              </p>
+              <p className="text-light/70 leading-relaxed">
+                From there, Dan builds a strategy that&apos;s specific to your operations,
+                implements the first wins within weeks (not quarters), and trains your team
+                to sustain and expand the AI advantage independently.
+              </p>
+              <p className="text-electric font-semibold leading-relaxed">
+                This is not a retainer where someone sends you ChatGPT prompts.
+              </p>
+              <p className="text-light/70 leading-relaxed">
+                This is executive AI leadership embedded in your business.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gray-900 text-center">
+      <section className="bg-gradient-to-r from-midnight to-navy py-20 text-center">
         <div className="max-w-2xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to talk strategy?</h2>
-          <p className="text-gray-400 mb-8">
+          <h2 className="text-3xl font-heading font-bold text-white mb-4">
+            Ready to talk strategy?
+          </h2>
+          <p className="text-light/50 mb-8">
             No sales pitch. Just a conversation about where AI fits in your business
             and whether a fractional CAIO is the right move.
           </p>
-          <a href="/contact" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+          <a
+            href="/contact"
+            className="inline-block bg-accent text-white px-8 py-4 rounded-lg font-heading font-semibold hover:shadow-[0_0_20px_rgba(0,210,255,0.3)] transition-all duration-300"
+          >
             Book an Intro Call
           </a>
         </div>

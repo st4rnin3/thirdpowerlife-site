@@ -1,41 +1,61 @@
 import Image from "next/image";
+import NewsletterForm from "@/components/NewsletterForm";
 
 export default function Home() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-blue-600 font-semibold text-sm uppercase tracking-wide mb-3">
-                TEDx Speaker · AI Strategist · Founder
+      {/* ================================================================ */}
+      {/* HERO — Full-bleed cinematic with TEDx stage background           */}
+      {/* ================================================================ */}
+      <section className="relative min-h-screen flex items-center">
+        {/* Background image */}
+        <Image
+          src="/images/tedx-stage-photo.jpg"
+          alt="Dan Gentry on the TEDx stage"
+          fill
+          className="object-cover"
+          priority
+        />
+
+        {/* Dark gradient overlay — lets the photo show through subtly */}
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/70 to-navy" />
+
+        {/* Hero content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-in-up">
+              <p className="text-electric font-heading uppercase tracking-widest text-sm mb-4">
+                TEDx Speaker &middot; AI Strategist &middot; Founder
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
-                Your Personal<br />
-                <span className="text-blue-600">Chief AI Officer</span>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight">
+                Your Personal
+                <br />
+                <span className="text-electric">Chief AI Officer</span>
               </h1>
-              <p className="mt-6 text-lg text-gray-600 leading-relaxed max-w-lg">
+              <p className="mt-6 text-lg md:text-xl text-light/80 max-w-xl leading-relaxed">
                 I help leaders leverage AI to grow their business — without losing
-                their humanity in the process. AI for your business. Humanity for your life.
+                their humanity in the process. AI for your business. Humanity for
+                your life.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <a
                   href="/speaking"
-                  className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-blue-700 transition"
+                  className="bg-accent text-white px-8 py-4 rounded-lg font-heading font-semibold text-center hover:shadow-[0_0_30px_rgba(0,210,255,0.4)] transition-all duration-300"
                 >
                   Book Dan to Speak
                 </a>
                 <a
                   href="/consulting"
-                  className="border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold text-center hover:border-blue-600 hover:text-blue-600 transition"
+                  className="border-2 border-electric/50 text-electric px-8 py-4 rounded-lg font-heading font-semibold text-center hover:bg-electric/10 hover:border-electric transition-all duration-300"
                 >
                   Fractional Chief AI Officer
                 </a>
               </div>
             </div>
-            <div className="flex justify-center">
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl">
+
+            {/* Headshot — hidden on mobile, visible on lg+ */}
+            <div className="hidden lg:flex justify-center">
+              <div className="relative w-72 h-72 xl:w-80 xl:h-80 rounded-2xl overflow-hidden ring-2 ring-electric/30 shadow-[0_0_40px_rgba(0,210,255,0.2)]">
                 <Image
                   src="/images/headshot.png"
                   alt="Dan Gentry"
@@ -49,175 +69,325 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The Framework */}
-      <section className="py-20 bg-white">
+      {/* ================================================================ */}
+      {/* MACHINE WORK vs. MEANING WORK                                    */}
+      {/* ================================================================ */}
+      <section className="bg-navy py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">
               Machine Work vs. Meaning Work
             </h2>
-            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="mt-4 text-lg text-light/60 max-w-2xl mx-auto">
               The core distinction that changes everything about how you use AI.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
-              <div className="text-3xl mb-4">🤖</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Machine Work</h3>
-              <p className="text-gray-600 mb-4">
-                What AI should handle — research, formatting, email triage, scheduling,
-                data entry, meeting prep, repetitive reports.
-              </p>
-              <p className="text-sm font-semibold text-blue-600">Let the machines do this.</p>
+
+          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            {/* Machine Work — cold / robotic / digital with background image */}
+            <div className="relative group rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-500 min-h-[400px]">
+              {/* Background image */}
+              <Image
+                src="/images/machine-work-bg.jpg"
+                alt=""
+                fill
+                className="object-cover"
+              />
+              {/* Dark overlay for readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#001433]/95 via-[#001433]/80 to-[#001433]/60 group-hover:from-[#001433]/90 group-hover:via-[#001433]/70 transition-all duration-500" />
+              {/* Border glow on hover */}
+              <div className="absolute inset-0 rounded-2xl border border-accent/20 group-hover:border-accent/50 group-hover:shadow-[inset_0_0_30px_rgba(0,87,255,0.1)] transition-all duration-500" />
+              <div className="relative z-10 p-10 md:p-12 flex flex-col justify-center h-full">
+                <h3 className="text-3xl font-heading font-bold text-white mb-4">
+                  Machine Work
+                </h3>
+                <ul className="space-y-2 text-white/80 mb-6">
+                  <li className="flex items-center gap-2"><span className="text-electric text-xs">▸</span> Research &amp; data gathering</li>
+                  <li className="flex items-center gap-2"><span className="text-electric text-xs">▸</span> Email triage &amp; scheduling</li>
+                  <li className="flex items-center gap-2"><span className="text-electric text-xs">▸</span> Formatting &amp; meeting prep</li>
+                  <li className="flex items-center gap-2"><span className="text-electric text-xs">▸</span> Repetitive reports &amp; data entry</li>
+                </ul>
+                <div className="border-t border-white/15 pt-4">
+                  <p className="text-sm font-heading font-bold text-electric tracking-wide uppercase">
+                    → Let the machines do this
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100">
-              <div className="text-3xl mb-4">💡</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Meaning Work</h3>
-              <p className="text-gray-600 mb-4">
-                What humans must protect — leadership, creativity, mentoring,
-                family, strategic thinking, presence, purpose.
-              </p>
-              <p className="text-sm font-semibold text-blue-600">Fiercely protect this.</p>
+
+            {/* Center divider — VS badge */}
+            <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+              <div className="w-16 h-16 bg-navy border-2 border-electric/50 rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(0,210,255,0.4)]">
+                <span className="text-electric font-heading font-bold text-sm">VS</span>
+              </div>
+            </div>
+
+            {/* Meaning Work — warm / human / glowing with background image */}
+            <div className="relative group rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-500 min-h-[400px]">
+              {/* Background image */}
+              <Image
+                src="/images/meaning-work-bg.jpg"
+                alt=""
+                fill
+                className="object-cover"
+              />
+              {/* Warm overlay for readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#001433]/95 via-[#001433]/75 to-[#001433]/50 group-hover:from-[#001433]/90 group-hover:via-[#001433]/65 transition-all duration-500" />
+              {/* Border glow on hover */}
+              <div className="absolute inset-0 rounded-2xl border border-electric/20 group-hover:border-electric/50 group-hover:shadow-[inset_0_0_30px_rgba(0,210,255,0.15)] transition-all duration-500" />
+              <div className="relative z-10 p-10 md:p-12 flex flex-col justify-center h-full">
+                <h3 className="text-3xl font-heading font-bold text-white mb-4">
+                  Meaning Work
+                </h3>
+                <ul className="space-y-2 text-white/85 mb-6">
+                  <li className="flex items-center gap-2"><span className="text-electric text-xs">✦</span> Leadership &amp; strategic thinking</li>
+                  <li className="flex items-center gap-2"><span className="text-electric text-xs">✦</span> Creativity &amp; mentoring</li>
+                  <li className="flex items-center gap-2"><span className="text-electric text-xs">✦</span> Family &amp; presence</li>
+                  <li className="flex items-center gap-2"><span className="text-electric text-xs">✦</span> Purpose &amp; connection</li>
+                </ul>
+                <div className="border-t border-electric/20 pt-4">
+                  <p className="text-sm font-heading font-bold text-electric tracking-wide uppercase">
+                    Fiercely protect this.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* AI Ascension Model */}
-      <section className="py-20 bg-gray-50">
+      {/* ================================================================ */}
+      {/* AI ASCENSION MODEL                                               */}
+      {/* ================================================================ */}
+      <section className="bg-gradient-to-b from-navy to-midnight/50 py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">
               The AI Ascension Model
             </h2>
-            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="mt-4 text-lg text-light/60 max-w-2xl mx-auto">
               A practical roadmap to reclaim 10-40 hours per week.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { level: "1", title: "Explorer", desc: "Curious but scattered. Using ChatGPT occasionally with no strategy.", color: "gray" },
-              { level: "2", title: "Assistant", desc: "AI handles specific tasks. You direct it for email, research, writing.", color: "blue" },
-              { level: "3", title: "Agent", desc: "AI operates autonomously on workflows. Systems, not prompts.", color: "indigo" },
-              { level: "4", title: "Commander", desc: "You set strategy. AI executes. 30+ hours reclaimed weekly.", color: "purple" },
-            ].map((stage) => (
-              <div key={stage.level} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition">
-                <div className={`text-sm font-bold text-${stage.color}-600 mb-2`}>Level {stage.level}</div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{stage.title}</h3>
-                <p className="text-sm text-gray-600">{stage.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* From the Stage */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              From the Stage
-            </h2>
-            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-              Signature keynote: <em>Humanity Amplified</em>
-            </p>
-          </div>
-          <div className="bg-gray-50 rounded-2xl p-8 md:p-12 border border-gray-100">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              &ldquo;Humanity Amplified: Redefining Success in the Age of AI&rdquo;
-            </h3>
-            <p className="text-gray-600 leading-relaxed mb-6">
-              Most AI talks focus on speed and automation. This one asks a more
-              important question: what should AI do so humans can do what matters
-              most? Dan draws the line between Machine Work and Meaning Work,
-              giving audiences a clear, practical roadmap to reclaim 10-40 hours
-              per week — and a framework for making sure those hours go toward the
-              life they actually want.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              <div className="flex items-start gap-3">
-                <span className="text-blue-600 mt-1">✓</span>
-                <span className="text-sm text-gray-700">The Machine Work vs. Meaning Work audit for their own role</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-blue-600 mt-1">✓</span>
-                <span className="text-sm text-gray-700">The AI Ascension roadmap they can start Monday</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-blue-600 mt-1">✓</span>
-                <span className="text-sm text-gray-700">The IMPACT method for delegating to AI like a leader</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-blue-600 mt-1">✓</span>
-                <span className="text-sm text-gray-700">A personal answer to: &ldquo;What am I no longer willing to sacrifice?&rdquo;</span>
+          {/* 4-card horizontal layout with background images */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Level 0 — Explorer */}
+            <div className="group relative rounded-2xl overflow-hidden min-h-[360px] hover:scale-[1.03] transition-all duration-500">
+              <Image src="/images/ascension-explorer-bg.jpg" alt="" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#001433]/95 via-[#001433]/70 to-[#001433]/40 group-hover:via-[#001433]/60 transition-all duration-500" />
+              <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-white/30 transition-all duration-500" />
+              <div className="relative z-10 p-8 pt-10 flex flex-col items-center justify-start h-full text-center">
+                <div className="text-7xl font-heading font-bold text-white/80 mb-1">0</div>
+                <h3 className="text-xl font-heading font-bold text-white uppercase tracking-wide mb-auto">Explorer</h3>
+                <p className="text-sm text-white/80 italic leading-relaxed">
+                  How do I dip a toe into AI safely?
+                </p>
               </div>
             </div>
-            <a
-              href="/speaking"
-              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
-            >
-              Book This Keynote
-            </a>
+
+            {/* Level 1 — Assistant */}
+            <div className="group relative rounded-2xl overflow-hidden min-h-[360px] hover:scale-[1.03] transition-all duration-500">
+              <Image src="/images/ascension-assistant-bg.jpg" alt="" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#001433]/95 via-[#001433]/70 to-[#001433]/40 group-hover:via-[#001433]/60 transition-all duration-500" />
+              <div className="absolute inset-0 rounded-2xl border border-accent/15 group-hover:border-accent/40 transition-all duration-500" />
+              <div className="relative z-10 p-8 pt-10 flex flex-col items-center justify-start h-full text-center">
+                <div className="text-7xl font-heading font-bold text-white/80 mb-1">1</div>
+                <h3 className="text-xl font-heading font-bold text-white uppercase tracking-wide mb-auto">Assistant</h3>
+                <p className="text-sm text-white/80 italic leading-relaxed">
+                  How can an AI intern lighten my workload today?
+                </p>
+              </div>
+            </div>
+
+            {/* Level 2 — Agent */}
+            <div className="group relative rounded-2xl overflow-hidden min-h-[360px] hover:scale-[1.03] transition-all duration-500">
+              <Image src="/images/ascension-agent-bg.jpg" alt="" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#001433]/95 via-[#001433]/70 to-[#001433]/35 group-hover:via-[#001433]/55 transition-all duration-500" />
+              <div className="absolute inset-0 rounded-2xl border border-accent/25 group-hover:border-accent/50 group-hover:shadow-[0_0_25px_rgba(0,87,255,0.15)] transition-all duration-500" />
+              <div className="relative z-10 p-8 pt-10 flex flex-col items-center justify-start h-full text-center">
+                <div className="text-7xl font-heading font-bold text-white/85 mb-1">2</div>
+                <h3 className="text-xl font-heading font-bold text-white uppercase tracking-wide mb-auto">Agent</h3>
+                <p className="text-sm text-white/85 italic leading-relaxed">
+                  How do I get an agent to do a task for me end-to-end while I&apos;m away?
+                </p>
+              </div>
+            </div>
+
+            {/* Level 3 — Commander (GLOWING) */}
+            <div className="group relative rounded-2xl overflow-hidden min-h-[360px] hover:scale-[1.03] transition-all duration-500">
+              <Image src="/images/ascension-commander-bg.jpg" alt="" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#001433]/90 via-[#001433]/55 to-[#001433]/25 group-hover:via-[#001433]/45 transition-all duration-500" />
+              <div className="absolute inset-0 rounded-2xl border border-electric/40 shadow-[0_0_30px_rgba(0,210,255,0.15)] group-hover:border-electric/60 group-hover:shadow-[0_0_45px_rgba(0,210,255,0.3)] transition-all duration-500" />
+              <div className="relative z-10 p-8 pt-10 flex flex-col items-center justify-start h-full text-center">
+                <div className="text-7xl font-heading font-bold text-electric mb-1">3</div>
+                <h3 className="text-xl font-heading font-bold text-white uppercase tracking-wide mb-auto">Commander</h3>
+                <p className="text-sm text-electric italic leading-relaxed">
+                  How do I design an AI ecosystem that self-optimizes while I lead vision?
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-gray-50">
+      {/* ================================================================ */}
+      {/* FROM THE STAGE — Cinematic section                               */}
+      {/* ================================================================ */}
+      <section className="relative py-24 overflow-hidden">
+        {/* Background stage photo */}
+        <Image
+          src="/images/tedx-stage-photo.jpg"
+          alt="TEDx stage"
+          fill
+          className="object-cover"
+        />
+
+        {/* Dark directional overlay for cinematic depth */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/85 to-navy/70" />
+
+        {/* Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-2">
+              From the Stage
+            </h2>
+            <p className="text-lg text-light/60 mb-10">
+              Signature keynote: <em>Humanity Amplified</em>
+            </p>
+
+            {/* Glassmorphism card */}
+            <div className="glass rounded-2xl p-8 md:p-12">
+              <h3 className="text-2xl font-heading font-bold text-white mb-4">
+                &ldquo;Humanity Amplified: Redefining Success in the Age of
+                AI&rdquo;
+              </h3>
+              <p className="text-light/80 leading-relaxed mb-8">
+                Most AI talks focus on speed and automation. This one asks a more
+                important question: what should AI do so humans can do what
+                matters most? Dan draws the line between Machine Work and Meaning
+                Work, giving audiences a clear, practical roadmap to reclaim
+                10-40 hours per week — and a framework for making sure those
+                hours go toward the life they actually want.
+              </p>
+
+              {/* Checkmark items in 2x2 grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <div className="flex items-start gap-3">
+                  <span className="text-electric mt-1 flex-shrink-0">&#10003;</span>
+                  <span className="text-sm text-light/80">
+                    The Machine Work vs. Meaning Work audit for their own role
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-electric mt-1 flex-shrink-0">&#10003;</span>
+                  <span className="text-sm text-light/80">
+                    The AI Ascension roadmap they can start Monday
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-electric mt-1 flex-shrink-0">&#10003;</span>
+                  <span className="text-sm text-light/80">
+                    The IMPACT method for delegating to AI like a leader
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-electric mt-1 flex-shrink-0">&#10003;</span>
+                  <span className="text-sm text-light/80">
+                    A personal answer to: &ldquo;What am I no longer willing to
+                    sacrifice?&rdquo;
+                  </span>
+                </div>
+              </div>
+
+              <a
+                href="/speaking"
+                className="inline-block bg-accent text-white px-8 py-4 rounded-lg font-heading font-semibold hover:shadow-[0_0_20px_rgba(0,210,255,0.3)] transition-all duration-300"
+              >
+                Book This Keynote
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================ */}
+      {/* TESTIMONIALS                                                     */}
+      {/* ================================================================ */}
+      <section className="bg-navy py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-white text-center mb-12">
             What People Say
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                quote: "Dan is a superb speaker and a caring coach. His Triad system is one of the most powerful personal development tools I have ever come across.",
+                quote:
+                  "Dan is a superb speaker and a caring coach. His Triad system is one of the most powerful personal development tools I have ever come across.",
                 name: "Ryan L.",
               },
               {
-                quote: "The moment I heard Dan speak I knew he had the experience to back up his theory. Authentic from the get-go.",
+                quote:
+                  "The moment I heard Dan speak I knew he had the experience to back up his theory. Authentic from the get-go.",
                 name: "Mary S.",
               },
               {
-                quote: "Dan does a wonderful job of turning his own experiences into teachable and useable information. His teachings would be valuable to any business board, from manager to CEO.",
+                quote:
+                  "Dan does a wonderful job of turning his own experiences into teachable and useable information. His teachings would be valuable to any business board, from manager to CEO.",
                 name: "Michael M.",
               },
             ].map((t, i) => (
-              <div key={i} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                <p className="text-gray-600 italic mb-4">&ldquo;{t.quote}&rdquo;</p>
-                <p className="font-semibold text-sm text-gray-900">— {t.name}</p>
+              <div
+                key={i}
+                className="glass rounded-xl p-6 border border-electric/10"
+              >
+                <p className="text-light/80 italic mb-4 leading-relaxed">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <p className="text-electric font-semibold text-sm">
+                  &mdash; {t.name}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Dual CTA */}
-      <section className="py-20 bg-white">
+      {/* ================================================================ */}
+      {/* DUAL CTA                                                         */}
+      {/* ================================================================ */}
+      <section className="bg-gradient-to-b from-midnight/50 to-navy py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-3">Book Dan to Speak</h3>
-              <p className="text-blue-100 mb-6">
+            {/* Speaking card */}
+            <div className="bg-gradient-to-br from-accent to-accent/80 rounded-2xl p-8 text-white hover:scale-[1.02] transition-transform duration-300">
+              <h3 className="text-2xl font-heading font-bold mb-3">
+                Book Dan to Speak
+              </h3>
+              <p className="text-white/80 mb-6 leading-relaxed">
                 Keynotes, workshops, and panels on AI leadership, the future of
                 work, and reclaiming what matters most.
               </p>
               <a
                 href="/speaking"
-                className="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition"
+                className="inline-block bg-white text-navy px-6 py-3 rounded-lg font-heading font-semibold hover:bg-light transition-colors duration-300"
               >
                 View Speaking Topics
               </a>
             </div>
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-3">Need a Chief AI Officer?</h3>
-              <p className="text-gray-300 mb-6">
+
+            {/* Consulting card */}
+            <div className="bg-gradient-to-br from-midnight to-navy border border-white/10 rounded-2xl p-8 text-white hover:scale-[1.02] transition-transform duration-300">
+              <h3 className="text-2xl font-heading font-bold mb-3">
+                Need a Chief AI Officer?
+              </h3>
+              <p className="text-light/70 mb-6 leading-relaxed">
                 Fractional AI leadership for businesses ready to implement — not
                 just experiment. Strategy, systems, and results.
               </p>
               <a
                 href="/consulting"
-                className="inline-block bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+                className="inline-block bg-electric text-navy px-6 py-3 rounded-lg font-heading font-semibold hover:shadow-[0_0_20px_rgba(0,210,255,0.3)] transition-all duration-300"
               >
                 Learn About fCAIO
               </a>
@@ -226,34 +396,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Podcast Teaser */}
-      <section className="py-20 bg-gray-50">
+      {/* ================================================================ */}
+      {/* PODCAST TEASER                                                   */}
+      {/* ================================================================ */}
+      <section className="bg-navy py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
             Third Power Life Podcast
           </h2>
-          <p className="text-lg text-gray-600 mb-4">
+          <p className="text-lg text-light/60 mb-8">
             Season 3: &ldquo;Saving Our Humanity with AI&rdquo;
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
               href="https://open.spotify.com/show/5bNph2wNURGSVgcDvtnNlu"
-              className="bg-green-600 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-green-700 transition"
-              target="_blank" rel="noopener"
+              className="bg-[#1DB954] text-white px-6 py-3 rounded-lg font-heading font-semibold hover:scale-105 hover:shadow-[0_0_20px_rgba(29,185,84,0.4)] transition-all duration-300"
+              target="_blank"
+              rel="noopener"
             >
               Spotify
             </a>
             <a
               href="https://itunes.apple.com/us/podcast/third-power-life/id1440527025"
-              className="bg-purple-600 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition"
-              target="_blank" rel="noopener"
+              className="bg-gradient-to-b from-[#F452FF] to-[#833AB4] text-white px-6 py-3 rounded-lg font-heading font-semibold hover:scale-105 hover:shadow-[0_0_20px_rgba(131,58,180,0.4)] transition-all duration-300"
+              target="_blank"
+              rel="noopener"
             >
               Apple Podcasts
             </a>
             <a
               href="https://www.youtube.com/channel/UCLoq_zdO_H37-VV2GttNP6g"
-              className="bg-red-600 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-red-700 transition"
-              target="_blank" rel="noopener"
+              className="bg-[#FF0000] text-white px-6 py-3 rounded-lg font-heading font-semibold hover:scale-105 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] transition-all duration-300"
+              target="_blank"
+              rel="noopener"
             >
               YouTube
             </a>
@@ -261,22 +436,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className="py-20 bg-blue-600">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            The AI Playbook Newsletter
-          </h2>
-          <p className="text-blue-100 mb-8">
-            Weekly frameworks, strategies, and real-world AI wins.
-            No hype. No fluff. Just actionable leadership intelligence.
-          </p>
-          <a
-            href="/contact"
-            className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition"
-          >
-            Subscribe
-          </a>
+      {/* ================================================================ */}
+      {/* NEWSLETTER                                                       */}
+      {/* ================================================================ */}
+      <section className="bg-gradient-to-r from-electric/20 via-accent/30 to-electric/20 py-24">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-navy/50 backdrop-blur-md rounded-2xl p-8 md:p-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+              The AI Playbook Newsletter
+            </h2>
+            <p className="text-light/70 mb-2 leading-relaxed">
+              Weekly frameworks, strategies, and real-world AI wins.
+              <br />
+              No hype. No fluff. Just actionable leadership intelligence.
+            </p>
+            <NewsletterForm />
+          </div>
         </div>
       </section>
     </>
