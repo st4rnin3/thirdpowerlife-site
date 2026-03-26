@@ -84,25 +84,24 @@ export default function Home() {
           </div>
 
           <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            {/* Machine Work — cold / robotic / digital */}
-            <div className="relative group bg-midnight/80 border border-white/10 rounded-2xl p-8 md:p-10 overflow-hidden hover:border-accent/40 transition-all duration-500">
-              {/* Animated grid pattern */}
-              <div
-                className="absolute inset-0 opacity-[0.08]"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(rgba(0,87,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(0,87,255,0.4) 1px, transparent 1px)",
-                  backgroundSize: "24px 24px",
-                }}
+            {/* Machine Work — cold / robotic / digital with background image */}
+            <div className="relative group rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-500 min-h-[400px]">
+              {/* Background image */}
+              <Image
+                src="/images/machine-work-bg.jpg"
+                alt=""
+                fill
+                className="object-cover"
               />
-              {/* Cold blue glow */}
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-accent/10 rounded-full blur-[80px] group-hover:bg-accent/20 transition-all duration-500" />
-              <div className="relative z-10">
-                <div className="text-4xl mb-5 font-heading font-bold text-accent/40 tracking-tight">⚙️</div>
-                <h3 className="text-2xl font-heading font-bold text-white mb-4">
+              {/* Dark overlay for readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#001433]/95 via-[#001433]/80 to-[#001433]/60 group-hover:from-[#001433]/90 group-hover:via-[#001433]/70 transition-all duration-500" />
+              {/* Border glow on hover */}
+              <div className="absolute inset-0 rounded-2xl border border-accent/20 group-hover:border-accent/50 group-hover:shadow-[inset_0_0_30px_rgba(0,87,255,0.1)] transition-all duration-500" />
+              <div className="relative z-10 p-8 md:p-10 flex flex-col justify-end h-full">
+                <h3 className="text-3xl font-heading font-bold text-white mb-4">
                   Machine Work
                 </h3>
-                <ul className="space-y-2 text-light/60 mb-6">
+                <ul className="space-y-2 text-light/70 mb-6">
                   <li className="flex items-center gap-2"><span className="text-accent/60 text-xs">▸</span> Research &amp; data gathering</li>
                   <li className="flex items-center gap-2"><span className="text-accent/60 text-xs">▸</span> Email triage &amp; scheduling</li>
                   <li className="flex items-center gap-2"><span className="text-accent/60 text-xs">▸</span> Formatting &amp; meeting prep</li>
@@ -118,22 +117,29 @@ export default function Home() {
 
             {/* Center divider — VS badge */}
             <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-              <div className="w-14 h-14 bg-navy border-2 border-electric/40 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,210,255,0.3)]">
+              <div className="w-16 h-16 bg-navy border-2 border-electric/50 rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(0,210,255,0.4)]">
                 <span className="text-electric font-heading font-bold text-sm">VS</span>
               </div>
             </div>
 
-            {/* Meaning Work — warm / human / glowing */}
-            <div className="relative group bg-gradient-to-br from-electric/15 via-midnight/80 to-accent/10 border border-electric/25 rounded-2xl p-8 md:p-10 overflow-hidden hover:border-electric/50 transition-all duration-500">
-              {/* Warm glow effect */}
-              <div className="absolute -top-16 -right-16 w-72 h-72 bg-electric/15 rounded-full blur-[100px] group-hover:bg-electric/25 transition-all duration-500" />
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#FFB800]/10 rounded-full blur-[60px]" />
-              <div className="relative z-10">
-                <div className="text-4xl mb-5 font-heading font-bold text-electric/60 tracking-tight">✦</div>
-                <h3 className="text-2xl font-heading font-bold text-white mb-4">
+            {/* Meaning Work — warm / human / glowing with background image */}
+            <div className="relative group rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-500 min-h-[400px]">
+              {/* Background image */}
+              <Image
+                src="/images/meaning-work-bg.jpg"
+                alt=""
+                fill
+                className="object-cover"
+              />
+              {/* Warm overlay for readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#001433]/95 via-[#001433]/75 to-[#001433]/50 group-hover:from-[#001433]/90 group-hover:via-[#001433]/65 transition-all duration-500" />
+              {/* Border glow on hover */}
+              <div className="absolute inset-0 rounded-2xl border border-electric/20 group-hover:border-electric/50 group-hover:shadow-[inset_0_0_30px_rgba(0,210,255,0.15)] transition-all duration-500" />
+              <div className="relative z-10 p-8 md:p-10 flex flex-col justify-end h-full">
+                <h3 className="text-3xl font-heading font-bold text-white mb-4">
                   Meaning Work
                 </h3>
-                <ul className="space-y-2 text-light/70 mb-6">
+                <ul className="space-y-2 text-light/80 mb-6">
                   <li className="flex items-center gap-2"><span className="text-electric text-xs">✦</span> Leadership &amp; strategic thinking</li>
                   <li className="flex items-center gap-2"><span className="text-electric text-xs">✦</span> Creativity &amp; mentoring</li>
                   <li className="flex items-center gap-2"><span className="text-electric text-xs">✦</span> Family &amp; presence</li>
