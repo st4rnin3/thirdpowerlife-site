@@ -101,14 +101,14 @@ export default function Home() {
                 <h3 className="text-3xl font-heading font-bold text-white mb-4">
                   Machine Work
                 </h3>
-                <ul className="space-y-2 text-light/70 mb-6">
-                  <li className="flex items-center gap-2"><span className="text-accent/60 text-xs">▸</span> Research &amp; data gathering</li>
-                  <li className="flex items-center gap-2"><span className="text-accent/60 text-xs">▸</span> Email triage &amp; scheduling</li>
-                  <li className="flex items-center gap-2"><span className="text-accent/60 text-xs">▸</span> Formatting &amp; meeting prep</li>
-                  <li className="flex items-center gap-2"><span className="text-accent/60 text-xs">▸</span> Repetitive reports &amp; data entry</li>
+                <ul className="space-y-2 text-white/80 mb-6">
+                  <li className="flex items-center gap-2"><span className="text-electric text-xs">▸</span> Research &amp; data gathering</li>
+                  <li className="flex items-center gap-2"><span className="text-electric text-xs">▸</span> Email triage &amp; scheduling</li>
+                  <li className="flex items-center gap-2"><span className="text-electric text-xs">▸</span> Formatting &amp; meeting prep</li>
+                  <li className="flex items-center gap-2"><span className="text-electric text-xs">▸</span> Repetitive reports &amp; data entry</li>
                 </ul>
-                <div className="border-t border-white/10 pt-4">
-                  <p className="text-sm font-heading font-bold text-accent tracking-wide uppercase">
+                <div className="border-t border-white/15 pt-4">
+                  <p className="text-sm font-heading font-bold text-electric tracking-wide uppercase">
                     → Let the machines do this
                   </p>
                 </div>
@@ -139,7 +139,7 @@ export default function Home() {
                 <h3 className="text-3xl font-heading font-bold text-white mb-4">
                   Meaning Work
                 </h3>
-                <ul className="space-y-2 text-light/80 mb-6">
+                <ul className="space-y-2 text-white/85 mb-6">
                   <li className="flex items-center gap-2"><span className="text-electric text-xs">✦</span> Leadership &amp; strategic thinking</li>
                   <li className="flex items-center gap-2"><span className="text-electric text-xs">✦</span> Creativity &amp; mentoring</li>
                   <li className="flex items-center gap-2"><span className="text-electric text-xs">✦</span> Family &amp; presence</li>
