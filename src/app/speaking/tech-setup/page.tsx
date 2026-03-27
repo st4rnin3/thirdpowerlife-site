@@ -40,11 +40,11 @@ export default function TechSetup() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-electric mt-0.5">✓</span>
-                  <span><strong className="text-white">Alternate:</strong> Over-ear headset mic (Countryman-style)</span>
+                  <span><strong className="text-white">Also works great:</strong> Over-ear headset mic (Countryman-style)</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-light/30 mt-0.5">✗</span>
-                  <span className="text-light/40">Handheld mic not preferred — Dan moves and gestures on stage</span>
+                  <span className="text-electric mt-0.5">✓</span>
+                  <span><strong className="text-white">Handheld:</strong> Works fine — Dan adapts to whatever you have available</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-electric mt-0.5">✓</span>
@@ -72,7 +72,7 @@ export default function TechSetup() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-electric mt-0.5">✓</span>
-                  <span>Dan brings his own wireless clicker/advancer</span>
+                  <span>Dan brings his own wireless clicker — happy to use yours if preferred</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-electric mt-0.5">✓</span>
@@ -146,7 +146,7 @@ export default function TechSetup() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-electric mt-0.5">✓</span>
-                  <span><strong className="text-white">Airports:</strong> MCO (Orlando) or GNV (Gainesville)</span>
+                  <span><strong className="text-white">Airports:</strong> MCO (Orlando, preferred), TPA (Tampa), or GNV (Gainesville)</span>
                 </li>
               </ul>
               <ul className="space-y-3">

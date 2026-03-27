@@ -1,8 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
-const faqs = [
+interface FAQ {
+  q: string;
+  a: string;
+  link?: { text: string; href: string };
+}
+
+const faqs: FAQ[] = [
   {
     q: "How long is the keynote?",
     a: "The signature keynote, Humanity Amplified, runs 45-60 minutes. Executive and closing keynotes run 30-45 minutes. All sessions can be adapted to your schedule — from a focused 30-minute power talk to a half-day workshop.",
@@ -21,7 +28,8 @@ const faqs = [
   },
   {
     q: "What are the technical requirements?",
-    a: "Minimal. A lavalier or headset microphone, HDMI/wireless connection for slides, and a confidence monitor are ideal. Dan brings his own clicker and can adapt to most setups. For detailed specs, see the full tech setup page.",
+    a: "Minimal. A lavalier or headset microphone, HDMI/wireless connection for slides, and a confidence monitor are ideal. Dan brings his own clicker and can adapt to most setups. For detailed specs, see the full ",
+    link: { text: "tech setup page", href: "/speaking/tech-setup" },
   },
   {
     q: "Does Dan travel?",
@@ -71,6 +79,12 @@ export default function FAQ() {
           >
             <p className="px-5 text-light/70 text-sm leading-relaxed">
               {faq.a}
+              {faq.link && (
+                <Link href={faq.link.href} className="text-electric underline hover:text-electric/80 transition">
+                  {faq.link.text}
+                </Link>
+              )}
+              {faq.link && "."}
             </p>
           </div>
         </div>
