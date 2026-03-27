@@ -120,22 +120,18 @@ export default function Footer() {
               &copy; 2026 Third Power Performance, LLC
             </p>
             <div className="flex gap-6">
-              <a
-                href="https://www.thirdpowerperformance.com/terms"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/terms"
                 className="text-sm text-light/40 transition-colors hover:text-electric"
               >
                 Terms
-              </a>
-              <a
-                href="https://www.thirdpowerperformance.com/privacy-policy"
-                target="_blank"
-                rel="noopener noreferrer"
+              </Link>
+              <Link
+                href="/privacy"
                 className="text-sm text-light/40 transition-colors hover:text-electric"
               >
                 Privacy
-              </a>
+              </Link>
             </div>
           </div>
         </div>
