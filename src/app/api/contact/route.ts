@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, interest, challenge, why_dan, budget } = body;
+    const { name, email, phone, sms_consent, interest, challenge, why_dan, budget } = body;
 
     if (!name || !email) {
       return NextResponse.json(
@@ -16,8 +16,14 @@ export async function POST(request: Request) {
       speaking: "Booking Dan to speak",
       consulting: "Fractional CAIO consulting",
       podcast: "Podcast collaboration",
+      networking: "Networking / Face to Face",
       other: "Something else",
     };
+
+    const smsRow = phone
+      ? `<tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Phone</td><td style="padding:8px;border-bottom:1px solid #eee;">${escapeHtml(phone)}</td></tr>
+         <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">SMS Consent</td><td style="padding:8px;border-bottom:1px solid #eee;">${sms_consent ? "✅ YES — consented to appointment reminders via SMS" : "❌ No — did not opt in to SMS"}</td></tr>`
+      : "";
 
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -34,6 +40,7 @@ export async function POST(request: Request) {
           <table style="border-collapse:collapse;width:100%;max-width:600px;">
             <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Name</td><td style="padding:8px;border-bottom:1px solid #eee;">${escapeHtml(name)}</td></tr>
             <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Email</td><td style="padding:8px;border-bottom:1px solid #eee;"><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></td></tr>
+            ${smsRow}
             <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Interest</td><td style="padding:8px;border-bottom:1px solid #eee;">${escapeHtml(interestLabels[interest] || interest || "Not specified")}</td></tr>
             <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Biggest AI Challenge</td><td style="padding:8px;border-bottom:1px solid #eee;">${escapeHtml(challenge || "Not provided")}</td></tr>
             <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Why Dan?</td><td style="padding:8px;border-bottom:1px solid #eee;">${escapeHtml(why_dan || "Not provided")}</td></tr>
