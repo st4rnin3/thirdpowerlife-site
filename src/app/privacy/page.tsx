@@ -214,7 +214,59 @@ export default function PrivacyPage() {
           {/* 11 */}
           <div>
             <h2 className="text-2xl font-heading font-bold text-white mt-10 mb-4">
-              11. Contact Us
+              11. International Users / GDPR Notice
+            </h2>
+            <p>
+              Our services are primarily directed to users in the United States. If you are
+              located in the European Union, United Kingdom, or another jurisdiction with
+              data protection laws, the following additional information applies.
+            </p>
+            <h3 className="text-lg font-heading font-semibold text-electric mb-2 mt-6">
+              Lawful Basis for Processing
+            </h3>
+            <p>
+              We process your personal data on the basis of: (a) your consent (e.g., SMS
+              opt-in); (b) performance of a contract or pre-contractual steps (e.g.,
+              scheduling a call); or (c) our legitimate interests in operating and improving
+              our services, where those interests are not overridden by your rights.
+            </p>
+            <h3 className="text-lg font-heading font-semibold text-electric mb-2 mt-6">
+              Your Rights Under GDPR / UK GDPR
+            </h3>
+            <p>If you are located in the EU or UK, you have the right to:</p>
+            <ul className="list-disc pl-6 space-y-1 mt-3">
+              <li><strong className="text-white">Access</strong> — request a copy of the personal data we hold about you</li>
+              <li><strong className="text-white">Rectification</strong> — request correction of inaccurate or incomplete data</li>
+              <li><strong className="text-white">Erasure</strong> — request deletion of your personal data (&ldquo;right to be forgotten&rdquo;), subject to legal retention requirements</li>
+              <li><strong className="text-white">Restriction</strong> — request that we limit how we use your data</li>
+              <li><strong className="text-white">Portability</strong> — receive your data in a structured, machine-readable format</li>
+              <li><strong className="text-white">Objection</strong> — object to processing based on legitimate interests</li>
+              <li><strong className="text-white">Withdraw consent</strong> — where processing is based on consent, withdraw it at any time without affecting the lawfulness of prior processing</li>
+            </ul>
+            <p className="mt-4">
+              To exercise any of these rights, contact us at{" "}
+              <a href={`mailto:${EMAIL}`} className="text-electric hover:underline">
+                {EMAIL}
+              </a>. We will respond within 30 days. You also have the right to lodge a
+              complaint with your local data protection authority (e.g., the ICO in the UK
+              or your EU Member State&apos;s supervisory authority).
+            </p>
+            <h3 className="text-lg font-heading font-semibold text-electric mb-2 mt-6">
+              International Data Transfers
+            </h3>
+            <p>
+              {COMPANY} is based in the United States. If you are located outside the US,
+              your information will be transferred to and processed in the United States,
+              where data protection laws may differ from those in your country. By using our
+              services, you acknowledge this transfer. We use service providers that
+              maintain appropriate safeguards for international data transfers where required.
+            </p>
+          </div>
+
+          {/* 12 */}
+          <div>
+            <h2 className="text-2xl font-heading font-bold text-white mt-10 mb-4">
+              12. Contact Us
             </h2>
             <p>If you have questions about this Privacy Policy, please contact us:</p>
             <div className="mt-4 glass rounded-lg p-6">
