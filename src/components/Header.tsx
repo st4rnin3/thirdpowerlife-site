@@ -109,7 +109,7 @@ export default function Header() {
             ))}
             <li className="pt-2">
               <Link
-                href="/contact"
+                href="/schedule"
                 className="block rounded-lg bg-accent px-3 py-2.5 text-center text-base font-semibold text-white transition-all hover:shadow-[0_0_20px_rgba(0,210,255,0.3)]"
               >
                 Book a Call

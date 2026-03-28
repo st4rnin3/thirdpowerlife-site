@@ -60,7 +60,7 @@ export default function Speaking() {
               efficiency.
             </p>
             <a
-              href="/contact"
+              href="/schedule"
               className="inline-block bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:shadow-[0_0_20px_rgba(0,210,255,0.3)] transition-all duration-300"
             >
               Book an Intro Call
@@ -185,7 +185,7 @@ export default function Speaking() {
             every session to your audience and objectives.
           </p>
           <a
-            href="/contact"
+            href="/schedule"
             className="inline-block bg-white text-accent px-8 py-3 rounded-lg font-semibold hover:bg-white/90 transition"
           >
             Book an Intro Call
