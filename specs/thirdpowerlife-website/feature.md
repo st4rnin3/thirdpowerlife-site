@@ -21,7 +21,7 @@ Dan's current website is on ClickFunnels, which expires June 2026. The site need
 ## Non-Goals
 
 - NG1: **Blog** -- future addition, not in this build
-- NG2: **E-commerce / payments** -- no purchases or checkout flows
+- NG2: **E-commerce / payments** -- no purchases or checkout flows *(superseded: Stripe order system added post-launch; see `specs/stripe-order-system.md`)*
 - NG3: **CRM integration for prospect pages** -- prospect data is static JSON/MDX for now; CRM-driven API is a future iteration
 - NG4: **Video hosting** -- all video is embedded from YouTube/Loom, no self-hosting
 - NG5: **Dark mode toggle** -- single clean light theme only
