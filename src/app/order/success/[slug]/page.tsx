@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getSuccessContent } from "@/data/order-success";
+import ConversionTracker from "@/components/ConversionTracker";
 
 export const metadata: Metadata = {
   title: "Payment Successful | Third Power Life",
@@ -16,6 +17,7 @@ export default async function OrderSuccessPage({
 
   return (
     <section className="relative min-h-[60vh] flex items-center justify-center px-4 py-20">
+      <ConversionTracker slug={slug} />
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-navy via-midnight/50 to-navy" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,87,255,0.15),transparent_60%)]" />
