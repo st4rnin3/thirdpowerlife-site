@@ -61,7 +61,7 @@ export default function Header() {
           ))}
           <li>
             <Link
-              href="/contact"
+              href="/schedule"
               className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-all hover:shadow-[0_0_20px_rgba(0,210,255,0.3)]"
             >
               Book a Call
