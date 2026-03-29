@@ -45,8 +45,8 @@ export default function CalEmbed() {
       theme: "dark",
       cssVarsPerTheme: {
         dark: {
-          "cal-bg": "transparent",
-          "cal-bg-emphasis": "rgba(0, 38, 110, 0.4)",
+          "cal-bg": "#001433",
+          "cal-bg-emphasis": "#00266E",
           "cal-border": "rgba(255, 255, 255, 0.1)",
           "cal-border-emphasis": "rgba(0, 210, 255, 0.3)",
           "cal-text": "#E6E8EA",
