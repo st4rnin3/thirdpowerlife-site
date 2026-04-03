@@ -59,27 +59,47 @@ export default function ConnectPage() {
         </div>
       </section>
 
-      {/* AI Ascension Guide Download */}
+      {/* AI Ascension Guide — Coming Soon */}
       <section className="bg-midnight/30 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="glass rounded-2xl p-8 md:p-12 text-center">
             <p className="text-electric font-heading text-sm uppercase tracking-widest mb-3">
-              Free Resource
+              Coming Soon
             </p>
             <h2 className="text-3xl font-heading font-bold text-white mb-4">
-              The AI Ascension Guide
+              The AI Ascension Guide{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500">
+                2.0
+              </span>
             </h2>
             <p className="text-light/70 max-w-xl mx-auto mb-6">
-              The complete framework behind everything from the talk — all four levels,
-              the IMPACT method, Machine Work vs. Meaning Work audits, and your personal
-              roadmap. 119 pages of actionable strategy.
+              The complete framework behind everything from the talk — all four levels
+              of AI Ascension, the IMPACT delegation method, Machine Work vs. Meaning
+              Work, and your personal roadmap to AI that amplifies trust. Updated for
+              2026.
             </p>
-            <a
-              href="https://www.thirdpowerlife.ai/ai-ascension-guide"
-              className="inline-block bg-accent text-white px-8 py-3.5 rounded-lg font-semibold hover:shadow-[0_0_20px_rgba(0,210,255,0.3)] transition-all duration-300 text-lg"
+            <p className="text-light/50 text-sm mb-6">
+              Drop your email and we&apos;ll send it the moment it&apos;s ready.
+            </p>
+            <form
+              action="https://app.kit.com/forms/YOUR_FORM_ID/subscriptions"
+              method="post"
+              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
             >
-              Download the Guide — Free
-            </a>
+              <input
+                type="email"
+                name="email_address"
+                placeholder="your@email.com"
+                required
+                className="flex-1 px-4 py-3 rounded-lg bg-midnight/80 border border-white/10 text-white placeholder-light/40 focus:outline-none focus:border-electric/50 transition"
+              />
+              <button
+                type="submit"
+                className="bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:shadow-[0_0_20px_rgba(0,210,255,0.3)] transition-all duration-300 whitespace-nowrap"
+              >
+                Notify Me
+              </button>
+            </form>
           </div>
         </div>
       </section>
