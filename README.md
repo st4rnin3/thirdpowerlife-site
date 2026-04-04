@@ -24,6 +24,8 @@ Professional website for Dan Gentry — TEDx Speaker, AI Strategist, and Your Pe
 | `/order/[slug]` | Product order page — fetches product details from Stripe by slug |
 | `/order/success` | Post-payment confirmation page |
 | `/order/cancelled` | Payment cancelled / try again page |
+| `/blog` | Blog index — lists all published posts, sorted newest first |
+| `/blog/[slug]` | Individual blog post rendered from Markdown with Article JSON-LD |
 
 ## Stripe Order System
 
@@ -71,6 +73,41 @@ npm run dev     # http://localhost:3000
 npm run build   # Production build
 npm run lint    # ESLint check
 ```
+
+## Blog System
+
+Blog posts are Markdown files in `src/content/blog/`. The utility library at `src/lib/blog.ts` exports `getAllPosts` and `getPostBySlug`, which parse frontmatter with `gray-matter` and convert body content to HTML with `remark`/`remark-html`.
+
+### Frontmatter fields
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `title` | Yes | Post title — used in `<h1>` and page `<title>` |
+| `date` | Yes | ISO date string, e.g. `2026-04-04` — used for sort order and display |
+| `description` | Yes | One-sentence summary shown on the blog index card and OG metadata |
+| `author` | No | Post author name; defaults to "Dan Gentry" if omitted |
+| `slug` | No | URL slug; defaults to filename without `.md` if omitted |
+| `tags` | No | Array of topic strings, e.g. `["AI", "Leadership"]` |
+| `ogImage` | No | URL to a custom social media preview image; defaults to site hero image |
+
+Posts missing `title` or `date` are silently skipped and will not appear on the blog.
+
+### How to add a new post
+
+1. Create a `.md` file in `src/content/blog/` — the filename (without `.md`) becomes the URL slug.
+2. Add the required frontmatter (`title`, `date`, `description`) at the top of the file.
+3. Write the post body in standard Markdown below the frontmatter.
+4. Deploy (or run `npm run dev`) — the post appears at `/blog/<slug>` immediately.
+
+No code changes are required to publish a post.
+
+### Dependencies added
+
+- `gray-matter` — frontmatter parsing
+- `remark` + `remark-html` — Markdown to HTML conversion
+- `@tailwindcss/typography` — prose styling for rendered post bodies
+
+---
 
 ## Adding Prospect Landing Pages
 

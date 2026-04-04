@@ -4,6 +4,50 @@ All notable changes to the ThirdPowerLife.ai site are recorded here. Newest entr
 
 ---
 
+## [Unreleased] - 2026-04-04
+
+### Markdown Blog System with Pillar Post Seed Content
+
+**Summary:**
+- Added a filesystem-based blog engine using `gray-matter` for frontmatter parsing and `remark`/`remark-html` for Markdown-to-HTML rendering, with all post logic centralized in `src/lib/blog.ts` (`getAllPosts`, `getPostBySlug`)
+- Added `/blog` index page (`src/app/blog/page.tsx`) with a responsive post grid using the existing glass-card theme, and `/blog/[slug]` dynamic post pages (`src/app/blog/[slug]/page.tsx`) with Article JSON-LD structured data, full OG/Twitter metadata, and canonical URLs
+- Seeded 6 pillar posts in `src/content/blog/` and updated `src/app/sitemap.ts` to include all blog URLs dynamically; added Blog link to `src/components/Header.tsx` and `src/components/Footer.tsx`
+
+**Who it's for:** Site visitors discovering ThirdPowerLife.ai through organic search, and Dan (site owner) as content author. Dan adds future posts by dropping a `.md` file with valid frontmatter into `src/content/blog/` and deploying — no code changes required.
+
+**How to test:**
+- [ ] Visit `/blog` — confirm all 6 seed posts appear in the grid with title, date, description, and reading time, sorted newest first
+- [ ] Click any post card — confirm the full post renders at `/blog/[slug]` with correct title, date, and body formatting
+- [ ] View page source on any post page — confirm `<script type="application/ld+json">` contains Article structured data with the correct `headline`, `author`, and `datePublished`
+- [ ] Check `<head>` on a post page — confirm `og:title`, `og:description`, `og:image`, `twitter:card`, and `<link rel="canonical">` are all present and populated
+- [ ] Visit `/sitemap.xml` — confirm all 6 `/blog/[slug]` URLs appear alongside existing site pages
+- [ ] Check Header and Footer — confirm a Blog navigation link is present and routes to `/blog`
+- [ ] Add a new `.md` file to `src/content/blog/` with valid frontmatter — confirm it appears on `/blog` and is accessible at its slug with no code changes
+
+**Breaking changes:** None. All additions; no existing routes or data models modified.
+
+**Migration required:** None. New dependencies install automatically on `npm install`.
+
+**New files:**
+- `src/lib/blog.ts` — shared blog utilities: `getAllPosts` and `getPostBySlug`, filesystem reads from `src/content/blog/`
+- `src/app/blog/page.tsx` — `/blog` index page with responsive glass-card post grid
+- `src/app/blog/[slug]/page.tsx` — dynamic post page with Article JSON-LD, OG/Twitter metadata, and canonical URL
+- `src/content/blog/machine-work-vs-meaning-work.md`
+- `src/content/blog/ai-ascension-model.md`
+- `src/content/blog/impact-method-delegate-to-ai.md`
+- `src/content/blog/commander-vs-drifter.md`
+- `src/content/blog/what-is-fractional-chief-ai-officer.md`
+- `src/content/blog/the-success-trap.md`
+
+**Updated files:**
+- `src/app/sitemap.ts` — calls `getAllPosts()` to include all blog post URLs dynamically
+- `src/components/Header.tsx` — Blog link added to main navigation
+- `src/components/Footer.tsx` — Blog link added to footer navigation
+
+**New dependencies:** `gray-matter`, `remark`, `remark-html`, `@tailwindcss/typography` (npm)
+
+---
+
 ## [Unreleased] - 2026-03-29
 
 ### Stripe Order/Payment System
