@@ -3,6 +3,18 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service — Third Power Life",
   description: "Terms of Service for Third Power Life and Third Power Performance, LLC.",
+  openGraph: {
+    title: "Terms of Service — Third Power Life",
+    description: "Terms of Service for Third Power Life and Third Power Performance, LLC.",
+    url: "https://www.thirdpowerlife.ai/terms",
+  },
+  twitter: {
+    title: "Terms of Service — Third Power Life",
+    description: "Terms of Service for Third Power Life and Third Power Performance, LLC.",
+  },
+  alternates: {
+    canonical: "https://www.thirdpowerlife.ai/terms",
+  },
 };
 
 const EFFECTIVE_DATE = "March 27, 2025";

@@ -3,6 +3,18 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy — Third Power Life",
   description: "Privacy Policy for Third Power Life and Third Power Performance, LLC.",
+  openGraph: {
+    title: "Privacy Policy — Third Power Life",
+    description: "Privacy Policy for Third Power Life and Third Power Performance, LLC.",
+    url: "https://www.thirdpowerlife.ai/privacy",
+  },
+  twitter: {
+    title: "Privacy Policy — Third Power Life",
+    description: "Privacy Policy for Third Power Life and Third Power Performance, LLC.",
+  },
+  alternates: {
+    canonical: "https://www.thirdpowerlife.ai/privacy",
+  },
 };
 
 const EFFECTIVE_DATE = "March 27, 2025";

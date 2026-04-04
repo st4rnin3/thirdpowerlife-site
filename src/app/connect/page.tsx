@@ -5,6 +5,18 @@ export const metadata: Metadata = {
   title: "CONNECT 2026 — Your Next Step | Dan Gentry",
   description:
     "You attended CONNECT 2026. Now take the next step: download the AI Ascension Guide and book your free AI Clarity Call with Dan Gentry.",
+  openGraph: {
+    title: "CONNECT 2026 — Your Next Step | Dan Gentry",
+    description: "You attended CONNECT 2026. Now take the next step: download the AI Ascension Guide and book your free AI Clarity Call with Dan Gentry.",
+    url: "https://www.thirdpowerlife.ai/connect",
+  },
+  twitter: {
+    title: "CONNECT 2026 — Your Next Step | Dan Gentry",
+    description: "You attended CONNECT 2026. Now take the next step: download the AI Ascension Guide and book your free AI Clarity Call with Dan Gentry.",
+  },
+  alternates: {
+    canonical: "https://www.thirdpowerlife.ai/connect",
+  },
 };
 
 const levels = [

@@ -32,6 +32,24 @@ export const metadata: Metadata = {
     url: "https://www.thirdpowerlife.ai",
     siteName: "Third Power Life",
     type: "website",
+    images: [
+      {
+        url: "https://www.thirdpowerlife.ai/images/tedx-stage-photo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dan Gentry on the TEDx stage",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dan Gentry — Your Personal Chief AI Officer",
+    description:
+      "TEDx Speaker · AI Strategist. AI for your business. Humanity for your life.",
+    images: ["https://www.thirdpowerlife.ai/images/tedx-stage-photo.jpg"],
+  },
+  alternates: {
+    canonical: "https://www.thirdpowerlife.ai",
   },
 };
 

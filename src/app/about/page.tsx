@@ -4,6 +4,18 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Dan Gentry — Your Personal Chief AI Officer",
   description: "TEDx Speaker, AI Strategist, and Founder of Third Power Performance. Dan teaches the distinction between Machine Work and Meaning Work.",
+  openGraph: {
+    title: "About Dan Gentry — Your Personal Chief AI Officer",
+    description: "TEDx Speaker, AI Strategist, and Founder of Third Power Performance. Dan teaches the distinction between Machine Work and Meaning Work.",
+    url: "https://www.thirdpowerlife.ai/about",
+  },
+  twitter: {
+    title: "About Dan Gentry — Your Personal Chief AI Officer",
+    description: "TEDx Speaker, AI Strategist, and Founder of Third Power Performance. Dan teaches the distinction between Machine Work and Meaning Work.",
+  },
+  alternates: {
+    canonical: "https://www.thirdpowerlife.ai/about",
+  },
 };
 
 const milestones = [

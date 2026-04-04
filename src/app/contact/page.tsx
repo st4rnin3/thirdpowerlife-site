@@ -4,6 +4,18 @@ import ContactForm from "./ContactForm";
 export const metadata: Metadata = {
   title: "Contact Dan Gentry — Speaking & Consulting Inquiries",
   description: "Book Dan to speak at your event or discuss fractional Chief AI Officer consulting. Let's start with a conversation.",
+  openGraph: {
+    title: "Contact Dan Gentry — Speaking & Consulting Inquiries",
+    description: "Book Dan to speak at your event or discuss fractional Chief AI Officer consulting. Let's start with a conversation.",
+    url: "https://www.thirdpowerlife.ai/contact",
+  },
+  twitter: {
+    title: "Contact Dan Gentry — Speaking & Consulting Inquiries",
+    description: "Book Dan to speak at your event or discuss fractional Chief AI Officer consulting. Let's start with a conversation.",
+  },
+  alternates: {
+    canonical: "https://www.thirdpowerlife.ai/contact",
+  },
 };
 
 export default function Contact() {

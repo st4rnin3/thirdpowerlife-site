@@ -5,6 +5,18 @@ export const metadata: Metadata = {
   title: "Schedule a Call — Dan Gentry | Third Power Life",
   description:
     "Book an introductory call with Dan Gentry. Pick a time that works for you.",
+  openGraph: {
+    title: "Schedule a Call — Dan Gentry | Third Power Life",
+    description: "Book an introductory call with Dan Gentry. Pick a time that works for you.",
+    url: "https://www.thirdpowerlife.ai/schedule",
+  },
+  twitter: {
+    title: "Schedule a Call — Dan Gentry | Third Power Life",
+    description: "Book an introductory call with Dan Gentry. Pick a time that works for you.",
+  },
+  alternates: {
+    canonical: "https://www.thirdpowerlife.ai/schedule",
+  },
 };
 
 export default function SchedulePage() {

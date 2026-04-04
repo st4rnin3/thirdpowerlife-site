@@ -3,6 +3,18 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Fractional Chief AI Officer — Dan Gentry | Third Power Life",
   description: "AI leadership for businesses ready to implement — not just experiment. Strategy, systems, and results from your personal Chief AI Officer.",
+  openGraph: {
+    title: "Fractional Chief AI Officer — Dan Gentry | Third Power Life",
+    description: "AI leadership for businesses ready to implement — not just experiment. Strategy, systems, and results from your personal Chief AI Officer.",
+    url: "https://www.thirdpowerlife.ai/consulting",
+  },
+  twitter: {
+    title: "Fractional Chief AI Officer — Dan Gentry | Third Power Life",
+    description: "AI leadership for businesses ready to implement — not just experiment. Strategy, systems, and results from your personal Chief AI Officer.",
+  },
+  alternates: {
+    canonical: "https://www.thirdpowerlife.ai/consulting",
+  },
 };
 
 export default function Consulting() {

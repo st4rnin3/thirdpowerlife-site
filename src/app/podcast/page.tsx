@@ -3,11 +3,48 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Third Power Life Podcast — Saving Our Humanity with AI",
   description: "Season 3: Saving Our Humanity with AI. Dan Gentry explores how AI can protect what matters most. Available on Spotify, Apple Podcasts, and YouTube.",
+  openGraph: {
+    title: "Third Power Life Podcast — Saving Our Humanity with AI",
+    description: "Season 3: Saving Our Humanity with AI. Dan Gentry explores how AI can protect what matters most. Available on Spotify, Apple Podcasts, and YouTube.",
+    url: "https://www.thirdpowerlife.ai/podcast",
+  },
+  twitter: {
+    title: "Third Power Life Podcast — Saving Our Humanity with AI",
+    description: "Season 3: Saving Our Humanity with AI. Dan Gentry explores how AI can protect what matters most. Available on Spotify, Apple Podcasts, and YouTube.",
+  },
+  alternates: {
+    canonical: "https://www.thirdpowerlife.ai/podcast",
+  },
 };
 
 export default function Podcast() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "PodcastSeries",
+            name: "Third Power Life",
+            description:
+              "Season 3: Saving Our Humanity with AI. Dan Gentry explores how AI can protect what matters most.",
+            url: "https://www.thirdpowerlife.ai/podcast",
+            author: {
+              "@type": "Person",
+              name: "Dan Gentry",
+              url: "https://www.thirdpowerlife.ai/about",
+            },
+            webFeed:
+              "https://open.spotify.com/show/5bNph2wNURGSVgcDvtnNlu",
+            sameAs: [
+              "https://open.spotify.com/show/5bNph2wNURGSVgcDvtnNlu",
+              "https://itunes.apple.com/us/podcast/third-power-life/id1440527025",
+              "https://www.youtube.com/channel/UCLoq_zdO_H37-VV2GttNP6g",
+            ],
+          }),
+        }}
+      />
       {/* Hero */}
       <section className="bg-gradient-to-br from-navy via-midnight/50 to-navy py-24 text-center relative overflow-hidden">
         {/* Subtle radial glow */}

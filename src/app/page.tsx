@@ -1,9 +1,87 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import NewsletterForm from "@/components/NewsletterForm";
+
+export const metadata: Metadata = {
+  title: "Dan Gentry — Your Personal Chief AI Officer | Third Power Life",
+  description:
+    "TEDx Speaker · AI Strategist · Founder, Third Power Performance. Dan helps leaders leverage AI to grow their business — without losing their humanity in the process.",
+  openGraph: {
+    title: "Dan Gentry — Your Personal Chief AI Officer | Third Power Life",
+    description:
+      "TEDx Speaker · AI Strategist. AI for your business. Humanity for your life.",
+    url: "https://www.thirdpowerlife.ai",
+  },
+  twitter: {
+    title: "Dan Gentry — Your Personal Chief AI Officer | Third Power Life",
+    description:
+      "TEDx Speaker · AI Strategist · Founder, Third Power Performance. Dan helps leaders leverage AI to grow their business — without losing their humanity in the process.",
+  },
+  alternates: {
+    canonical: "https://www.thirdpowerlife.ai",
+  },
+};
 
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebSite",
+                name: "Third Power Life",
+                url: "https://www.thirdpowerlife.ai",
+                description:
+                  "Dan Gentry — Your Personal Chief AI Officer. AI for your business. Humanity for your life.",
+                publisher: {
+                  "@id": "https://www.thirdpowerlife.ai/#organization",
+                },
+              },
+              {
+                "@type": "Organization",
+                "@id": "https://www.thirdpowerlife.ai/#organization",
+                name: "Third Power Performance",
+                url: "https://www.thirdpowerlife.ai",
+                logo: "https://www.thirdpowerlife.ai/images/headshot.png",
+                founder: {
+                  "@id": "https://www.thirdpowerlife.ai/#person",
+                },
+                sameAs: [
+                  "https://www.linkedin.com/in/daniel-gentry/",
+                  "https://www.youtube.com/channel/UCLoq_zdO_H37-VV2GttNP6g",
+                  "https://www.skool.com/impact-ai",
+                ],
+              },
+              {
+                "@type": "Person",
+                "@id": "https://www.thirdpowerlife.ai/#person",
+                name: "Dan Gentry",
+                jobTitle: "Founder & Chief AI Officer",
+                url: "https://www.thirdpowerlife.ai/about",
+                image: "https://www.thirdpowerlife.ai/images/headshot.png",
+                worksFor: {
+                  "@id": "https://www.thirdpowerlife.ai/#organization",
+                },
+                sameAs: [
+                  "https://www.linkedin.com/in/daniel-gentry/",
+                  "https://www.youtube.com/channel/UCLoq_zdO_H37-VV2GttNP6g",
+                ],
+                knowsAbout: [
+                  "Artificial Intelligence",
+                  "AI Strategy",
+                  "Leadership",
+                  "Public Speaking",
+                  "Executive Coaching",
+                ],
+              },
+            ],
+          }),
+        }}
+      />
       {/* ================================================================ */}
       {/* HERO — Full-bleed cinematic with TEDx stage background           */}
       {/* ================================================================ */}
@@ -89,7 +167,7 @@ export default function Home() {
               {/* Background image */}
               <Image
                 src="/images/machine-work-bg.jpg"
-                alt=""
+                alt="Abstract digital pattern representing Machine Work — tasks AI can handle"
                 fill
                 className="object-cover"
               />
@@ -127,7 +205,7 @@ export default function Home() {
               {/* Background image */}
               <Image
                 src="/images/meaning-work-bg.jpg"
-                alt=""
+                alt="Warm light representing Meaning Work — human purpose and connection"
                 fill
                 className="object-cover"
               />
@@ -174,7 +252,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Level 0 — Explorer */}
             <div className="group relative rounded-2xl overflow-hidden min-h-[360px] hover:scale-[1.03] transition-all duration-500">
-              <Image src="/images/ascension-explorer-bg.jpg" alt="" fill className="object-cover" />
+              <Image src="/images/ascension-explorer-bg.jpg" alt="AI Ascension Level 0: Explorer" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#001433]/95 via-[#001433]/70 to-[#001433]/40 group-hover:via-[#001433]/60 transition-all duration-500" />
               <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-white/30 transition-all duration-500" />
               <div className="relative z-10 p-8 pt-10 flex flex-col items-center justify-start h-full text-center">
@@ -188,7 +266,7 @@ export default function Home() {
 
             {/* Level 1 — Assistant */}
             <div className="group relative rounded-2xl overflow-hidden min-h-[360px] hover:scale-[1.03] transition-all duration-500">
-              <Image src="/images/ascension-assistant-bg.jpg" alt="" fill className="object-cover" />
+              <Image src="/images/ascension-assistant-bg.jpg" alt="AI Ascension Level 1: Assistant" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#001433]/95 via-[#001433]/70 to-[#001433]/40 group-hover:via-[#001433]/60 transition-all duration-500" />
               <div className="absolute inset-0 rounded-2xl border border-accent/15 group-hover:border-accent/40 transition-all duration-500" />
               <div className="relative z-10 p-8 pt-10 flex flex-col items-center justify-start h-full text-center">
@@ -202,7 +280,7 @@ export default function Home() {
 
             {/* Level 2 — Agent */}
             <div className="group relative rounded-2xl overflow-hidden min-h-[360px] hover:scale-[1.03] transition-all duration-500">
-              <Image src="/images/ascension-agent-bg.jpg" alt="" fill className="object-cover" />
+              <Image src="/images/ascension-agent-bg.jpg" alt="AI Ascension Level 2: Agent" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#001433]/95 via-[#001433]/70 to-[#001433]/35 group-hover:via-[#001433]/55 transition-all duration-500" />
               <div className="absolute inset-0 rounded-2xl border border-accent/25 group-hover:border-accent/50 group-hover:shadow-[0_0_25px_rgba(0,87,255,0.15)] transition-all duration-500" />
               <div className="relative z-10 p-8 pt-10 flex flex-col items-center justify-start h-full text-center">
@@ -216,7 +294,7 @@ export default function Home() {
 
             {/* Level 3 — Commander (GLOWING) */}
             <div className="group relative rounded-2xl overflow-hidden min-h-[360px] hover:scale-[1.03] transition-all duration-500">
-              <Image src="/images/ascension-commander-bg.jpg" alt="" fill className="object-cover" />
+              <Image src="/images/ascension-commander-bg.jpg" alt="AI Ascension Level 3: Commander" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#001433]/90 via-[#001433]/55 to-[#001433]/25 group-hover:via-[#001433]/45 transition-all duration-500" />
               <div className="absolute inset-0 rounded-2xl border border-electric/40 shadow-[0_0_30px_rgba(0,210,255,0.15)] group-hover:border-electric/60 group-hover:shadow-[0_0_45px_rgba(0,210,255,0.3)] transition-all duration-500" />
               <div className="relative z-10 p-8 pt-10 flex flex-col items-center justify-start h-full text-center">

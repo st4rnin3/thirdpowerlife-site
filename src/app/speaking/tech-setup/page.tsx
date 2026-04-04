@@ -3,6 +3,18 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Technical Setup & Requirements — Dan Gentry | Third Power Life",
   description: "A/V requirements, stage setup, and technical specifications for booking Dan Gentry as a keynote speaker.",
+  openGraph: {
+    title: "Technical Setup & Requirements — Dan Gentry | Third Power Life",
+    description: "A/V requirements, stage setup, and technical specifications for booking Dan Gentry as a keynote speaker.",
+    url: "https://www.thirdpowerlife.ai/speaking/tech-setup",
+  },
+  twitter: {
+    title: "Technical Setup & Requirements — Dan Gentry | Third Power Life",
+    description: "A/V requirements, stage setup, and technical specifications for booking Dan Gentry as a keynote speaker.",
+  },
+  alternates: {
+    canonical: "https://www.thirdpowerlife.ai/speaking/tech-setup",
+  },
 };
 
 export default function TechSetup() {

@@ -4,6 +4,18 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Book Dan Gentry to Speak — Keynotes, Workshops & Panels",
   description: "Humanity Amplified keynote, Machine Work vs Meaning Work workshop, and Commander Mode closing keynote. Book Dan for your next event.",
+  openGraph: {
+    title: "Book Dan Gentry to Speak — Keynotes, Workshops & Panels",
+    description: "Humanity Amplified keynote, Machine Work vs Meaning Work workshop, and Commander Mode closing keynote. Book Dan for your next event.",
+    url: "https://www.thirdpowerlife.ai/speaking",
+  },
+  twitter: {
+    title: "Book Dan Gentry to Speak — Keynotes, Workshops & Panels",
+    description: "Humanity Amplified keynote, Machine Work vs Meaning Work workshop, and Commander Mode closing keynote. Book Dan for your next event.",
+  },
+  alternates: {
+    canonical: "https://www.thirdpowerlife.ai/speaking",
+  },
 };
 
 const keynoteItems = [
