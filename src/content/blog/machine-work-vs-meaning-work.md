@@ -13,6 +13,8 @@ There is a question I ask every leader I work with. It sounds simple, but it ten
 
 Not "could" be doing. *Should* be doing. Because when a human being spends two hours reformatting a slide deck or triaging 200 emails to find the three that actually matter, something has gone wrong. Not with the person. With the system.
 
+I did not arrive at this distinction because I love productivity frameworks. I arrived at it because I know what it costs when your life gets organized around the wrong things. There was a season when I said yes to work so often that I was really saying no to presence, family, health, and purpose without admitting it. That is part of what sits underneath [the Success Trap](/blog/the-success-trap).
+
 This is the line I draw in every engagement, every keynote, every conversation about AI: there is Machine Work, and there is Meaning Work. Everything you do in a day falls on one side or the other. And the leaders who figure out which is which — fast — are the ones who will thrive in the next decade.
 
 ## What Is Machine Work?
@@ -61,6 +63,8 @@ I want to give you something you can use this week. Grab a piece of paper (or op
 
 **Step 4: Pick one Machine Work task and delegate it this week.** Not to a person — to AI. Use ChatGPT to draft your next meeting summary. Use an AI scheduling tool to handle your calendar coordination. Start small. Start now.
 
+And when you get the time back, do not waste it. I am not talking about reclaiming five hours so you can cram in more noise. I am talking about reclaiming five hours so you can do something good with your life.
+
 **Step 5: Decide what you will do with the reclaimed time.** This is the step people skip, and it is the most important one. If you free up five hours a week and fill them with more Machine Work, you have missed the point entirely.
 
 ## The Real Question
@@ -73,6 +77,15 @@ Would you mentor someone on your team who needs it? Would you finally think thro
 
 AI should protect humanity, not consume it. That is not a slogan — it is a design principle. Every AI implementation should start with this question: what human work am I trying to protect?
 
+If you are too busy just trying to survive, you probably do not have much room to think about purpose. That is why systems matter. Good systems do not replace meaning — they create room for it.
+
 When you draw the line between Machine Work and Meaning Work, you are not just making a productivity decision. You are making a life decision. And the leaders who make that decision intentionally are the ones who will look back in five years and know they used this moment well.
 
 Draw the line. Protect what matters. Let the machines do the rest.
+
+---
+
+**Related reading:**
+- [The Success Trap: When Winning Costs You Everything That Matters](/blog/the-success-trap)
+- [The IMPACT Method: How to Delegate to AI Like a Leader](/blog/impact-method-delegate-to-ai)
+- [What Is a Fractional Chief AI Officer — and Does Your Business Need One?](/blog/what-is-fractional-chief-ai-officer)

@@ -43,6 +43,8 @@ I wish I could tell you I had a dramatic awakening — a health scare or a near-
 
 The first decision was admitting, out loud, to someone I trusted, that I was not okay. Not that things were "fine but busy." Not that I "just needed a vacation." That the trajectory I was on was costing me the things I cared about most, and I did not know how to stop.
 
+Part of what made that season so dangerous was that the rewards were real. Titles. Recognition. The feeling of being needed. But ego loves trophies, and trophies are a terrible substitute for presence. I have talked before about working 140-hour weeks and wearing that kind of self-destruction like a badge of honor. It took me too long to realize that the applause was hiding the price my family was paying.
+
 That admission cracked something open.
 
 From there, I started asking a different question. Instead of "How do I do more?" I asked "What am I no longer willing to sacrifice?" The answer was immediate and painful: my presence with my family. My health. My sense that my work actually meant something beyond the numbers.
@@ -65,11 +67,13 @@ But building those systems requires reclaiming your time. And that is where AI e
 
 I did not get into AI because I love technology. I got into AI because I saw what it could do for the problem I cared about most: giving leaders back the time and capacity for the things that actually make life meaningful.
 
-When I talk about "Humanity Amplified," I mean something specific. I mean using AI to handle the Machine Work — the repetitive, pattern-based tasks that consume your best hours — so you have the capacity for Meaning Work. The leadership. The creativity. The presence.
+When I talk about "Humanity Amplified," I mean something specific. I mean using AI to handle the repetitive, pattern-based tasks that consume your best hours so you have the capacity for leadership, creativity, and presence. If you have not read it yet, that is the whole point of my distinction between [Machine Work and Meaning Work](/blog/machine-work-vs-meaning-work).
 
 AI can save you 10 hours a week. I see it happen consistently. But that is not the transformation. The transformation is what you do with those 10 hours.
 
-Do you use them to be at every one of your kid's games? Do you use them to finally write that book, or start that project, or have the hard conversation you have been putting off? Do you use them to sit quietly and think about what you actually want your life to look like?
+That is why I keep asking leaders a simple question: **why do you want the time back?** If reclaimed time just gets poured into more busywork, you have not escaped the trap. You have upgraded it.
+
+Do you use them to be at your kid's game without checking your phone every three innings? Do you use them to finally write that book, start that project, or have the hard conversation you have been postponing for six months? Do you use them to sit quietly long enough to remember what you actually want?
 
 That is Humanity Amplified. Not AI replacing human capability — AI protecting it.
 
@@ -81,9 +85,9 @@ If you recognize yourself in what I have described, here is what I would tell yo
 
 **Second, name what you are sacrificing.** Be specific. Not "work-life balance" — that phrase is so vague it is meaningless. What, specifically, are you missing? What conversations are you not having? What experiences are you trading for one more hour of email?
 
-**Third, identify the Machine Work that is stealing your best hours.** Most leaders in the Success Trap are spending 40-60% of their day on tasks that AI could handle. That is not a technology problem — it is a priorities problem. Use the IMPACT Method to start reclaiming those hours.
+**Third, identify the Machine Work that is stealing your best hours.** Most leaders in the Success Trap are spending 40-60% of their day on tasks that AI could handle. That is not a technology problem — it is a priorities problem. Use [the IMPACT Method](/blog/impact-method-delegate-to-ai) to start reclaiming those hours.
 
-**Fourth, decide — in advance — what you will do with reclaimed time.** This is critical. The Success Trap will try to fill any freed-up time with more work. You have to intentionally redirect those hours toward the Meaning Work you identified. Put it on the calendar. Tell someone you trust. Make it real.
+**Fourth, decide — in advance — what you will do with reclaimed time.** This is critical. The Success Trap will try to fill any freed-up time with more work. You have to intentionally redirect those hours toward the Meaning Work you identified. Put it on the calendar. Tell someone you trust. Make it real. Schedule family like a board meeting if you have to — non-negotiable.
 
 **Fifth, define success on your terms.** Not your industry's terms, not your parents' terms, not LinkedIn's terms. What does a successful week look like for you — honestly? Write it down. Use it as your compass.
 
@@ -102,3 +106,10 @@ AI is the most powerful tool we have ever had for making that choice practical. 
 But the tool does not make the choice. You do.
 
 What are you no longer willing to sacrifice?
+
+---
+
+**Related reading:**
+- [Machine Work vs. Meaning Work: The Distinction That Changes Everything](/blog/machine-work-vs-meaning-work)
+- [The IMPACT Method: How to Delegate to AI Like a Leader](/blog/impact-method-delegate-to-ai)
+- [Commander vs. Drifter: The Choice That Defines Your Next Decade](/blog/commander-vs-drifter)

@@ -9,6 +9,8 @@ tags: ["IMPACT method", "AI strategy", "frameworks", "delegation", "leadership"]
 
 Here is something I hear from leaders all the time: "I know AI can help, but I do not know where to start."
 
+Usually what they mean is: "I got one decent result, three weird ones, and now I do not trust it enough to use it on real work."
+
 That is not a knowledge problem. It is a framework problem. Most people approach AI the way they approach a new piece of software — they open it up, poke around, and hope something clicks. But AI is not software in the traditional sense. It is more like a new team member. And like any new team member, it performs brilliantly when you give it clear direction and poorly when you wing it.
 
 That is why I built the IMPACT Method. It is a six-step process for delegating work to AI the same way a great leader delegates work to people: with clarity, context, and intentionality.
@@ -19,7 +21,7 @@ You do not need to code. You do not need a computer science degree. You need to 
 
 Before you touch any AI tool, step back and look at your week. What are you doing that follows a pattern? What tasks drain your energy without requiring your unique judgment?
 
-This is where the Machine Work vs. Meaning Work framework comes in. Grab your calendar and your task list from the past week. Flag every item that is repetitive, rule-based, or low-judgment. Common candidates:
+This is where the [Machine Work vs. Meaning Work](/blog/machine-work-vs-meaning-work) framework comes in. Grab your calendar and your task list from the past week. Flag every item that is repetitive, rule-based, or low-judgment. Common candidates:
 
 - Email drafting and responses that follow a pattern
 - Meeting summaries and follow-up action items
@@ -123,6 +125,13 @@ What took 45 minutes now takes 5 minutes of review and a quick send. Over a year
 
 The question is not whether that is worth doing. The question is: **what will you do with those 150 hours?**
 
-That is where Meaning Work begins. That is where leadership, presence, and purpose get their time back.
+That is where Meaning Work begins. That is where leadership, presence, and purpose get their time back. It is also the difference between staying an [Explorer or Assistant](/blog/ai-ascension-model) forever and actually moving toward Commander-level leverage.
 
 You do not need to code. You need to lead. The IMPACT Method is how you start.
+
+---
+
+**Related reading:**
+- [Machine Work vs. Meaning Work: The Distinction That Changes Everything](/blog/machine-work-vs-meaning-work)
+- [The AI Ascension Model: Where Are You on the Ladder?](/blog/ai-ascension-model)
+- [The Success Trap: When Winning Costs You Everything That Matters](/blog/the-success-trap)

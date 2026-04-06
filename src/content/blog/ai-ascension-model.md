@@ -7,11 +7,13 @@ author: "Dan Gentry"
 tags: ["AI strategy", "leadership", "frameworks", "AI adoption"]
 ---
 
-I have worked with hundreds of leaders on their AI journey, and I have noticed something consistent: there is a pattern to how people adopt this technology. Not just individuals — entire organizations move through the same stages.
+Most leaders do not have an AI problem. They have a staging problem.
 
-Some leaders are curious but cautious. Others have dabbled but plateaued. A few have broken through to something genuinely transformative. And the difference between them is not technical skill or budget. It is mindset — and a clear understanding of where they are and what the next step actually requires.
+They have tried a few prompts, maybe gotten a decent result, maybe even saved some time — and then they stall out. They know enough to be interested, but not enough to build real leverage. I have seen this pattern over and over with leaders and teams, which is why I built the AI Ascension Model.
 
-That is why I developed the AI Ascension Model. It is a four-level framework that gives leaders a way to honestly assess their current position and see the specific leap required to reach the next level.
+It is not a technical maturity chart. It is a practical roadmap for how humans actually adopt AI in the real world. Not in demos. Not in hype threads. In the middle of packed calendars, operational chaos, and teams that still need to trust what they are using.
+
+That is why the model matters. It gives leaders a way to honestly assess their current position and see the specific leap required to reach the next level.
 
 ## Level 0: Explorer
 
@@ -25,13 +27,13 @@ That is why I developed the AI Ascension Model. It is a four-level framework tha
 
 ## Level 1: Assistant
 
-**What it looks like:** You use AI as a tool for specific tasks. You have a handful of prompts that work. You might use it to draft emails, summarize documents, brainstorm ideas, or generate first drafts. AI is your intern — helpful, but you are still doing the directing and the heavy lifting.
+**What it looks like:** You use AI as a tool for specific tasks. You have a handful of prompts that work. You might use it to draft emails, summarize documents, brainstorm ideas, or generate first drafts. AI is your intern — helpful, but you are still doing the directing and the heavy lifting. This is usually where people first start seeing the difference between [Machine Work and Meaning Work](/blog/machine-work-vs-meaning-work), even if they do not have the language for it yet.
 
 **Who is here:** Early adopters and the genuinely curious. These are leaders who have moved past "playing around" and found two or three places where AI saves them real time. But the AI is still reactive — it only works when you explicitly ask it to do something.
 
 **The trap at this level:** Staying here forever. Level 1 is comfortable. You get enough value to feel like you are "using AI." But you are capturing maybe 10-15% of the actual potential. Most leaders I meet are stuck right here.
 
-**What the leap requires:** Systems thinking. Instead of using AI for one-off tasks, start asking: "What workflows could I redesign around AI?" Move from individual prompts to chains of operations. Build templates. Create standard operating procedures that include AI as a core component, not an afterthought.
+**What the leap requires:** Systems thinking. Instead of using AI for one-off tasks, start asking: "What workflows could I redesign around AI?" Move from individual prompts to chains of operations. Build templates. Create standard operating procedures that include AI as a core component, not an afterthought. If you need a practical starting point, this is exactly what [the IMPACT Method](/blog/impact-method-delegate-to-ai) is for.
 
 ## Level 2: Agent
 
@@ -85,3 +87,10 @@ That is not a coincidence. When you stop spending your days on Machine Work, you
 The Ascension Model is not about becoming more dependent on AI. It is about using AI to become more fully human. That is the whole point.
 
 Where are you on the ladder — and what is your next step?
+
+---
+
+**Related reading:**
+- [Machine Work vs. Meaning Work: The Distinction That Changes Everything](/blog/machine-work-vs-meaning-work)
+- [The IMPACT Method: How to Delegate to AI Like a Leader](/blog/impact-method-delegate-to-ai)
+- [Commander vs. Drifter: The Choice That Defines Your Next Decade](/blog/commander-vs-drifter)
