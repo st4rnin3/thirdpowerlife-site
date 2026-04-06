@@ -5,6 +5,7 @@ slug: what-is-fractional-chief-ai-officer
 date: "2026-03-31"
 author: "Dan Gentry"
 tags: ["fractional CAIO", "consulting", "AI strategy", "business leadership"]
+ogImage: "https://www.thirdpowerlife.ai/images/blog-og/fractional-chief-ai-officer.jpg"
 ---
 
 A question I get almost every week from business owners and executives: "We know we need to do something with AI, but we do not need a full-time AI person. What are our options?"

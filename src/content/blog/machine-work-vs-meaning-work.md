@@ -5,6 +5,7 @@ slug: machine-work-vs-meaning-work
 date: "2026-03-03"
 author: "Dan Gentry"
 tags: ["AI strategy", "productivity", "leadership", "frameworks"]
+ogImage: "https://www.thirdpowerlife.ai/images/blog-og/machine-work-vs-meaning-work.jpg"
 ---
 
 There is a question I ask every leader I work with. It sounds simple, but it tends to stop people mid-sentence.

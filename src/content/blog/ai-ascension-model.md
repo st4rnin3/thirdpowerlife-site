@@ -5,6 +5,7 @@ slug: ai-ascension-model
 date: "2026-03-10"
 author: "Dan Gentry"
 tags: ["AI strategy", "leadership", "frameworks", "AI adoption"]
+ogImage: "https://www.thirdpowerlife.ai/images/blog-og/ai-ascension-model.jpg"
 ---
 
 Most leaders do not have an AI problem. They have a staging problem.

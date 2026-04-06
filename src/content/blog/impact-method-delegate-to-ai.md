@@ -5,6 +5,7 @@ slug: impact-method-delegate-to-ai
 date: "2026-03-17"
 author: "Dan Gentry"
 tags: ["IMPACT method", "AI strategy", "frameworks", "delegation", "leadership"]
+ogImage: "https://www.thirdpowerlife.ai/images/blog-og/impact-method.jpg"
 ---
 
 Here is something I hear from leaders all the time: "I know AI can help, but I do not know where to start."

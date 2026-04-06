@@ -5,6 +5,7 @@ slug: commander-vs-drifter
 date: "2026-03-24"
 author: "Dan Gentry"
 tags: ["leadership", "personal development", "AI strategy", "purpose"]
+ogImage: "https://www.thirdpowerlife.ai/images/blog-og/commander-vs-drifter.jpg"
 ---
 
 For a long time, I looked successful from the outside and directionless on the inside.

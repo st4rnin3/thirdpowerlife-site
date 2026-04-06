@@ -5,6 +5,7 @@ slug: the-success-trap
 date: "2026-04-04"
 author: "Dan Gentry"
 tags: ["personal development", "purpose", "leadership", "humanity amplified"]
+ogImage: "https://www.thirdpowerlife.ai/images/blog-og/the-success-trap.jpg"
 ---
 
 I am going to tell you something that most people in my position do not admit publicly.
