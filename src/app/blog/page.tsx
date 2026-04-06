@@ -88,7 +88,7 @@ export default function BlogIndex() {
                 {post.ogImage && (
                   <div className="aspect-[1.91/1] overflow-hidden border-b border-white/10 bg-midnight/40">
                     <img
-                      src={post.ogImage}
+                      src={post.ogImage.replace('/images/blog-og/', '/images/blog-og/thumb-')}
                       alt={post.title}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                     />
