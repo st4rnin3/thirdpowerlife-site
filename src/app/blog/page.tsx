@@ -83,28 +83,39 @@ export default function BlogIndex() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group glass rounded-2xl p-6 flex flex-col hover:border-electric/40 hover:shadow-[0_0_30px_rgba(0,210,255,0.1)] transition-all duration-300"
+                className="group glass overflow-hidden rounded-2xl flex flex-col hover:border-electric/40 hover:shadow-[0_0_30px_rgba(0,210,255,0.1)] transition-all duration-300"
               >
-                <div className="flex items-center gap-3 text-sm text-light/50 mb-3">
-                  <time dateTime={post.date}>{formatDate(post.date)}</time>
-                  <span className="text-electric/40">|</span>
-                  <span>{post.readingTime} min read</span>
-                </div>
-                <h2 className="text-xl font-heading font-bold text-white mb-2 group-hover:text-electric transition-colors duration-300">
-                  {post.title}
-                </h2>
-                <p className="text-light/60 text-sm leading-relaxed flex-1">
-                  {post.description}
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {post.tags.slice(0, 3).map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs text-electric/70 bg-electric/10 px-2 py-1 rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                {post.ogImage && (
+                  <div className="aspect-[1.91/1] overflow-hidden border-b border-white/10 bg-midnight/40">
+                    <img
+                      src={post.ogImage}
+                      alt={post.title}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                  </div>
+                )}
+                <div className="p-6 flex flex-1 flex-col">
+                  <div className="flex items-center gap-3 text-sm text-light/50 mb-3">
+                    <time dateTime={post.date}>{formatDate(post.date)}</time>
+                    <span className="text-electric/40">|</span>
+                    <span>{post.readingTime} min read</span>
+                  </div>
+                  <h2 className="text-xl font-heading font-bold text-white mb-2 group-hover:text-electric transition-colors duration-300">
+                    {post.title}
+                  </h2>
+                  <p className="text-light/60 text-sm leading-relaxed flex-1">
+                    {post.description}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {post.tags.slice(0, 3).map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs text-electric/70 bg-electric/10 px-2 py-1 rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </Link>
             ))}
