@@ -53,6 +53,13 @@ const successContent: Record<string, SuccessContent> = {
     detail:
       "You'll receive an onboarding email within 24 hours with access to scheduling, communication channels, and your first month's kickoff agenda.",
   },
+  "ai-capability-gap-diagnostic": {
+    heading: "You're in. Let's get this moving.",
+    message:
+      "Your AI Capability Gap Diagnostic is confirmed.",
+    detail:
+      "Step 1: complete your intake questionnaire. Step 2: book your 20-minute review call. Your 48-hour turnaround starts once the intake is submitted.",
+  },
 };
 
 const defaultContent: SuccessContent = {
