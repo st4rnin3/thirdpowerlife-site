@@ -52,12 +52,6 @@ export default function AICapabilityGapDiagnosticPage() {
             >
               Book Your Diagnostic
             </a>
-            <a
-              href="/consulting"
-              className="inline-block border border-white/15 text-white px-8 py-4 rounded-lg font-heading font-semibold hover:border-electric/40 transition-all duration-300"
-            >
-              See the Full fCAIO Offer
-            </a>
           </div>
         </div>
       </section>
