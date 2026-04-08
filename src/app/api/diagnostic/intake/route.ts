@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabaseSelect, supabaseUpsert } from '@/lib/supabase-admin';
+import { supabaseSelect, supabaseUpdate, supabaseUpsert } from '@/lib/supabase-admin';
 
 export async function POST(req: NextRequest) {
   try {
@@ -27,11 +27,12 @@ export async function POST(req: NextRequest) {
 
     const responseRows = await supabaseUpsert('capability_diagnostic_responses', responsePayload, 'order_id,section_key');
 
-    await supabaseUpsert('capability_diagnostic_orders', {
+    await supabaseUpdate('capability_diagnostic_orders', {
       id: resolvedOrderId,
+    }, {
       status: isSubmitted ? 'intake_complete' : 'intake_started',
       updated_at: new Date().toISOString(),
-    }, 'id');
+    });
 
     return NextResponse.json({ ok: true, response: Array.isArray(responseRows) ? responseRows[0] : null, orderId: resolvedOrderId });
   } catch (error) {

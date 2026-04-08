@@ -51,6 +51,26 @@ export async function supabaseUpsert(table: string, payload: unknown, onConflict
   return res.json();
 }
 
+export async function supabaseUpdate(table: string, filters: Record<string, string>, payload: unknown) {
+  const url = new URL(`${SUPABASE_URL}/rest/v1/${table}`);
+  for (const [key, value] of Object.entries(filters)) {
+    url.searchParams.set(key, `eq.${value}`);
+  }
+
+  const res = await fetch(url.toString(), {
+    method: 'PATCH',
+    headers: getHeaders(),
+    body: JSON.stringify(payload),
+    cache: 'no-store',
+  });
+
+  if (!res.ok) {
+    throw new Error(`Supabase update failed: ${res.status} ${await res.text()}`);
+  }
+
+  return res.json();
+}
+
 export async function supabaseSelect(table: string, query = '') {
   const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}${query}`, {
     headers: getHeaders(),
