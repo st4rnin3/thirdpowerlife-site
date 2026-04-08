@@ -16,11 +16,16 @@ type DiagnosticResponse = {
   section_key: string;
   is_submitted: boolean;
   updated_at: string;
+  response_json?: { answers?: string[] };
 };
+
+function titleCase(value: string) {
+  return value.replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
+}
 
 export default async function DiagnosticsAdminPage() {
   const orders = (await supabaseSelect('capability_diagnostic_orders', '?select=*&order=created_at.desc&limit=50').catch(() => [])) as DiagnosticOrder[];
-  const responses = (await supabaseSelect('capability_diagnostic_responses', '?select=order_id,section_key,is_submitted,updated_at&order=updated_at.desc&limit=200').catch(() => [])) as DiagnosticResponse[];
+  const responses = (await supabaseSelect('capability_diagnostic_responses', '?select=order_id,section_key,is_submitted,updated_at,response_json&order=updated_at.asc&limit=500').catch(() => [])) as DiagnosticResponse[];
 
   const grouped = new Map<string, DiagnosticResponse[]>();
   for (const row of responses || []) {
@@ -47,27 +52,33 @@ export default async function DiagnosticsAdminPage() {
                     <div>Created: {new Date(order.created_at).toLocaleString()}</div>
                   </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <div className="text-light/50 mb-2">Order</div>
-                    <div className="text-white break-all">{order.id}</div>
-                    <div className="text-light/60 break-all mt-1">Stripe session: {order.stripe_checkout_session_id || 'n/a'}</div>
-                  </div>
-                  <div>
-                    <div className="text-light/50 mb-2">Responses</div>
-                    {orderResponses.length === 0 ? (
-                      <div className="text-light/40">No responses yet</div>
-                    ) : (
-                      <ul className="space-y-1">
-                        {orderResponses.map((r, idx) => (
-                          <li key={idx} className="text-light/70">
-                            {r.section_key} {r.is_submitted ? '(submitted)' : ''}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
+
+                <div className="mb-4 text-sm">
+                  <div className="text-light/50 mb-1">Order</div>
+                  <div className="text-white break-all">{order.id}</div>
+                  <div className="text-light/60 break-all mt-1">Stripe session: {order.stripe_checkout_session_id || 'n/a'}</div>
                 </div>
+
+                {orderResponses.length === 0 ? (
+                  <div className="text-light/40">No responses yet</div>
+                ) : (
+                  <div className="space-y-4 mt-6">
+                    {orderResponses.map((response, idx) => (
+                      <details key={idx} className="rounded-lg border border-white/10 bg-white/5 p-4">
+                        <summary className="cursor-pointer text-white font-semibold">
+                          {titleCase(response.section_key)} {response.is_submitted ? '(submitted)' : ''}
+                        </summary>
+                        <div className="mt-3 space-y-2">
+                          {(response.response_json?.answers || []).map((answer, answerIdx) => (
+                            <div key={answerIdx} className="rounded bg-black/20 px-3 py-2 text-sm text-light/70 whitespace-pre-wrap">
+                              {answer || <span className="text-light/30">No answer</span>}
+                            </div>
+                          ))}
+                        </div>
+                      </details>
+                    ))}
+                  </div>
+                )}
               </div>
             );
           })}
