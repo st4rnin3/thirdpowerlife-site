@@ -55,7 +55,7 @@ On error:
 
 Below the form:
 - "Prefer email? Reach out directly at info@ThirdPowerPerformance.com"
-- "Ready to book right now? Schedule an intro call" -> https://www.thirdpowerlife.ai/schedule/introductory-call
+- "Ready to book right now? Schedule an intro call" -> https://www.thirdpowerlife.ai/schedule
 
 ## Acceptance Criteria
 

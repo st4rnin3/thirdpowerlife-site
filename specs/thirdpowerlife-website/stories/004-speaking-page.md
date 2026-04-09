@@ -62,7 +62,7 @@ Display as expandable cards or a visible list:
 ### Section 6: Booking CTA
 
 - Heading: "Ready to Book Dan?"
-- CTA: "Schedule an Intro Call" -> https://www.thirdpowerlife.ai/schedule/introductory-call (external link)
+- CTA: "Schedule an Intro Call" -> https://www.thirdpowerlife.ai/schedule (external link)
 - Secondary text: "Or email info@ThirdPowerPerformance.com"
 
 ## Acceptance Criteria
@@ -73,7 +73,7 @@ Display as expandable cards or a visible list:
 - [ ] AC-4: Both additional talk options are displayed with their titles, durations, descriptions, audience takeaways, and "Best for" audience types.
 - [ ] AC-5: At least 3 testimonials are displayed with quote text and attribution.
 - [ ] AC-6: The speaker assets section contains a link to the speaker one-sheet PDF, a headshot download link, and the TEDx talk link.
-- [ ] AC-7: The booking CTA section contains a link to the scheduling URL (https://www.thirdpowerlife.ai/schedule/introductory-call) and displays the contact email.
+- [ ] AC-7: The booking CTA section contains a link to the scheduling URL (https://www.thirdpowerlife.ai/schedule) and displays the contact email.
 - [ ] AC-8: The page is responsive -- all sections stack cleanly on mobile (375px) and use appropriate layouts on desktop (1280px).
 - [ ] AC-9: All talk descriptions use real content from the knowledge base -- no placeholder text.
 

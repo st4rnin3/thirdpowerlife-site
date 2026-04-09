@@ -55,7 +55,7 @@ Brief process overview (keep it simple, 3-4 steps):
 
 - Heading: "Ready to Talk AI Strategy?"
 - Body text: "No pitch deck. No pressure. Just a conversation about where AI can move the needle for your business."
-- CTA: "Book an Intro Call" -> https://www.thirdpowerlife.ai/schedule/introductory-call (external link)
+- CTA: "Book an Intro Call" -> https://www.thirdpowerlife.ai/schedule (external link)
 - Secondary: "Or email info@ThirdPowerPerformance.com"
 
 ### Important Constraints
@@ -72,7 +72,7 @@ Brief process overview (keep it simple, 3-4 steps):
 - [ ] AC-4: The outcomes section presents results (clarity, reclaimed time, confident adoption, protected humanity) -- NOT features, deliverables, or pricing.
 - [ ] AC-5: **No pricing information appears anywhere on the page.**
 - [ ] AC-6: The "How It Works" section displays a 3-4 step process.
-- [ ] AC-7: The booking CTA links to the scheduling URL (https://www.thirdpowerlife.ai/schedule/introductory-call) and displays the contact email.
+- [ ] AC-7: The booking CTA links to the scheduling URL (https://www.thirdpowerlife.ai/schedule) and displays the contact email.
 - [ ] AC-8: The page is responsive on mobile (375px), tablet (768px), and desktop (1280px).
 - [ ] AC-9: All copy uses real, substantive text -- no placeholder or lorem ipsum content.
 

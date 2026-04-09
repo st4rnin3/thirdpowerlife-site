@@ -99,7 +99,7 @@ These files contain the real copy to use when building pages. Implementers shoul
 
 ### External Links (Verified from Knowledge Base)
 
-- Scheduling: https://www.thirdpowerlife.ai/schedule/introductory-call
+- Scheduling: https://www.thirdpowerlife.ai/schedule
 - LinkedIn: https://www.linkedin.com/in/daniel-gentry/
 - Podcast (Apple): https://podcasts.apple.com/us/podcast/third-power-life/id1440527025
 - Podcast (Spotify): https://open.spotify.com/show/5bNph2wNURGSVgcDvtnNlu

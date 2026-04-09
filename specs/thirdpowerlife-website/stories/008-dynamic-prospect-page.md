@@ -90,7 +90,7 @@ Create `src/data/prospects/katie-mdrt.json`:
   "showSpeakerAssets": true,
   "showBookSection": false,
   "ctaLabel": "Schedule Our Next Call",
-  "ctaUrl": "https://www.thirdpowerlife.ai/schedule/introductory-call",
+  "ctaUrl": "https://www.thirdpowerlife.ai/schedule",
   "additionalNotes": "Looking forward to continuing the conversation about bringing Humanity Amplified to MDRT."
 }
 ```
