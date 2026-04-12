@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 const NAV_LINKS = [
   { href: "/about", label: "About" },
@@ -52,7 +53,20 @@ export default function Footer() {
   return (
     <footer className="bg-navy border-t border-white/10">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        {/* Top section: brand + nav + social */}
+        {/* Newsletter signup */}
+        <div className="mb-12 pb-12 border-b border-white/10">
+          <div className="max-w-md">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-light/50">
+              Newsletter
+            </h3>
+            <p className="mt-2 text-sm text-light/60">
+              Weekly AI leadership insights — practical tools and strategies.
+            </p>
+            <NewsletterSignup variant="compact" />
+          </div>
+        </div>
+
+        {/* Brand + nav + social */}
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand Column */}
           <div>

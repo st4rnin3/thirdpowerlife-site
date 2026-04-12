@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Metadata } from "next";
-import NewsletterForm from "@/components/NewsletterForm";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 export const metadata: Metadata = {
   title: "Dan Gentry — Your Personal Chief AI Officer | Third Power Life",
@@ -517,21 +517,7 @@ export default function Home() {
       {/* ================================================================ */}
       {/* NEWSLETTER                                                       */}
       {/* ================================================================ */}
-      <section className="bg-gradient-to-r from-electric/20 via-accent/30 to-electric/20 py-24">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-navy/50 backdrop-blur-md rounded-2xl p-8 md:p-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-              The AI Playbook Newsletter
-            </h2>
-            <p className="text-light/70 mb-2 leading-relaxed">
-              Weekly frameworks, strategies, and real-world AI wins.
-              <br />
-              No hype. No fluff. Just actionable leadership intelligence.
-            </p>
-            <NewsletterForm />
-          </div>
-        </div>
-      </section>
+      <NewsletterSignup variant="section" />
     </>
   );
 }

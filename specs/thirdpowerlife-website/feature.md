@@ -26,7 +26,7 @@ Dan's current website is on ClickFunnels, which expires June 2026. The site need
 - NG4: **Video hosting** -- all video is embedded from YouTube/Loom, no self-hosting
 - NG5: **Dark mode toggle** -- single clean light theme only
 - NG6: **Custom CMS or admin panel** -- content is managed via code/files
-- NG7: **Form backend infrastructure** -- form submissions use mailto: or a simple API route that sends email; no database or CRM writeback
+- NG7: **Form backend infrastructure** -- form submissions use mailto: or a simple API route that sends email; no database or CRM writeback *(superseded for newsletter: real signup connected to dashboard API endpoint; see CHANGELOG 2026-04-12)*
 - NG8: **Analytics beyond Vercel Analytics** -- no Google Analytics, Mixpanel, etc.
 
 ## Stories
@@ -115,7 +115,7 @@ These files contain the real copy to use when building pages. Implementers shoul
 ### Risks
 
 - **R1: Speaker one-sheet PDF does not exist yet.** The speaking page references a downloadable PDF. Mitigation: Use a placeholder link with a TODO comment; Dan can supply the file before DNS switch. Flag this to stakeholder.
-- **R2: Newsletter signup has no backend.** The homepage includes a newsletter signup form but there is no email service provider configured. Mitigation: Implement as a mailto: link or static form that shows a "thank you" message; connect to an ESP in a future iteration. [ASSUMPTION: A simple visual form with a "coming soon" or mailto fallback is acceptable for launch.]
+- **R2: Newsletter signup has no backend.** *(Resolved 2026-04-12)* The `NewsletterSignup` component connects directly to `POST /api/audience/public-subscribe` on the dashboard. Welcome emails are sent via Resend. The orphaned `NewsletterForm.tsx` placeholder has been deleted.
 - **R3: Video embed URLs not yet provided.** The homepage and prospect pages reference video embeds (speaker reel, personalized Loom videos). Mitigation: Use placeholder embed containers with clear TODO markers; real URLs can be dropped in before launch.
 - **R4: Vercel free tier limits.** Hobby tier has limits on serverless function execution time and bandwidth. Mitigation: Static generation for all pages minimizes serverless usage; the contact form API route is the only server function.
 - **R5: DNS cutover timing.** The site must be reviewed and approved by Dan before DNS switch from ClickFunnels. Mitigation: Deploy to Vercel's auto-generated URL first; README includes DNS instructions for when Dan approves.
@@ -124,7 +124,7 @@ These files contain the real copy to use when building pages. Implementers shoul
 
 - **OQ1:** Is the speaker one-sheet PDF available, or does it need to be created? The speaking page references a downloadable one-sheet.
 - **OQ2:** What is the speaker reel / keynote video URL for the homepage hero embed? Is this the TEDx talk or a separate reel?
-- **OQ3:** For the newsletter signup, is there an existing email service provider (Mailchimp, ConvertKit, etc.) to integrate with, or should this be deferred?
+- **OQ3:** *(Resolved 2026-04-12)* Newsletter signup connects to the OpenClaw dashboard API (`POST /api/audience/public-subscribe`). Welcome emails go out via Resend from `dan@thirdpowerlife.ai`.
 - **OQ4:** For the `/hello/katie-mdrt` example prospect page, what is the personalized Loom/YouTube video URL and specific greeting copy?
 - **OQ5:** Should the contact form send emails via a Vercel serverless function (requires email service like Resend/SendGrid), or is a simple mailto: link acceptable for launch?
 

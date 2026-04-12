@@ -13,7 +13,7 @@ Professional website for Dan Gentry — TEDx Speaker, AI Strategist, and Your Pe
 
 | Route | Description |
 |-------|-------------|
-| `/` | Homepage — hero, frameworks, testimonials, podcast, newsletter |
+| `/` | Homepage — hero, frameworks, testimonials, podcast, newsletter signup (section variant) |
 | `/about` | Bio, key frameworks, dual CTA |
 | `/speaking` | Keynote details, additional talks, testimonials, booking CTA |
 | `/consulting` | Fractional Chief AI Officer services |
@@ -139,8 +139,19 @@ To point the domain to Vercel:
 | `STRIPE_SECRET_KEY` | Server-side only (API routes) | Stripe secret key — set in Vercel, never expose to client |
 | `NEXT_PUBLIC_SITE_URL` | API routes (redirect URLs) | Base URL for Stripe success/cancel redirects, e.g. `https://thirdpowerlife.ai` or the Vercel preview URL |
 
-Both variables must be set in Vercel → Project Settings → Environment Variables before the Stripe order system will function.
+`STRIPE_SECRET_KEY` and `NEXT_PUBLIC_SITE_URL` must be set in Vercel → Project Settings → Environment Variables before the Stripe order system will function.
 
-Future additions:
-- Newsletter service API key
-- Contact form email delivery service key
+## Newsletter Signup Component
+
+The `NewsletterSignup` component (`src/components/NewsletterSignup.tsx`) connects directly to the dashboard backend. It has two variants:
+
+| Variant | Used in | Description |
+|---------|---------|-------------|
+| `"section"` | Homepage (`src/app/page.tsx`) | Full-width block with headline, subtext, email + name fields, and optional phone/SMS consent |
+| `"compact"` | Footer (`src/components/Footer.tsx`) | Minimal email input suitable for tight layout contexts |
+
+Both variants POST JSON to the hardcoded dashboard URL `https://openclaw.thirdpowerperformance.com/api/audience/public-subscribe`. The component handles all response states: loading, success, already-subscribed, suppressed, rate-limited, and error. A 10-second fetch timeout prevents indefinite spinner states.
+
+The form includes a hidden honeypot field. The backend silently accepts honeypot-filled submissions without creating subscriber records.
+
+The deleted `src/components/NewsletterForm.tsx` was a placeholder with no backend connection and has been fully replaced by this component.

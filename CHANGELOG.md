@@ -4,6 +4,40 @@ All notable changes to the ThirdPowerLife.ai site are recorded here. Newest entr
 
 ---
 
+## [Unreleased] - 2026-04-12
+
+### Public Newsletter Signup Component
+
+**Summary:**
+- Added `NewsletterSignup` React component (`src/components/NewsletterSignup.tsx`) with two rendering variants: `"section"` (full-width homepage block with headline and subtext) and `"compact"` (minimal form for embedding in the footer). Both variants POST to the dashboard API endpoint `POST /api/audience/public-subscribe`.
+- Replaced the orphaned `NewsletterForm` placeholder on the homepage (`src/app/page.tsx`) with the real `NewsletterSignup` component (section variant).
+- Added the compact variant to the footer (`src/components/Footer.tsx`).
+- Deleted `src/components/NewsletterForm.tsx` (orphaned placeholder with no backend connection).
+
+**Who it's for:** Site visitors on thirdpowerlife.ai who want to subscribe to the newsletter. The form collects email and optional name, validates client-side, and submits to the dashboard backend. Successful submissions receive a branded welcome email.
+
+**How to test:**
+- [ ] Visit the homepage — confirm the newsletter signup section is visible with the section variant (headline, subtext, email input, name input, submit button)
+- [ ] Scroll to the footer — confirm the compact variant is present with a minimal email input
+- [ ] Submit a valid email — confirm the form shows a success state (no page reload)
+- [ ] Submit an invalid email — confirm client-side validation prevents submission
+- [ ] Submit an already-subscribed email — confirm the response is handled gracefully (no error UI)
+- [ ] Confirm `NewsletterForm.tsx` no longer exists in `src/components/`
+
+**Breaking changes:** `src/components/NewsletterForm.tsx` is deleted. Any import of `NewsletterForm` elsewhere would break — none exist after this change.
+
+**New files:**
+- `src/components/NewsletterSignup.tsx` — two-variant signup form component; handles form state, submission, and response feedback
+
+**Updated files:**
+- `src/app/page.tsx` — replaced `NewsletterForm` import with `NewsletterSignup` (section variant)
+- `src/components/Footer.tsx` — added `NewsletterSignup` compact variant
+
+**Deleted files:**
+- `src/components/NewsletterForm.tsx` — orphaned placeholder; had no backend connection
+
+---
+
 ## [Unreleased] - 2026-04-04
 
 ### Markdown Blog System with Pillar Post Seed Content

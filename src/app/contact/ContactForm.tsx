@@ -107,10 +107,12 @@ export default function ContactForm() {
             className="mt-0.5 h-4 w-4 shrink-0 rounded border-white/30 bg-white/5 accent-electric cursor-pointer"
           />
           <label htmlFor="sms_consent" className="text-xs text-light/50 leading-relaxed cursor-pointer">
-            I consent to receive appointment reminders and service-related SMS messages from{" "}
-            <span className="text-light/70">Third Power Performance, LLC</span>. Message and data rates may
-            apply. Message frequency varies. Reply <strong className="text-light/70">STOP</strong> to opt
-            out at any time. Reply <strong className="text-light/70">HELP</strong> for help. View our{" "}
+            I agree to receive text messages from{" "}
+            <span className="text-light/70">Third Power Performance, LLC</span>{" "}
+            including appointment reminders, follow-ups, and service-related communications.
+            Message and data rates may apply. Message frequency varies.
+            Reply <strong className="text-light/70">STOP</strong> to opt out at any time.
+            Reply <strong className="text-light/70">HELP</strong> for help. View our{" "}
             <a href="/privacy" className="text-electric hover:underline">Privacy Policy</a> and{" "}
             <a href="/terms" className="text-electric hover:underline">Terms of Service</a>.
           </label>

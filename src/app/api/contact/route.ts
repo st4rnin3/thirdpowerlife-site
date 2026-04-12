@@ -20,9 +20,15 @@ export async function POST(request: Request) {
       other: "Something else",
     };
 
+    const consentTimestamp = new Date().toISOString();
+    const consentLanguage = "I agree to receive text messages from Third Power Performance, LLC including appointment reminders, follow-ups, and service-related communications. Message and data rates may apply. Message frequency varies. Reply STOP to opt out at any time. Reply HELP for help.";
+
     const smsRow = phone
       ? `<tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Phone</td><td style="padding:8px;border-bottom:1px solid #eee;">${escapeHtml(phone)}</td></tr>
-         <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">SMS Consent</td><td style="padding:8px;border-bottom:1px solid #eee;">${sms_consent ? "✅ YES — consented to appointment reminders via SMS" : "❌ No — did not opt in to SMS"}</td></tr>`
+         <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">SMS Consent</td><td style="padding:8px;border-bottom:1px solid #eee;">${sms_consent ? "✅ YES — consented to SMS" : "❌ No — did not opt in to SMS"}</td></tr>
+         ${sms_consent ? `<tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Consent Date</td><td style="padding:8px;border-bottom:1px solid #eee;">${consentTimestamp}</td></tr>
+         <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Consent Method</td><td style="padding:8px;border-bottom:1px solid #eee;">web_form (thirdpowerlife.ai/contact)</td></tr>
+         <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Consent Language</td><td style="padding:8px;border-bottom:1px solid #eee;font-size:11px;">${escapeHtml(consentLanguage)}</td></tr>` : ""}`
       : "";
 
     const res = await fetch("https://api.resend.com/emails", {
