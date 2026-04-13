@@ -169,6 +169,31 @@ export default function Consulting() {
         </div>
       </section>
 
+      {/* Diagnostic Option */}
+      <section className="bg-midnight/40 py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="glass rounded-2xl p-8 md:p-10 border border-electric/20 text-center">
+            <p className="text-electric font-heading uppercase tracking-widest text-sm mb-4">
+              Start Here
+            </p>
+            <h2 className="text-3xl font-heading font-bold text-white mb-4">
+              Not ready for a full fCAIO engagement yet?
+            </h2>
+            <p className="text-light/70 max-w-2xl mx-auto mb-8 leading-relaxed">
+              Start with the <span className="text-white font-semibold">AI Capability Gap Diagnostic</span>,
+              a paid assessment designed to show you where AI can create the most value in your business,
+              where you have risk, and what the smartest next steps look like.
+            </p>
+            <a
+              href="/ai-capability-gap-diagnostic"
+              className="inline-block bg-accent text-white px-8 py-4 rounded-lg font-heading font-semibold hover:shadow-[0_0_20px_rgba(0,210,255,0.3)] transition-all duration-300"
+            >
+              Take the Diagnostic
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-gradient-to-r from-midnight to-navy py-20 text-center">
         <div className="max-w-2xl mx-auto px-4">
