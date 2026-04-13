@@ -180,9 +180,10 @@ export default function Consulting() {
               Not ready for a full fCAIO engagement yet?
             </h2>
             <p className="text-light/70 max-w-2xl mx-auto mb-8 leading-relaxed">
-              Start with the <span className="text-white font-semibold">AI Capability Gap Diagnostic</span>,
-              a paid assessment designed to show you where AI can create the most value in your business,
-              where you have risk, and what the smartest next steps look like.
+              Start with the <span className="text-white font-semibold">AI Capability Gap Diagnostic</span>
+              for <span className="text-white font-semibold">$197</span>, a paid assessment designed to show
+              you where AI can create the most value in your business, where you have risk,
+              and what the smartest next steps look like.
             </p>
             <a
               href="/ai-capability-gap-diagnostic"
