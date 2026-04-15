@@ -213,8 +213,12 @@ export default function IntakeClient({
           <div className="mt-6 h-2 bg-white/10 rounded-full overflow-hidden">
             <div className="h-full bg-accent" style={{ width: `${progress}%` }} />
           </div>
-          {loadingSaved && <p className="mt-3 text-sm text-light/50">Loading saved answers...</p>}
-          {error && (
+          {loadingSaved && (
+            <div className="mt-4 rounded-lg border border-electric/20 bg-electric/10 px-4 py-3 text-sm text-light/80">
+              Recovering your order and loading your intake, one moment...
+            </div>
+          )}
+          {error && !loadingSaved && (
             <div className="mt-4 rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
               {error}
             </div>
