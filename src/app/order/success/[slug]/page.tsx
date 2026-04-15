@@ -73,7 +73,7 @@ export default async function OrderSuccessPage({
           {slug === "ai-capability-gap-diagnostic" ? (
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href={`/diagnostic/intake${email ? `?email=${encodeURIComponent(email)}` : ""}`}
+                href={`/diagnostic/intake?sessionId=${encodeURIComponent(sessionId || "")}${email ? `&email=${encodeURIComponent(email)}` : ""}`}
                 className="inline-block bg-accent text-white px-8 py-3 rounded-lg font-heading font-semibold hover:bg-accent/90 transition-all"
               >
                 Complete the Questionnaire

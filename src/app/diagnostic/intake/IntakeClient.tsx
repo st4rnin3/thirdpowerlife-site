@@ -64,14 +64,17 @@ const sections = [
 export default function IntakeClient({
   initialEmail = "",
   initialOrderId = "",
+  initialSessionId = "",
 }: {
   initialEmail?: string;
   initialOrderId?: string;
+  initialSessionId?: string;
 }) {
   const [step, setStep] = useState(0);
   const [email, setEmail] = useState(initialEmail);
   const [orderId, setOrderId] = useState(initialOrderId);
   const [answers, setAnswers] = useState<Record<string, string[]>>({});
+  const [sessionId] = useState(initialSessionId);
   const [saving, setSaving] = useState(false);
   const [loadingSaved, setLoadingSaved] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -86,7 +89,7 @@ export default function IntakeClient({
       setError("");
       try {
         let currentOrderId = orderId;
-        if (!currentOrderId) {
+        if (!currentOrderId && email) {
           const orderRes = await fetch(`/api/diagnostic/order?email=${encodeURIComponent(email)}`);
           const orderData = await orderRes.json();
           if (!orderRes.ok) throw new Error(orderData.error || "Failed to fetch order");
@@ -95,6 +98,22 @@ export default function IntakeClient({
             setOrderId(currentOrderId);
           }
         }
+
+        if (!currentOrderId && sessionId) {
+          const initRes = await fetch("/api/diagnostic/init", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ sessionId }),
+          });
+          const initData = await initRes.json();
+          if (!initRes.ok) throw new Error(initData.error || "Failed to initialize order");
+          if (initData.order?.id) {
+            currentOrderId = initData.order.id;
+            setOrderId(currentOrderId);
+            if (initData.order?.email && !email) setEmail(initData.order.email);
+          }
+        }
+
         if (!currentOrderId) return;
 
         const responsesRes = await fetch(`/api/diagnostic/responses?orderId=${encodeURIComponent(currentOrderId)}`);
