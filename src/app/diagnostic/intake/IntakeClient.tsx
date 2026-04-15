@@ -91,9 +91,8 @@ export default function IntakeClient({
         let currentOrderId = orderId;
         if (!currentOrderId && email) {
           const orderRes = await fetch(`/api/diagnostic/order?email=${encodeURIComponent(email)}`);
-          const orderData = await orderRes.json();
-          if (!orderRes.ok) throw new Error(orderData.error || "Failed to fetch order");
-          if (orderData.order?.id) {
+          const orderData = await orderRes.json().catch(() => ({}));
+          if (orderRes.ok && orderData.order?.id) {
             currentOrderId = orderData.order.id;
             setOrderId(currentOrderId);
           }

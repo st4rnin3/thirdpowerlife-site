@@ -16,8 +16,22 @@ export async function POST(req: NextRequest) {
 
     let resolvedOrderId = orderId;
     if (!resolvedOrderId && email) {
-      const rows = await supabaseSelect('capability_diagnostic_orders', `?select=id,email,status&email=eq.${encodeURIComponent(email)}&order=created_at.desc&limit=1`);
+      const rows = await supabaseSelect('capability_diagnostic_orders', `?select=id,email,status&email=eq.${encodeURIComponent(email)}&product_slug=eq.ai-capability-gap-diagnostic&order=created_at.desc&limit=1`).catch(() => []);
       resolvedOrderId = rows?.[0]?.id;
+    }
+
+    if (!resolvedOrderId && email) {
+      const createdRows = await supabaseUpsert(
+        'capability_diagnostic_orders',
+        {
+          email,
+          product_slug: 'ai-capability-gap-diagnostic',
+          status: isSubmitted ? 'intake_complete' : 'intake_started',
+          updated_at: new Date().toISOString(),
+        },
+        'email,product_slug'
+      );
+      resolvedOrderId = createdRows?.[0]?.id;
     }
 
     if (!resolvedOrderId) {
