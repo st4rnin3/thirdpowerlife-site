@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabaseSelect, supabaseUpdate, supabaseUpsert } from '@/lib/supabase-admin';
+import { supabaseInsert, supabaseSelect, supabaseUpdate, supabaseUpsert } from '@/lib/supabase-admin';
 
 function escapeHtml(str: string): string {
   return str
@@ -21,16 +21,12 @@ export async function POST(req: NextRequest) {
     }
 
     if (!resolvedOrderId && email) {
-      const createdRows = await supabaseUpsert(
-        'capability_diagnostic_orders',
-        {
-          email,
-          product_slug: 'ai-capability-gap-diagnostic',
-          status: isSubmitted ? 'intake_complete' : 'intake_started',
-          updated_at: new Date().toISOString(),
-        },
-        'email,product_slug'
-      );
+      const createdRows = await supabaseInsert('capability_diagnostic_orders', {
+        email,
+        product_slug: 'ai-capability-gap-diagnostic',
+        status: isSubmitted ? 'intake_complete' : 'intake_started',
+        updated_at: new Date().toISOString(),
+      });
       resolvedOrderId = createdRows?.[0]?.id;
     }
 
