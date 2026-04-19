@@ -24,6 +24,8 @@ Professional website for Dan Gentry — TEDx Speaker, AI Strategist, and Your Pe
 | `/order/[slug]` | Product order page — fetches product details from Stripe by slug |
 | `/order/success` | Post-payment confirmation page |
 | `/order/cancelled` | Payment cancelled / try again page |
+| `/connect` | CONNECT 2026 post-event page — AI Ascension Mini-Survey (interactive, client-side scoring → Level 0-3 result card) and Cal.com booking embed for AI Clarity Calls |
+| `/commander-launchpad` | Commander Launchpad sales page — 3-tier productized offer (Audit $997, Sprint $5k-$9k, Retainer $1.5k-$4k/mo) |
 | `/blog` | Blog index — lists all published posts, sorted newest first |
 | `/blog/[slug]` | Individual blog post rendered from Markdown with Article JSON-LD |
 
@@ -44,6 +46,7 @@ Dan sends `/order/<slug>` links directly to clients after discovery calls. There
 | `speaking-engagement` | Speaking Engagement | $5,000 | One-time |
 | `fcaio-initial` | fCAIO Initial Session | $1,000 | One-time |
 | `fcaio-monthly` | fCAIO Monthly Retainer | $2,500/mo | Recurring (monthly) |
+| `commander-launchpad-audit` | Commander Launchpad Audit | $997 (recommended starting price) | One-time |
 
 ### Payment flow
 

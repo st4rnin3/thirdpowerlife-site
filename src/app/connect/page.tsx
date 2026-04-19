@@ -1,54 +1,24 @@
 import type { Metadata } from "next";
 import CalEmbedConnect from "./CalEmbedConnect";
+import AiAscensionSurvey from "./AiAscensionSurvey";
 
 export const metadata: Metadata = {
   title: "CONNECT 2026 — Your Next Step | Dan Gentry",
   description:
-    "You attended CONNECT 2026. Now take the next step: download the AI Ascension Guide and book your free AI Clarity Call with Dan Gentry.",
+    "You attended CONNECT 2026. Now take the next step: find your AI Ascension level and book your free AI Clarity Call with Dan Gentry.",
   openGraph: {
     title: "CONNECT 2026 — Your Next Step | Dan Gentry",
-    description: "You attended CONNECT 2026. Now take the next step: download the AI Ascension Guide and book your free AI Clarity Call with Dan Gentry.",
+    description: "You attended CONNECT 2026. Now take the next step: find your AI Ascension level and book your free AI Clarity Call with Dan Gentry.",
     url: "https://www.thirdpowerlife.ai/connect",
   },
   twitter: {
     title: "CONNECT 2026 — Your Next Step | Dan Gentry",
-    description: "You attended CONNECT 2026. Now take the next step: download the AI Ascension Guide and book your free AI Clarity Call with Dan Gentry.",
+    description: "You attended CONNECT 2026. Now take the next step: find your AI Ascension level and book your free AI Clarity Call with Dan Gentry.",
   },
   alternates: {
     canonical: "https://www.thirdpowerlife.ai/connect",
   },
 };
-
-const levels = [
-  {
-    num: "0",
-    name: "Explorer",
-    desc: "Curious about AI but not sure where to start",
-    color: "border-yellow-500/30",
-    numColor: "text-yellow-400",
-  },
-  {
-    num: "1",
-    name: "Assistant",
-    desc: "Using AI for tasks — drafts, research, brainstorming",
-    color: "border-electric/30",
-    numColor: "text-electric",
-  },
-  {
-    num: "2",
-    name: "Agent",
-    desc: "AI runs workflows while you focus on Meaning Work",
-    color: "border-blue-400/30",
-    numColor: "text-blue-400",
-  },
-  {
-    num: "3",
-    name: "Commander",
-    desc: "Multiple agents. You lead vision & relationships.",
-    color: "border-green-400/30",
-    numColor: "text-green-400",
-  },
-];
 
 export default function ConnectPage() {
   return (
@@ -71,90 +41,27 @@ export default function ConnectPage() {
         </div>
       </section>
 
-      {/* AI Ascension Guide — Coming Soon */}
-      <section className="bg-midnight/30 py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="glass rounded-2xl p-8 md:p-12 text-center">
-            <p className="text-electric font-heading text-sm uppercase tracking-widest mb-3">
-              Coming Soon
-            </p>
-            <h2 className="text-3xl font-heading font-bold text-white mb-4">
-              The AI Ascension Guide{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500">
-                2.0
-              </span>
-            </h2>
-            <p className="text-light/70 max-w-xl mx-auto mb-6">
-              The complete framework behind everything from the talk — all four levels
-              of AI Ascension, the IMPACT delegation method, Machine Work vs. Meaning
-              Work, and your personal roadmap to AI that amplifies trust. Updated for
-              2026.
-            </p>
-            <p className="text-light/50 text-sm mb-6">
-              Drop your email and we&apos;ll send it the moment it&apos;s ready.
-            </p>
-            <form
-              action="https://app.kit.com/forms/YOUR_FORM_ID/subscriptions"
-              method="post"
-              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-            >
-              <input
-                type="email"
-                name="email_address"
-                placeholder="your@email.com"
-                required
-                className="flex-1 px-4 py-3 rounded-lg bg-midnight/80 border border-white/10 text-white placeholder-light/40 focus:outline-none focus:border-electric/50 transition"
-              />
-              <button
-                type="submit"
-                className="bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:shadow-[0_0_20px_rgba(0,210,255,0.3)] transition-all duration-300 whitespace-nowrap"
-              >
-                Notify Me
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
       {/* Find Your Level */}
       <section className="bg-navy py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <p className="text-electric font-heading text-sm uppercase tracking-widest mb-3">
-              Where Are You Today?
+              Find Your Level
             </p>
             <h2 className="text-3xl font-heading font-bold text-white mb-3">
-              The 4 Levels of AI Ascension
+              What Level of AI Ascension Are You?
             </h2>
             <p className="text-light/60 max-w-xl mx-auto">
-              Identify your level. Then let&apos;s map your next move.
+              Take this 2-minute self-evaluation to see where you are today, what
+              trust requires at your level, and what your smartest next move should be.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {levels.map((level) => (
-              <div
-                key={level.num}
-                className={`bg-midnight/60 border ${level.color} rounded-xl p-6 hover:bg-midnight/80 transition-all duration-300`}
-              >
-                <div className="flex items-baseline gap-3 mb-2">
-                  <span
-                    className={`text-4xl font-heading font-bold ${level.numColor}`}
-                  >
-                    {level.num}
-                  </span>
-                  <span className="text-white font-heading font-bold text-xl">
-                    {level.name}
-                  </span>
-                </div>
-                <p className="text-light/60 text-sm">{level.desc}</p>
-              </div>
-            ))}
-          </div>
+          <AiAscensionSurvey />
         </div>
       </section>
 
       {/* AI Clarity Call */}
-      <section className="bg-midnight/30 py-16">
+      <section id="clarity-call" className="bg-midnight/30 py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <p className="text-electric font-heading text-sm uppercase tracking-widest mb-3">

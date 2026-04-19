@@ -53,6 +53,19 @@ const successContent: Record<string, SuccessContent> = {
     detail:
       "You'll receive an onboarding email within 24 hours with access to scheduling, communication channels, and your first month's kickoff agenda.",
   },
+  "commander-launchpad-audit": {
+    heading: "Your Launchpad Audit is confirmed.",
+    message:
+      "You're on the board. Dan will review your intake and deliver your audit within 5-7 business days.",
+    detail:
+      "Step 1: complete your Commander Launchpad intake. Step 2: Dan delivers your Environment Snapshot, Workflow Leverage Map, and 7-Day Action Plan. Step 3: 30-minute walkthrough call.",
+    upsell: {
+      heading: "Ready for the full agent stack?",
+      body: "Most Audit clients move to the 3-Agent Launchpad Sprint — a 2-week deployment that gets your Chief, Revenue, and Inbox or Content agents operational with human approval gates.",
+      cta: "Book a Discovery Call",
+      href: "/schedule",
+    },
+  },
   "ai-capability-gap-diagnostic": {
     heading: "You're in. Let's get this moving.",
     message:

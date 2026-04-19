@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, type FormEvent, type ChangeEvent } from "react";
+import { useState, useEffect, type FormEvent, type ChangeEvent } from "react";
+import { getConnectData } from "@/lib/connect-autofill";
 
 /* -------------------------------------------------------------------------- */
 /* Types                                                                      */
@@ -57,6 +58,16 @@ export default function NewsletterSignup({
   const [smsConsent, setSmsConsent] = useState(false);
   const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<FormStatus>("idle");
+
+  // Pre-fill from CONNECT survey data if fields are still empty
+  useEffect(() => {
+    const saved = getConnectData();
+    if (saved) {
+      if (!email && saved.email) setEmail(saved.email);
+      if (!phone && saved.phone) setPhone(saved.phone);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const isTerminal =
     status === "subscribed" || status === "already_subscribed";

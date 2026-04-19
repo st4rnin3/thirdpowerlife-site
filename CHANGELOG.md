@@ -4,6 +4,125 @@ All notable changes to the ThirdPowerLife.ai site are recorded here. Newest entr
 
 ---
 
+## [Unreleased] - 2026-04-19
+
+### Remove Unfinished Guide 2.0 Waitlist Section from /connect
+
+**Summary:**
+- Removed the "AI Ascension Guide 2.0 Coming Soon" section from `src/app/connect/page.tsx` — it contained a hardcoded placeholder form action (`YOUR_FORM_ID`) that would have produced a broken experience for visitors.
+- Updated page metadata (`description`, `og:description`, `twitter:description`) from "download the AI Ascension Guide" to "find your AI Ascension level" to reflect the page's actual current purpose.
+- Updated `/connect` route description in `README.md` to remove the Guide 2.0 waitlist reference.
+
+**Who it's for:** Site visitors on `/connect`. The page now flows without interruption: Hero → Find Your Level (survey) → AI Clarity Call (Cal.com embed) → About Dan.
+
+**How to test:**
+- [ ] Visit `/connect` — confirm no "Coming Soon" or Guide 2.0 waitlist section is visible
+- [ ] Confirm the page `<head>` description contains "find your AI Ascension level" (not "download the AI Ascension Guide")
+- [ ] Inspect page source or Open Graph preview — verify `og:description` and `twitter:description` reflect the updated copy
+
+**Breaking changes:** None. Section removed; no routes, APIs, or data models changed.
+
+**Migration required:** None.
+
+**Updated files:**
+- `src/app/connect/page.tsx` — removed Guide 2.0 Coming Soon section, updated metadata descriptions
+- `README.md` — updated /connect route description
+
+---
+
+## [Unreleased] - 2026-04-19
+
+### AI Ascension Mini-Survey on /connect
+
+**Summary:**
+- Replaced the static 4-level AI Ascension cards on `src/app/connect/page.tsx` with an interactive 8-question diagnostic component (`src/app/connect/AiAscensionSurvey.tsx`) that scores visitors into one of four levels: Level 0 (Explorer), Level 1 (Assistant), Level 2 (Agent), or Level 3 (Commander).
+- Scoring is fully deterministic with a Q7 tie-break; all logic runs client-side — no new dependencies or backend routes added.
+- The result card surfaces level, explanation, common failure mode, trust principle, next move, and a level-specific CTA that scrolls to the existing `#clarity-call` booking section.
+
+**Who it's for:** CONNECT 2026 attendees and site visitors evaluating their AI maturity. Replaces a passive content block with an actionable self-assessment, improving qualification signal before an AI Clarity Call booking.
+
+**How to test:**
+- [ ] Visit `/connect` — confirm the static 4-level cards are gone and the survey renders in their place
+- [ ] Complete all 8 questions and confirm a result card appears with the correct level, failure mode, trust principle, and next-move copy
+- [ ] Verify the result CTA button scrolls to `#clarity-call` without a full page reload
+- [ ] Use the Back button to confirm navigation returns to the previous question with the prior selection preserved
+- [ ] Tab through the survey using keyboard only — confirm radiogroup ARIA pattern is intact and all controls are reachable
+- [ ] Test on a mobile viewport — confirm single-question stepped UI and progress bar are responsive
+- [ ] Confirm no new network requests fire during or after survey completion (pure client-side)
+
+**Breaking changes:** None. The `/connect` route is preserved; only the internal content block was replaced.
+
+**Migration required:** None.
+
+**New files:**
+- `src/app/connect/AiAscensionSurvey.tsx` — interactive 8-question diagnostic with scoring engine, stepped UI, progress bar, result card, and level-specific CTAs
+
+**Updated files:**
+- `src/app/connect/page.tsx` — removed static 4-level cards, inserted `AiAscensionSurvey` component
+
+---
+
+## [Unreleased] - 2026-04-19
+
+### Commander Launchpad Sales Page and Offer
+
+**Summary:**
+- Added an 8-section landing page at `/commander-launchpad` for the Commander Launchpad productized service offer — a 3-tier engagement (Audit, Sprint, Retainer) that takes founder-led businesses from scattered AI tool usage to a functioning 3-agent operating system.
+- Added `/commander-launchpad` to `src/app/sitemap.ts` at priority 0.8 with monthly change frequency.
+- Added `commander-launchpad-audit` to `src/data/order-success.ts` with a custom confirmation heading, message, delivery step sequence, and upsell CTA linking to the Sprint discovery call at `/schedule`.
+- Added full offer architecture spec at `specs/commander-launchpad/offer.md` covering ICP, tier pricing, delivery checklists, intake questions, risks, and offer ladder position.
+
+**Who it's for:** Founder-operators (1-25 person teams, $200K-$5M revenue) who are already paying for AI tools but not getting operational leverage from them. The landing page is the public conversion surface. The Tier 1 Audit ($997) is purchasable via Stripe; Tier 2 Sprint ($5k-$9k) and Tier 3 Retainer ($1.5k-$4k/mo) route to a discovery call at `/schedule`.
+
+**Offer ladder position:**
+```
+$197 AI Capability Gap Diagnostic  →  $997 Launchpad Audit (Tier 1)
+  →  $5k-$9k 3-Agent Sprint (Tier 2)
+  →  $1.5k-$4k/mo Managed Optimization (Tier 3)
+  →  $1,000 fCAIO Initial Session
+  →  fCAIO Monthly Retainer
+```
+
+**Landing page sections:**
+1. Hero — core promise and tier entry CTA
+2. Before/After framing — "tool overwhelm" vs. "functioning operating system"
+3. 3-tier overview with scopes and prices
+4. Who this is for / not for (ICP qualification)
+5. Agent configuration options (Chief, Revenue, Inbox or Content)
+6. Process walkthrough
+7. FAQ
+8. Footer CTA
+
+**How to test:**
+- [ ] Visit `/commander-launchpad` — confirm all 8 sections render correctly with the dark navy/glass-card theme
+- [ ] Confirm Tier 1 "Buy the Audit" CTA links to the correct Stripe order URL (requires `commander-launchpad-audit` Stripe product to be created with metadata `slug: commander-launchpad-audit`)
+- [ ] Confirm Tier 2 and Tier 3 CTAs link to `/schedule` for discovery call booking
+- [ ] Complete a test Stripe payment for the Audit — confirm redirect to `/order/success?slug=commander-launchpad-audit` shows the custom heading "Your Launchpad audit is confirmed." and the intake step sequence
+- [ ] Visit `/sitemap.xml` — confirm `/commander-launchpad` appears
+- [ ] Confirm page `<head>` includes `og:title`, `og:description`, `og:url`, `twitter:title`, `twitter:description`, and `<link rel="canonical" href="https://www.thirdpowerlife.ai/commander-launchpad">`
+
+**Breaking changes:** None. All additions; no existing routes or data models modified.
+
+**New files:**
+- `src/app/commander-launchpad/page.tsx` — 8-section landing page with full OG/Twitter metadata and canonical URL
+- `specs/commander-launchpad/offer.md` — full offer architecture (ICP, tier architecture, delivery assets, intake questions, delivery checklists, risks, offer ladder integration)
+
+**Updated files:**
+- `src/app/sitemap.ts` — added `/commander-launchpad` static page entry (priority 0.8, monthly)
+- `src/data/order-success.ts` — added `commander-launchpad-audit` success page content
+
+**Stripe setup required (before Tier 1 Audit is purchasable):**
+1. In Stripe Dashboard, create a Product named "Commander Launchpad Audit" with a one-time price of $997.
+2. Add metadata: `slug` = `commander-launchpad-audit`.
+3. The order page at `/order/commander-launchpad-audit` is then live with no further code changes.
+
+**Known gaps / follow-ups (not blocking first sale):**
+- Intake form at `/commander-launchpad/intake` — not yet built; required for full launch per `specs/commander-launchpad/offer.md` Section 10
+- Before/after case study, short-form video walkthrough, and ROI calculator — listed as nice-to-have in the offer spec
+- Agent Starter Sprint spec (2026-04-17) is superseded by Commander Launchpad per `specs/commander-launchpad/offer.md` Appendix A; that spec should be marked as superseded when located
+
+---
+
 ## [Unreleased] - 2026-04-12
 
 ### Public Newsletter Signup Component

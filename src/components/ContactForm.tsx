@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, type FormEvent } from "react";
+import { getConnectData } from "@/lib/connect-autofill";
 
 const INQUIRY_TYPES = [
   "Speaking Engagement",
@@ -50,6 +51,17 @@ const LABEL_CLASSES = "block text-sm font-medium text-brand-navy";
 export default function ContactForm() {
   const [form, setForm] = useState<FormData>(INITIAL_FORM);
   const [submitted, setSubmitted] = useState(false);
+
+  // Pre-fill email from CONNECT survey data if the field is still empty
+  useEffect(() => {
+    const saved = getConnectData();
+    if (saved) {
+      setForm((prev) => ({
+        ...prev,
+        email: prev.email || saved.email || "",
+      }));
+    }
+  }, []);
 
   function update(field: keyof FormData, value: string) {
     setForm((prev) => ({ ...prev, [field]: value }));

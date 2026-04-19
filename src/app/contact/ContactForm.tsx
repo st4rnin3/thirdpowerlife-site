@@ -1,9 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { getConnectData } from "@/lib/connect-autofill";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // Pre-fill email/phone from CONNECT survey data if fields are empty
+  useEffect(() => {
+    const saved = getConnectData();
+    if (!saved || !formRef.current) return;
+    const form = formRef.current;
+    const emailInput = form.elements.namedItem("email") as HTMLInputElement | null;
+    const phoneInput = form.elements.namedItem("phone") as HTMLInputElement | null;
+    if (emailInput && !emailInput.value && saved.email) emailInput.value = saved.email;
+    if (phoneInput && !phoneInput.value && saved.phone) phoneInput.value = saved.phone;
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -59,7 +72,7 @@ export default function ContactForm() {
 
   return (
     <div className="glass rounded-2xl p-8">
-      <form onSubmit={handleSubmit} className="space-y-5">
+      <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
 
         {/* Name */}
         <div>
