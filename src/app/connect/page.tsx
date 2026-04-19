@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import CalEmbedConnect from "@/components/CalEmbedConnect";
 
@@ -31,52 +32,93 @@ const LEVELS = [
     level: 0,
     name: "Explorer",
     tagline: "Trust starts here",
-    colorClass: "text-yellow-400",
-    borderClass: "border-yellow-400/30",
+    micro: "Learning before delegating",
+    image: "/images/connect/level-0-explorer.jpg",
+    alt: "A person standing before ascending glass steps illuminated by warm golden light",
+    accentColor: "#facc15", // yellow-400
+    glowShadow: "0 0 40px rgba(250, 204, 21, 0.25)",
+    borderGlow: "rgba(250, 204, 21, 0.4)",
   },
   {
     level: 1,
     name: "Assistant",
     tagline: "Saving hours, keeping judgment",
-    colorClass: "text-electric",
-    borderClass: "border-electric/30",
+    micro: "AI helps, you still decide",
+    image: "/images/connect/level-1-assistant.jpg",
+    alt: "A figure standing next to a floating crystalline monolith in a vast dark space",
+    accentColor: "#00D2FF", // electric
+    glowShadow: "0 0 40px rgba(0, 210, 255, 0.25)",
+    borderGlow: "rgba(0, 210, 255, 0.4)",
   },
   {
     level: 2,
     name: "Agent",
     tagline: "Delegation requires design",
-    colorClass: "text-blue-400",
-    borderClass: "border-blue-400/30",
+    micro: "Workflows move with supervision",
+    image: "/images/connect/level-2-agent.jpg",
+    alt: "A person at the center of an interconnected network of glass nodes with cyan and gold pathways",
+    accentColor: "#60a5fa", // blue-400
+    glowShadow: "0 0 40px rgba(96, 165, 250, 0.25)",
+    borderGlow: "rgba(96, 165, 250, 0.4)",
   },
   {
     level: 3,
     name: "Commander",
     tagline: "Scale requires guardrails",
-    colorClass: "text-green-400",
-    borderClass: "border-green-400/30",
+    micro: "Systems operate, you lead",
+    image: "/images/connect/level-3-commander.jpg",
+    alt: "A figure standing on an illuminated command platform with guardrails and golden rings of light",
+    accentColor: "#4ade80", // green-400
+    glowShadow: "0 0 40px rgba(74, 222, 128, 0.25)",
+    borderGlow: "rgba(74, 222, 128, 0.4)",
   },
 ] as const;
 
 export default function ConnectPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-navy py-16 sm:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-electric font-heading uppercase tracking-widest text-sm mb-4">
+      {/* ============================================================ */}
+      {/* Hero — atmospheric background with layered radial gradients  */}
+      {/* ============================================================ */}
+      <section
+        className="relative py-24 sm:py-32 lg:py-40"
+        style={{
+          background: [
+            "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(0, 87, 255, 0.15) 0%, transparent 70%)",
+            "radial-gradient(ellipse 40% 40% at 30% 80%, rgba(250, 204, 21, 0.06) 0%, transparent 60%)",
+            "radial-gradient(ellipse 50% 50% at 70% 90%, rgba(0, 210, 255, 0.05) 0%, transparent 60%)",
+            "#001433",
+          ].join(", "),
+        }}
+      >
+        {/* Subtle bloom accent — top center glow */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          aria-hidden="true"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 35% at 50% -5%, rgba(0, 210, 255, 0.08) 0%, transparent 70%)",
+          }}
+        />
+
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-electric font-heading uppercase tracking-widest text-sm mb-5 animate-fade-in-up">
             CONNECT 2026
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">
+
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 animate-fade-in-up">
             Humanity{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500">
               Amplified
             </span>
           </h1>
-          <p className="text-xl text-light/70 max-w-2xl mx-auto mb-8">
-            Thanks for being in the room. Here&apos;s how to keep the momentum
-            going.
+
+          <p className="text-xl text-light/70 max-w-2xl mx-auto mb-10 animate-fade-in-up">
+            Thanks for being in the room. Now let&apos;s turn insight into your
+            next move.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+
+          <div className="flex flex-wrap justify-center gap-4 animate-fade-in-up">
             <Link
               href="/ai-ascension-diagnostic"
               className="inline-block bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:shadow-[0_0_20px_rgba(0,210,255,0.3)] transition-all duration-300"
@@ -93,9 +135,46 @@ export default function ConnectPage() {
         </div>
       </section>
 
-      {/* 4 Levels of AI Ascension */}
-      <section className="bg-navy py-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ============================================================ */}
+      {/* Transition Band — bold bridge text                           */}
+      {/* ============================================================ */}
+      <section className="relative py-12 sm:py-16">
+        {/* Top gradient divider */}
+        <div
+          className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-full max-w-3xl"
+          aria-hidden="true"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, rgba(0, 210, 255, 0.3), transparent)",
+          }}
+        />
+
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-2xl md:text-3xl font-heading font-bold text-white mb-4 leading-snug">
+            You don&apos;t need more AI noise.
+          </p>
+          <p className="text-2xl md:text-3xl font-heading font-bold text-white leading-snug">
+            You need to know where you are, what trust requires, and what your
+            next move is.
+          </p>
+        </div>
+
+        {/* Bottom gradient divider */}
+        <div
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 h-px w-full max-w-3xl"
+          aria-hidden="true"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, rgba(0, 210, 255, 0.3), transparent)",
+          }}
+        />
+      </section>
+
+      {/* ============================================================ */}
+      {/* The 4 Levels — image-led 2x2 grid centerpiece               */}
+      {/* ============================================================ */}
+      <section className="py-16 sm:py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-electric font-heading text-sm uppercase tracking-widest mb-3">
               The Framework
@@ -109,48 +188,116 @@ export default function ConnectPage() {
             </p>
           </div>
 
-          {/* Level cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {LEVELS.map((lvl) => (
-              <div
-                key={lvl.level}
-                className={`glass rounded-2xl p-8 border ${lvl.borderClass} text-center`}
-              >
-                <span
-                  className={`inline-block text-5xl font-heading font-bold ${lvl.colorClass} mb-3`}
-                >
-                  {lvl.level}
-                </span>
-                <h3 className="text-white font-heading font-bold text-lg mb-2">
-                  {lvl.name}
-                </h3>
-                <p className="text-light/60 text-sm leading-relaxed">
-                  {lvl.tagline}
-                </p>
-              </div>
-            ))}
-          </div>
+          {/* Grid with ascension gradient connector */}
+          <div className="relative">
+            {/* Ascension connector — vertical gradient line (desktop only) */}
+            <div
+              className="hidden lg:block absolute -left-6 top-8 bottom-8 w-px"
+              aria-hidden="true"
+              style={{
+                background:
+                  "linear-gradient(to bottom, #facc15, #00D2FF 33%, #60a5fa 66%, #4ade80)",
+              }}
+            />
 
-          {/* Diagnostic Launch Band */}
-          <div className="glass rounded-2xl p-8 md:p-12 text-center">
-            <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4">
-              Find your level in under 2 minutes.
-            </h3>
-            <p className="text-light/60 max-w-2xl mx-auto mb-8">
-              This diagnostic will show you where you are now, what trust
-              requires at your level, and the smartest next step from here.
-            </p>
-            <Link
-              href="/ai-ascension-diagnostic"
-              className="inline-block bg-accent text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-[0_0_20px_rgba(0,210,255,0.3)] transition-all duration-300"
-            >
-              Start the Diagnostic
-            </Link>
+            <div className="grid md:grid-cols-2 gap-5 lg:gap-6">
+              {LEVELS.map((lvl) => (
+                <div
+                  key={lvl.level}
+                  className="group relative overflow-hidden rounded-2xl"
+                  style={{ aspectRatio: "16 / 10" }}
+                >
+                  {/* Background image */}
+                  <Image
+                    src={lvl.image}
+                    alt={lvl.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+
+                  {/* Dark overlay for text legibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30 transition-colors duration-500 group-hover:from-black/70 group-hover:via-black/40 group-hover:to-black/20" />
+
+                  {/* Bottom border glow accent */}
+                  <div
+                    className="absolute bottom-0 left-0 right-0 h-px"
+                    aria-hidden="true"
+                    style={{
+                      background: `linear-gradient(90deg, transparent, ${lvl.borderGlow}, transparent)`,
+                    }}
+                  />
+
+                  {/* Content — bottom-left positioned */}
+                  <div className="absolute bottom-0 left-0 p-6 md:p-8">
+                    {/* Large numeral with accent glow */}
+                    <span
+                      className="block text-6xl md:text-7xl font-heading font-bold opacity-30"
+                      style={{
+                        color: lvl.accentColor,
+                        textShadow: lvl.glowShadow,
+                      }}
+                    >
+                      {lvl.level}
+                    </span>
+
+                    <h3 className="text-xl md:text-2xl font-heading font-bold text-white -mt-2 mb-1">
+                      {lvl.name}
+                    </h3>
+
+                    <p className="text-sm md:text-base text-light/70">
+                      {lvl.tagline}
+                    </p>
+
+                    <p className="text-xs text-light/50 mt-1">{lvl.micro}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* AI Clarity Call */}
+      {/* ============================================================ */}
+      {/* Diagnostic Launch Band                                       */}
+      {/* ============================================================ */}
+      <section className="py-16 sm:py-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            className="glass rounded-2xl p-8 md:p-12 text-center relative overflow-hidden"
+          >
+            {/* Subtle radial glow inside the glass panel */}
+            <div
+              className="pointer-events-none absolute inset-0"
+              aria-hidden="true"
+              style={{
+                background:
+                  "radial-gradient(ellipse 70% 60% at 50% 40%, rgba(0, 87, 255, 0.12) 0%, transparent 70%)",
+              }}
+            />
+
+            <div className="relative">
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4">
+                Find your level in under 2 minutes.
+              </h3>
+              <p className="text-light/60 max-w-2xl mx-auto mb-8">
+                This diagnostic will show you where you are now, what trust
+                requires at your level, and the smartest next step from here.
+              </p>
+              <Link
+                href="/ai-ascension-diagnostic"
+                className="inline-block bg-accent text-white px-8 py-4 rounded-lg font-semibold text-lg hover:animate-glow transition-all duration-300"
+              >
+                Start the Diagnostic
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* AI Clarity Call — Booking                                    */}
+      {/* ============================================================ */}
       <section id="clarity-call" className="bg-midnight/30 py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
@@ -190,7 +337,9 @@ export default function ConnectPage() {
         </div>
       </section>
 
-      {/* Who is Dan */}
+      {/* ============================================================ */}
+      {/* About Dan                                                    */}
+      {/* ============================================================ */}
       <section className="bg-navy py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="glass rounded-2xl p-8 md:p-12">

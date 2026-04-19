@@ -6,6 +6,28 @@ All notable changes to the ThirdPowerLife.ai site are recorded here. Newest entr
 
 ## [Unreleased] - 2026-04-19
 
+### CONNECT Landing Page — Keynote-Image-Led Visual Redesign
+
+**Summary:**
+- Rewrote `/src/app/connect/page.tsx` with image-led layout: hero atmospheric radial gradients (blue, amber, cyan bloom layers), a transition band with bridge copy, a 2x2 keynote image grid for the 4 Levels section, and an enhanced diagnostic launch band with glass container and interior glow
+- Added 4 keynote deck images to `/public/images/connect/` (`level-0` through `level-3`) used as full-bleed panel backgrounds via Next.js `Image` with `fill`/`object-cover`, dark gradient overlays, bottom-left text, accent-colored numeral glows, hover scale, and a desktop-only vertical ascension connector gradient line
+- Booking and About Dan sections below the fold are unchanged
+
+**Who it's for:** Visitors to `/connect` — the redesign improves visual hierarchy and brand consistency; no funnel routes, form behavior, or API calls were changed.
+
+**How to test:**
+- [ ] Visit `/connect` and confirm hero renders with gradient bloom layers and a `text-7xl` headline with fade-in animation
+- [ ] Verify the 4 Levels section shows keynote images as panel backgrounds with overlay text, numeral glows, and a vertical connector line on desktop
+- [ ] Hover each level panel and confirm the scale effect activates
+- [ ] Confirm booking and About Dan sections below the fold render correctly
+- [ ] Run `next build` and confirm `/connect` compiles as a static page with no errors
+
+**Breaking changes:** None
+
+**Migration required:** None
+
+---
+
 ### Remove Unfinished Guide 2.0 Waitlist Section from /connect
 
 **Summary:**
@@ -27,38 +49,6 @@ All notable changes to the ThirdPowerLife.ai site are recorded here. Newest entr
 **Updated files:**
 - `src/app/connect/page.tsx` — removed Guide 2.0 Coming Soon section, updated metadata descriptions
 - `README.md` — updated /connect route description
-
----
-
-## [Unreleased] - 2026-04-19
-
-### AI Ascension Mini-Survey on /connect
-
-**Summary:**
-- Replaced the static 4-level AI Ascension cards on `src/app/connect/page.tsx` with an interactive 8-question diagnostic component (`src/app/connect/AiAscensionSurvey.tsx`) that scores visitors into one of four levels: Level 0 (Explorer), Level 1 (Assistant), Level 2 (Agent), or Level 3 (Commander).
-- Scoring is fully deterministic with a Q7 tie-break; all logic runs client-side — no new dependencies or backend routes added.
-- The result card surfaces level, explanation, common failure mode, trust principle, next move, and a level-specific CTA that scrolls to the existing `#clarity-call` booking section.
-
-**Who it's for:** CONNECT 2026 attendees and site visitors evaluating their AI maturity. Replaces a passive content block with an actionable self-assessment, improving qualification signal before an AI Clarity Call booking.
-
-**How to test:**
-- [ ] Visit `/connect` — confirm the static 4-level cards are gone and the survey renders in their place
-- [ ] Complete all 8 questions and confirm a result card appears with the correct level, failure mode, trust principle, and next-move copy
-- [ ] Verify the result CTA button scrolls to `#clarity-call` without a full page reload
-- [ ] Use the Back button to confirm navigation returns to the previous question with the prior selection preserved
-- [ ] Tab through the survey using keyboard only — confirm radiogroup ARIA pattern is intact and all controls are reachable
-- [ ] Test on a mobile viewport — confirm single-question stepped UI and progress bar are responsive
-- [ ] Confirm no new network requests fire during or after survey completion (pure client-side)
-
-**Breaking changes:** None. The `/connect` route is preserved; only the internal content block was replaced.
-
-**Migration required:** None.
-
-**New files:**
-- `src/app/connect/AiAscensionSurvey.tsx` — interactive 8-question diagnostic with scoring engine, stepped UI, progress bar, result card, and level-specific CTAs
-
-**Updated files:**
-- `src/app/connect/page.tsx` — removed static 4-level cards, inserted `AiAscensionSurvey` component
 
 ---
 
