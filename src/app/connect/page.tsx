@@ -267,7 +267,7 @@ export default function ConnectPage() {
                   <div className="relative z-10 pl-14 pr-5 py-5">
                     {/* Large backdrop numeral */}
                     <span
-                      className="absolute top-2 right-4 text-8xl font-heading font-bold opacity-10 select-none"
+                      className="absolute top-2 right-4 text-8xl font-heading font-bold opacity-[0.15] select-none"
                       aria-hidden="true"
                       style={{
                         color: lvl.accentColor,
@@ -282,7 +282,7 @@ export default function ConnectPage() {
                         className="text-sm font-semibold mr-2 opacity-60"
                         style={{ color: lvl.accentColor }}
                       >
-                        L{lvl.level}
+                        Level {lvl.level}
                       </span>
                       {lvl.name}
                     </h3>
@@ -313,10 +313,10 @@ export default function ConnectPage() {
                           className="text-[10px] font-heading font-bold uppercase tracking-widest"
                           style={{ color: lvl.accentColor }}
                         >
-                          What Goes Wrong
+                          Trust Requires
                         </span>
                         <p className="text-xs text-light/70 mt-0.5 leading-snug">
-                          {lvl.goesWrong}
+                          {lvl.trustRequires}
                         </p>
                       </div>
 
@@ -325,10 +325,10 @@ export default function ConnectPage() {
                           className="text-[10px] font-heading font-bold uppercase tracking-widest"
                           style={{ color: lvl.accentColor }}
                         >
-                          Trust Requires
+                          What Goes Wrong
                         </span>
                         <p className="text-xs text-light/70 mt-0.5 leading-snug">
-                          {lvl.trustRequires}
+                          {lvl.goesWrong}
                         </p>
                       </div>
 
@@ -397,7 +397,7 @@ export default function ConnectPage() {
                   <div className="relative z-10 p-8 lg:p-10 min-h-[420px] lg:min-h-[460px] flex flex-col">
                     {/* Large backdrop numeral — oversized, semi-transparent */}
                     <span
-                      className="absolute top-4 right-6 text-[8rem] lg:text-[10rem] font-heading font-bold opacity-10 select-none leading-none"
+                      className="absolute top-4 right-6 text-[8rem] lg:text-[10rem] font-heading font-bold opacity-[0.15] select-none leading-none"
                       aria-hidden="true"
                       style={{
                         color: lvl.accentColor,
@@ -414,7 +414,7 @@ export default function ConnectPage() {
                           className="text-base font-semibold mr-2 opacity-60"
                           style={{ color: lvl.accentColor }}
                         >
-                          L{lvl.level}
+                          Level {lvl.level}
                         </span>
                         {lvl.name}
                       </h3>
@@ -426,60 +426,54 @@ export default function ConnectPage() {
                       </p>
                     </div>
 
-                    {/* Body area — two columns on large screens */}
-                    <div className="grid lg:grid-cols-2 gap-x-6 gap-y-4 flex-1">
-                      {/* Left column */}
-                      <div className="space-y-4">
-                        <div>
-                          <span
-                            className="text-[10px] font-heading font-bold uppercase tracking-widest"
-                            style={{ color: lvl.accentColor }}
-                          >
-                            What This Looks Like
-                          </span>
-                          <p className="text-sm text-light/70 mt-1 leading-relaxed">
-                            {lvl.looksLike}
-                          </p>
-                        </div>
-
-                        <div>
-                          <span
-                            className="text-[10px] font-heading font-bold uppercase tracking-widest"
-                            style={{ color: lvl.accentColor }}
-                          >
-                            What Goes Wrong
-                          </span>
-                          <p className="text-sm text-light/70 mt-1 leading-relaxed">
-                            {lvl.goesWrong}
-                          </p>
-                        </div>
+                    {/* Body area — 2x2 quadrant grid */}
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-5 flex-1">
+                      <div>
+                        <span
+                          className="text-[11px] font-heading font-bold uppercase tracking-widest"
+                          style={{ color: lvl.accentColor }}
+                        >
+                          What This Looks Like
+                        </span>
+                        <p className="text-sm text-light/70 mt-1 leading-relaxed">
+                          {lvl.looksLike}
+                        </p>
                       </div>
 
-                      {/* Right column */}
-                      <div className="space-y-4">
-                        <div>
-                          <span
-                            className="text-[10px] font-heading font-bold uppercase tracking-widest"
-                            style={{ color: lvl.accentColor }}
-                          >
-                            Trust Requires
-                          </span>
-                          <p className="text-sm text-light/70 mt-1 leading-relaxed">
-                            {lvl.trustRequires}
-                          </p>
-                        </div>
+                      <div>
+                        <span
+                          className="text-[11px] font-heading font-bold uppercase tracking-widest"
+                          style={{ color: lvl.accentColor }}
+                        >
+                          Trust Requires
+                        </span>
+                        <p className="text-sm text-light/70 mt-1 leading-relaxed">
+                          {lvl.trustRequires}
+                        </p>
+                      </div>
 
-                        <div>
-                          <span
-                            className="text-[10px] font-heading font-bold uppercase tracking-widest"
-                            style={{ color: lvl.accentColor }}
-                          >
-                            Next Move
-                          </span>
-                          <p className="text-sm text-light/55 mt-1 leading-relaxed">
-                            {lvl.nextMove}
-                          </p>
-                        </div>
+                      <div>
+                        <span
+                          className="text-[11px] font-heading font-bold uppercase tracking-widest"
+                          style={{ color: lvl.accentColor }}
+                        >
+                          What Goes Wrong
+                        </span>
+                        <p className="text-sm text-light/70 mt-1 leading-relaxed">
+                          {lvl.goesWrong}
+                        </p>
+                      </div>
+
+                      <div>
+                        <span
+                          className="text-[11px] font-heading font-bold uppercase tracking-widest"
+                          style={{ color: lvl.accentColor }}
+                        >
+                          Next Move
+                        </span>
+                        <p className="text-sm text-light/55 mt-1 leading-relaxed">
+                          {lvl.nextMove}
+                        </p>
                       </div>
                     </div>
                   </div>
