@@ -32,9 +32,13 @@ const LEVELS = [
     level: 0,
     name: "Explorer",
     tagline: "Trust starts here",
-    description:
-      "You are learning where AI fits and what is safe to delegate.",
-    nextMove: "Start with one low-risk use case.",
+    looksLike:
+      "You're experimenting, learning the tools, and figuring out where AI is useful without creating unnecessary risk.",
+    goesWrong:
+      "People either avoid AI completely or hand it too much authority before they've built judgment.",
+    trustRequires: "Transparency and safe experimentation before delegation.",
+    nextMove:
+      "Choose one low-stakes use case and learn what good output actually looks like.",
     image: "/images/connect/level-0-explorer.jpg",
     alt: "A person standing before ascending glass steps illuminated by warm golden light",
     accentColor: "#facc15",
@@ -45,9 +49,13 @@ const LEVELS = [
     level: 1,
     name: "Assistant",
     tagline: "Saving hours, keeping judgment",
-    description:
-      "AI helps with drafts, research, and prep — but you still drive every decision.",
-    nextMove: "Build one repeatable workflow.",
+    looksLike:
+      "AI is helping with drafts, research, summaries, and prep work, but the human is still actively steering every important decision.",
+    goesWrong:
+      "Usage stays helpful but scattered, so AI saves time without creating real leverage.",
+    trustRequires: "The human touch stays the last touch.",
+    nextMove:
+      "Turn one repeated task into a clean, repeatable workflow.",
     image: "/images/connect/level-1-assistant.jpg",
     alt: "A figure standing next to a floating crystalline monolith in a vast dark space",
     accentColor: "#00D2FF",
@@ -58,9 +66,13 @@ const LEVELS = [
     level: 2,
     name: "Agent",
     tagline: "Delegation requires design",
-    description:
-      "AI is doing real work, but ownership, review, and escalation are not fully designed.",
-    nextMove: "Design trust into the workflow.",
+    looksLike:
+      "AI is doing real delegated work, but ownership, review, escalation, and boundaries are not yet fully designed.",
+    goesWrong:
+      "Capability outruns control, and people start trusting outputs or actions without a clear system around them.",
+    trustRequires: "Delegation must be designed, not improvised.",
+    nextMove:
+      "Define oversight, validation, escalation, and transparency rules around the workflow.",
     image: "/images/connect/level-2-agent.jpg",
     alt: "A person at the center of an interconnected network of glass nodes with cyan and gold pathways",
     accentColor: "#60a5fa",
@@ -71,9 +83,13 @@ const LEVELS = [
     level: 3,
     name: "Commander",
     tagline: "Scale requires guardrails",
-    description:
-      "Multiple systems or agents are operating, and governance now matters.",
-    nextMove: "Build the operating model for scale.",
+    looksLike:
+      "Multiple agents or systems are operating across the business, and leadership now has to manage trust, governance, and operating cadence.",
+    goesWrong:
+      "Leaders scale capability without scaling accountability, and complexity starts eroding trust.",
+    trustRequires: "More autonomy requires more guardrails.",
+    nextMove:
+      "Build the operating model, governance layer, and decision cadence for scale.",
     image: "/images/connect/level-3-commander.jpg",
     alt: "A figure standing on an illuminated command platform with guardrails and golden rings of light",
     accentColor: "#4ade80",
@@ -89,7 +105,7 @@ export default function ConnectPage() {
       {/* Hero — cinematic atmosphere with layered radial gradients    */}
       {/* ============================================================ */}
       <section
-        className="relative py-28 sm:py-36 lg:py-44"
+        className="relative py-16 sm:py-20 lg:py-28"
         style={{
           background: [
             "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(0, 87, 255, 0.15) 0%, transparent 70%)",
@@ -207,7 +223,7 @@ export default function ConnectPage() {
           </div>
 
           {/* ----------------------------------------------------------
-              MOBILE LAYOUT — compact cinematic bands (below md)
+              MOBILE LAYOUT — text-led compact panels (below md)
           ---------------------------------------------------------- */}
           <div className="md:hidden relative">
             {/* Vertical ascension connector line between bands */}
@@ -225,9 +241,8 @@ export default function ConnectPage() {
                 <div
                   key={lvl.level}
                   className="group relative overflow-hidden rounded-xl"
-                  style={{ minHeight: "240px", maxHeight: "280px" }}
                 >
-                  {/* Background image — tight crop for mobile */}
+                  {/* Background image — atmospheric support only */}
                   <Image
                     src={lvl.image}
                     alt={lvl.alt}
@@ -236,8 +251,8 @@ export default function ConnectPage() {
                     className="object-cover object-[50%_35%]"
                   />
 
-                  {/* Strong dark overlay for mobile legibility */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/75 to-black/55" />
+                  {/* Heavy dark overlay — text is the payload, not the image */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/88 to-black/80" />
 
                   {/* Bottom border glow accent */}
                   <div
@@ -248,8 +263,8 @@ export default function ConnectPage() {
                     }}
                   />
 
-                  {/* Content — left-anchored, vertically centered */}
-                  <div className="relative z-10 flex flex-col justify-center h-full pl-14 pr-5 py-5">
+                  {/* Content — text-led, all 4 info blocks stacked */}
+                  <div className="relative z-10 pl-14 pr-5 py-5">
                     {/* Large backdrop numeral */}
                     <span
                       className="absolute top-2 right-4 text-8xl font-heading font-bold opacity-10 select-none"
@@ -273,23 +288,61 @@ export default function ConnectPage() {
                     </h3>
 
                     <p
-                      className="text-sm font-heading font-semibold mb-2"
+                      className="text-sm font-heading font-semibold mb-3"
                       style={{ color: lvl.accentColor }}
                     >
                       {lvl.tagline}
                     </p>
 
-                    <p className="text-sm text-light/70 leading-snug mb-3">
-                      {lvl.description}
-                    </p>
+                    {/* Info blocks — stacked rows */}
+                    <div className="space-y-2.5">
+                      <div>
+                        <span
+                          className="text-[10px] font-heading font-bold uppercase tracking-widest"
+                          style={{ color: lvl.accentColor }}
+                        >
+                          What This Looks Like
+                        </span>
+                        <p className="text-xs text-light/70 mt-0.5 leading-snug">
+                          {lvl.looksLike}
+                        </p>
+                      </div>
 
-                    <div>
-                      <span className="text-[10px] font-heading font-bold uppercase tracking-widest text-light/40">
-                        Next Move
-                      </span>
-                      <p className="text-xs text-light/55 mt-0.5">
-                        {lvl.nextMove}
-                      </p>
+                      <div>
+                        <span
+                          className="text-[10px] font-heading font-bold uppercase tracking-widest"
+                          style={{ color: lvl.accentColor }}
+                        >
+                          What Goes Wrong
+                        </span>
+                        <p className="text-xs text-light/70 mt-0.5 leading-snug">
+                          {lvl.goesWrong}
+                        </p>
+                      </div>
+
+                      <div>
+                        <span
+                          className="text-[10px] font-heading font-bold uppercase tracking-widest"
+                          style={{ color: lvl.accentColor }}
+                        >
+                          Trust Requires
+                        </span>
+                        <p className="text-xs text-light/70 mt-0.5 leading-snug">
+                          {lvl.trustRequires}
+                        </p>
+                      </div>
+
+                      <div>
+                        <span
+                          className="text-[10px] font-heading font-bold uppercase tracking-widest"
+                          style={{ color: lvl.accentColor }}
+                        >
+                          Next Move
+                        </span>
+                        <p className="text-xs text-light/55 mt-0.5 leading-snug">
+                          {lvl.nextMove}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -298,7 +351,7 @@ export default function ConnectPage() {
           </div>
 
           {/* ----------------------------------------------------------
-              DESKTOP LAYOUT — immersive 2x2 grid (md and above)
+              DESKTOP LAYOUT — framework reveal panels (md and above)
           ---------------------------------------------------------- */}
           <div className="hidden md:block relative">
             {/* Ascension connector — vertical gradient line (lg only) */}
@@ -317,7 +370,7 @@ export default function ConnectPage() {
                   key={lvl.level}
                   className="group relative overflow-hidden rounded-2xl"
                 >
-                  {/* Background image — fills panel naturally */}
+                  {/* Background image — atmospheric, heavily overlaid */}
                   <div className="absolute inset-0">
                     <Image
                       src={lvl.image}
@@ -328,8 +381,8 @@ export default function ConnectPage() {
                     />
                   </div>
 
-                  {/* Dark overlay for text legibility */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/60 to-black/35 transition-colors duration-500 group-hover:from-black/80 group-hover:via-black/50 group-hover:to-black/25" />
+                  {/* Darker overlay so framework text is structurally legible */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/80 to-black/65 transition-colors duration-500 group-hover:from-black/88 group-hover:via-black/75 group-hover:to-black/55" />
 
                   {/* Bottom border glow accent */}
                   <div
@@ -340,11 +393,11 @@ export default function ConnectPage() {
                     }}
                   />
 
-                  {/* Content — overlay positioned with generous padding */}
-                  <div className="relative z-10 p-8 lg:p-10 min-h-[340px] lg:min-h-[380px] flex flex-col justify-end">
+                  {/* Content — framework reveal layout */}
+                  <div className="relative z-10 p-8 lg:p-10 min-h-[420px] lg:min-h-[460px] flex flex-col">
                     {/* Large backdrop numeral — oversized, semi-transparent */}
                     <span
-                      className="absolute top-4 right-6 text-[8rem] lg:text-[10rem] font-heading font-bold opacity-15 select-none leading-none"
+                      className="absolute top-4 right-6 text-[8rem] lg:text-[10rem] font-heading font-bold opacity-10 select-none leading-none"
                       aria-hidden="true"
                       style={{
                         color: lvl.accentColor,
@@ -354,32 +407,80 @@ export default function ConnectPage() {
                       {lvl.level}
                     </span>
 
-                    {/* Level name */}
-                    <h3 className="text-2xl lg:text-3xl font-heading font-bold text-white mb-1">
-                      {lvl.name}
-                    </h3>
-
-                    {/* Theme line — brighter, accent-tinted */}
-                    <p
-                      className="text-base lg:text-lg font-heading font-semibold mb-3"
-                      style={{ color: lvl.accentColor }}
-                    >
-                      {lvl.tagline}
-                    </p>
-
-                    {/* What this looks like — body text */}
-                    <p className="text-sm lg:text-base text-light/70 leading-relaxed mb-4">
-                      {lvl.description}
-                    </p>
-
-                    {/* Next move — muted with small label */}
-                    <div>
-                      <span className="text-[10px] font-heading font-bold uppercase tracking-widest text-light/40">
-                        Next Move
-                      </span>
-                      <p className="text-sm text-light/55 mt-0.5">
-                        {lvl.nextMove}
+                    {/* Header area: numeral badge, level name, theme line */}
+                    <div className="mb-5">
+                      <h3 className="text-2xl lg:text-3xl font-heading font-bold text-white mb-1">
+                        <span
+                          className="text-base font-semibold mr-2 opacity-60"
+                          style={{ color: lvl.accentColor }}
+                        >
+                          L{lvl.level}
+                        </span>
+                        {lvl.name}
+                      </h3>
+                      <p
+                        className="text-base lg:text-lg font-heading font-semibold"
+                        style={{ color: lvl.accentColor }}
+                      >
+                        {lvl.tagline}
                       </p>
+                    </div>
+
+                    {/* Body area — two columns on large screens */}
+                    <div className="grid lg:grid-cols-2 gap-x-6 gap-y-4 flex-1">
+                      {/* Left column */}
+                      <div className="space-y-4">
+                        <div>
+                          <span
+                            className="text-[10px] font-heading font-bold uppercase tracking-widest"
+                            style={{ color: lvl.accentColor }}
+                          >
+                            What This Looks Like
+                          </span>
+                          <p className="text-sm text-light/70 mt-1 leading-relaxed">
+                            {lvl.looksLike}
+                          </p>
+                        </div>
+
+                        <div>
+                          <span
+                            className="text-[10px] font-heading font-bold uppercase tracking-widest"
+                            style={{ color: lvl.accentColor }}
+                          >
+                            What Goes Wrong
+                          </span>
+                          <p className="text-sm text-light/70 mt-1 leading-relaxed">
+                            {lvl.goesWrong}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Right column */}
+                      <div className="space-y-4">
+                        <div>
+                          <span
+                            className="text-[10px] font-heading font-bold uppercase tracking-widest"
+                            style={{ color: lvl.accentColor }}
+                          >
+                            Trust Requires
+                          </span>
+                          <p className="text-sm text-light/70 mt-1 leading-relaxed">
+                            {lvl.trustRequires}
+                          </p>
+                        </div>
+
+                        <div>
+                          <span
+                            className="text-[10px] font-heading font-bold uppercase tracking-widest"
+                            style={{ color: lvl.accentColor }}
+                          >
+                            Next Move
+                          </span>
+                          <p className="text-sm text-light/55 mt-1 leading-relaxed">
+                            {lvl.nextMove}
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
