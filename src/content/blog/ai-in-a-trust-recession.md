@@ -16,7 +16,7 @@ People are more skeptical, more guarded, more suspicious of polish, promises, po
 
 And most leaders are still underestimating how much that changes.
 
-Next week I will be in Dallas speaking at CONNECT on a theme I keep returning to because the market keeps proving it right: **Humanity Amplified.** On the surface, that sounds like an AI talk.
+Today I am in Dallas speaking at CONNECT on a theme I keep returning to because the market keeps proving it right: **Humanity Amplified.** On the surface, that sounds like an AI talk.
 
 It is.
 
