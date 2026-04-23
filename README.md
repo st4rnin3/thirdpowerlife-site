@@ -135,12 +135,31 @@ To point the domain to Vercel:
 4. Vercel will auto-provision SSL certificates
 5. Set `www.thirdpowerlife.ai` as the primary domain (recommended)
 
+## Domain Redirects (Canonical Enforcement)
+
+`next.config.ts` defines three permanent (301) redirect rules that enforce `https://www.thirdpowerlife.ai` as the sole canonical domain. All redirects are path-preserving — the full path and query string are forwarded to the destination.
+
+| Source host | Destination |
+|-------------|-------------|
+| `thirdpowerlife.com` | `https://www.thirdpowerlife.ai/:path*` |
+| `www.thirdpowerlife.com` | `https://www.thirdpowerlife.ai/:path*` |
+| `thirdpowerlife.ai` (bare, no www) | `https://www.thirdpowerlife.ai/:path*` |
+
+These rules apply only when those domains are added to the Vercel project and their DNS is pointed at Vercel. Without DNS resolution to Vercel, the `has: host` condition in Next.js will never match and no redirect fires.
+
+To verify locally:
+```bash
+# Next.js host-based redirects cannot be triggered via localhost.
+# Test by deploying to a Vercel preview and hitting the domain directly,
+# or by inspecting the redirect config in next.config.ts.
+```
+
 ## Environment Variables
 
 | Variable | Where used | Description |
 |----------|-----------|-------------|
 | `STRIPE_SECRET_KEY` | Server-side only (API routes) | Stripe secret key — set in Vercel, never expose to client |
-| `NEXT_PUBLIC_SITE_URL` | API routes (redirect URLs) | Base URL for Stripe success/cancel redirects, e.g. `https://thirdpowerlife.ai` or the Vercel preview URL |
+| `NEXT_PUBLIC_SITE_URL` | API routes (redirect URLs) | Base URL for Stripe success/cancel redirects, e.g. `https://www.thirdpowerlife.ai` or the Vercel preview URL |
 
 `STRIPE_SECRET_KEY` and `NEXT_PUBLIC_SITE_URL` must be set in Vercel → Project Settings → Environment Variables before the Stripe order system will function.
 

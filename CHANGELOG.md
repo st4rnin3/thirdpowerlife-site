@@ -4,6 +4,28 @@ All notable changes to the ThirdPowerLife.ai site are recorded here. Newest entr
 
 ---
 
+## [Unreleased] - 2026-04-23
+
+### Domain Redirect Consolidation to Canonical www.thirdpowerlife.ai
+
+**Summary:**
+- Added three 301 redirect rules in `next.config.ts` covering all non-canonical domain variants: `thirdpowerlife.com`, `www.thirdpowerlife.com`, and bare `thirdpowerlife.ai` each redirect to `https://www.thirdpowerlife.ai` with the original path preserved.
+- Consolidates SEO authority onto one canonical domain and prevents `.com` and bare `.ai` variants from competing in search rankings.
+
+**Who it's for:** Invisible to end users (browsers follow the redirect automatically). Affects any inbound link or indexed URL pointing at the old `.com` domain or the bare `.ai` domain — all will now resolve to the correct canonical URL without losing path context.
+
+**How to test:**
+- [ ] Request `http://thirdpowerlife.com/blog` — confirm 301 redirect to `https://www.thirdpowerlife.ai/blog`
+- [ ] Request `http://www.thirdpowerlife.com/connect` — confirm 301 redirect to `https://www.thirdpowerlife.ai/connect`
+- [ ] Request `http://thirdpowerlife.ai/commander-launchpad` — confirm 301 redirect to `https://www.thirdpowerlife.ai/commander-launchpad`
+- [ ] Confirm root path redirects (`thirdpowerlife.com/` → `https://www.thirdpowerlife.ai/`) with no trailing-slash issues
+
+**Breaking changes:** None. Redirects are additive; `www.thirdpowerlife.ai` routing is unchanged.
+
+**Migration required:** None.
+
+---
+
 ## [Unreleased] - 2026-04-19
 
 ### CONNECT Landing Page — Keynote-Image-Led Visual Redesign
