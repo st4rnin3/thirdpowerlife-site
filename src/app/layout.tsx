@@ -22,6 +22,7 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.thirdpowerlife.ai"),
   title: "Dan Gentry — Your Personal Chief AI Officer | Third Power Life",
   description:
     "TEDx Speaker · AI Strategist · Founder, Third Power Performance. Dan helps leaders leverage AI to grow their business — without losing their humanity in the process.",
