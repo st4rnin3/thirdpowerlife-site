@@ -397,9 +397,21 @@ export default function AiAscensionGuidePage() {
       <div id="get-guide">
         <NewsletterSignup
           heading="Get the Free AI Ascension Guide"
-          description="Use the web guide now and join the list for the polished PDF and follow-up tools when they are released."
+          description="Use the web guide now and join the AI Ascension Guide list for the polished PDF and follow-up tools when they are released."
           buttonLabel="Get the Guide"
           submittingLabel="Sending..."
+          successMessage="You're on the AI Ascension Guide list. Use the web guide here now, and watch your inbox for the polished PDF and follow-up tools when they are released."
+          alreadySubscribedMessage="You're already on the list. We updated your AI Ascension Guide request and will send the guide follow-up when it is released."
+          source="ai_ascension_guide"
+          sourceDetail="Lead magnet: AI Ascension Guide (/ai-ascension-guide)"
+          leadMagnet="ai_ascension_guide"
+          leadMagnetTitle="AI Ascension Guide"
+          landingPage="https://www.thirdpowerlife.ai/ai-ascension-guide"
+          tags={["ai-ascension-guide"]}
+          metadata={{
+            utm_campaign: "ai-ascension-guide",
+            utm_content: "article-cta",
+          }}
         />
       </div>
 

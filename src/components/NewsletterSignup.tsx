@@ -15,6 +15,8 @@ type FormStatus =
   | "error"
   | "rate_limited";
 
+type SignupMetadata = Record<string, string | undefined>;
+
 interface NewsletterSignupProps {
   /** 'section' renders a full-width section with heading and glass card.
    *  'compact' renders a minimal inline form suitable for embedding in a footer. */
@@ -23,6 +25,15 @@ interface NewsletterSignupProps {
   description?: string;
   buttonLabel?: string;
   submittingLabel?: string;
+  successMessage?: string;
+  alreadySubscribedMessage?: string;
+  source?: string;
+  sourceDetail?: string;
+  leadMagnet?: string;
+  leadMagnetTitle?: string;
+  landingPage?: string;
+  tags?: string[];
+  metadata?: SignupMetadata;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -59,6 +70,15 @@ export default function NewsletterSignup({
   description = "Weekly insights on AI leadership - practical tools and strategies for humans who lead.",
   buttonLabel = "Subscribe",
   submittingLabel = "Subscribing...",
+  successMessage = STATUS_MESSAGES.subscribed,
+  alreadySubscribedMessage = STATUS_MESSAGES.already_subscribed,
+  source,
+  sourceDetail,
+  leadMagnet,
+  leadMagnetTitle,
+  landingPage,
+  tags,
+  metadata,
 }: NewsletterSignupProps) {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -103,6 +123,13 @@ export default function NewsletterSignup({
           name: name || undefined,
           phone: phone || undefined,
           sms_consent: phone ? smsConsent : false,
+          source,
+          source_detail: sourceDetail,
+          lead_magnet: leadMagnet,
+          lead_magnet_title: leadMagnetTitle,
+          landing_page: landingPage,
+          tags,
+          metadata,
           honeypot,
         }),
         signal: controller.signal,
@@ -140,7 +167,12 @@ export default function NewsletterSignup({
   /** Status banner shown after submission (success, error, etc.) */
   function renderStatusMessage() {
     if (status === "idle" || status === "submitting") return null;
-    const message = STATUS_MESSAGES[status];
+    const message =
+      status === "subscribed"
+        ? successMessage
+        : status === "already_subscribed"
+          ? alreadySubscribedMessage
+          : STATUS_MESSAGES[status];
     const isSuccess = status === "subscribed" || status === "already_subscribed";
 
     return (
