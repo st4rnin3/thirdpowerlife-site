@@ -19,6 +19,10 @@ interface NewsletterSignupProps {
   /** 'section' renders a full-width section with heading and glass card.
    *  'compact' renders a minimal inline form suitable for embedding in a footer. */
   variant?: "section" | "compact";
+  heading?: string;
+  description?: string;
+  buttonLabel?: string;
+  submittingLabel?: string;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -51,6 +55,10 @@ const INPUT_CLASS =
 
 export default function NewsletterSignup({
   variant = "section",
+  heading = "Stay in the Loop",
+  description = "Weekly insights on AI leadership - practical tools and strategies for humans who lead.",
+  buttonLabel = "Subscribe",
+  submittingLabel = "Subscribing...",
 }: NewsletterSignupProps) {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -195,7 +203,7 @@ export default function NewsletterSignup({
           disabled={isDisabled}
           className="rounded-lg bg-electric px-6 py-3 font-heading font-bold text-navy transition-all hover:shadow-[0_0_20px_rgba(0,210,255,0.4)] sm:rounded-l-none disabled:opacity-50"
         >
-          {isDisabled ? "Sending..." : "Subscribe"}
+          {isDisabled ? "Sending..." : buttonLabel}
         </button>
 
         {/* Inline error / rate-limit feedback */}
@@ -217,11 +225,10 @@ export default function NewsletterSignup({
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="glass rounded-2xl p-8 md:p-12 border border-electric/10">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-            Stay in the Loop
+            {heading}
           </h2>
           <p className="text-light/70 mb-8 font-body">
-            Weekly insights on AI leadership — practical tools and strategies
-            for humans who lead.
+            {description}
           </p>
 
           {/* Show success / already-subscribed message in place of form */}
@@ -325,7 +332,7 @@ export default function NewsletterSignup({
                 disabled={isDisabled}
                 className="w-full bg-accent text-white px-8 py-4 rounded-lg font-heading font-semibold hover:shadow-[0_0_30px_rgba(0,210,255,0.4)] transition-all duration-300 disabled:opacity-50"
               >
-                {isDisabled ? "Subscribing..." : "Subscribe"}
+                {isDisabled ? submittingLabel : buttonLabel}
               </button>
 
               {/* Error / rate-limit feedback below the button */}
