@@ -35,6 +35,22 @@ export const metadata: Metadata = {
   },
 };
 
+function getBlogThumbnailSrc(ogImage: string): string {
+  const thumbnailSrc = ogImage.replace("/images/blog-og/", "/images/blog-og/thumb-");
+
+  try {
+    const url = new URL(thumbnailSrc);
+
+    if (url.hostname === "www.thirdpowerlife.ai" || url.hostname === "thirdpowerlife.ai") {
+      return url.pathname;
+    }
+  } catch {
+    return thumbnailSrc;
+  }
+
+  return thumbnailSrc;
+}
+
 export default function BlogIndex() {
   const posts = getAllPosts();
 
@@ -88,7 +104,7 @@ export default function BlogIndex() {
                 {post.ogImage && (
                   <div className="aspect-[1.91/1] overflow-hidden border-b border-white/10 bg-midnight/40">
                     <img
-                      src={post.ogImage.replace('/images/blog-og/', '/images/blog-og/thumb-')}
+                      src={getBlogThumbnailSrc(post.ogImage)}
                       alt={post.title}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                     />

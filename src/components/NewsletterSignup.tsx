@@ -27,6 +27,8 @@ interface NewsletterSignupProps {
   submittingLabel?: string;
   successMessage?: string;
   alreadySubscribedMessage?: string;
+  successActionHref?: string;
+  successActionLabel?: string;
   source?: string;
   sourceDetail?: string;
   leadMagnet?: string;
@@ -72,6 +74,8 @@ export default function NewsletterSignup({
   submittingLabel = "Subscribing...",
   successMessage = STATUS_MESSAGES.subscribed,
   alreadySubscribedMessage = STATUS_MESSAGES.already_subscribed,
+  successActionHref,
+  successActionLabel,
   source,
   sourceDetail,
   leadMagnet,
@@ -176,14 +180,23 @@ export default function NewsletterSignup({
     const isSuccess = status === "subscribed" || status === "already_subscribed";
 
     return (
-      <p
-        role="status"
-        className={`text-center font-body text-lg ${
-          isSuccess ? "text-electric" : "text-red-400"
-        }`}
-      >
-        {message}
-      </p>
+      <div role="status" className="space-y-5 text-center">
+        <p
+          className={`font-body text-lg ${
+            isSuccess ? "text-electric" : "text-red-400"
+          }`}
+        >
+          {message}
+        </p>
+        {isSuccess && successActionHref && successActionLabel && (
+          <a
+            href={successActionHref}
+            className="inline-block rounded-lg bg-accent px-8 py-4 font-heading font-semibold text-white transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,210,255,0.4)]"
+          >
+            {successActionLabel}
+          </a>
+        )}
+      </div>
     );
   }
 

@@ -85,6 +85,8 @@ const STARTER_STEPS = [
   "Decide in advance where the saved time goes: family, health, faith, strategy, rest, or relationship-building.",
 ] as const;
 
+const GUIDE_PDF_URL = "/downloads/ai-ascension-guide.pdf";
+
 export default function AiAscensionGuidePage() {
   return (
     <>
@@ -397,11 +399,13 @@ export default function AiAscensionGuidePage() {
       <div id="get-guide">
         <NewsletterSignup
           heading="Get the Free AI Ascension Guide"
-          description="Use the web guide now and join the AI Ascension Guide list for the polished PDF and follow-up tools when they are released."
+          description="Enter your email to join the AI Ascension Guide list. After you submit, you can download the full 119-page PDF guide immediately."
           buttonLabel="Get the Guide"
-          submittingLabel="Sending..."
-          successMessage="You're on the AI Ascension Guide list. Use the web guide here now, and watch your inbox for the polished PDF and follow-up tools when they are released."
-          alreadySubscribedMessage="You're already on the list. We updated your AI Ascension Guide request and will send the guide follow-up when it is released."
+          submittingLabel="Preparing..."
+          successMessage="You're on the AI Ascension Guide list. Download the full PDF guide now."
+          alreadySubscribedMessage="You're already on the list. We updated your AI Ascension Guide request. Download the full PDF guide now."
+          successActionHref={GUIDE_PDF_URL}
+          successActionLabel="Download the PDF"
           source="ai_ascension_guide"
           sourceDetail="Lead magnet: AI Ascension Guide (/ai-ascension-guide)"
           leadMagnet="ai_ascension_guide"
@@ -411,6 +415,7 @@ export default function AiAscensionGuidePage() {
           metadata={{
             utm_campaign: "ai-ascension-guide",
             utm_content: "article-cta",
+            pdf_url: GUIDE_PDF_URL,
           }}
         />
       </div>
