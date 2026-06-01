@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "About Dan Gentry — Your Personal Chief AI Officer",
@@ -64,13 +66,65 @@ const milestones = [
 ];
 
 const frameworks = [
-  { title: "Machine Work vs. Meaning Work", desc: "The core distinction — what AI handles vs. what humans protect." },
-  { title: "Commander vs. Drifter", desc: "Identity and mindset framework. Intentional design vs. reactive drift." },
-  { title: "AI Ascension Model", desc: "Explorer → Assistant → Agent → Commander. Your practical roadmap." },
-  { title: "IMPACT Method", desc: "Identify, Map, Prepare, Assemble, Commence, Tune. Delegation done right." },
-  { title: "The Success Trap", desc: "Achieving everything you wanted while losing what actually matters." },
-  { title: "The Third Power", desc: "Integration of business success with a vibrant, purposeful life." },
+  {
+    title: "Machine Work vs. Meaning Work",
+    desc: "The core distinction — what AI handles vs. what humans protect.",
+    href: "/blog/machine-work-vs-meaning-work",
+  },
+  {
+    title: "Commander vs. Drifter",
+    desc: "Identity and mindset framework. Intentional design vs. reactive drift.",
+    href: "/blog/commander-vs-drifter",
+  },
+  {
+    title: "AI Ascension Model",
+    desc: "Explorer → Assistant → Agent → Commander. Your practical roadmap.",
+    href: "/blog/ai-ascension-model",
+  },
+  {
+    title: "IMPACT Method",
+    desc: "Identify, Map, Prepare, Assemble, Commence, Tune. Delegation done right.",
+    href: "/blog/impact-method-delegate-to-ai",
+  },
+  {
+    title: "The Success Trap",
+    desc: "Achieving everything you wanted while losing what actually matters.",
+    href: "/blog/the-success-trap",
+  },
+  {
+    title: "The Third Power",
+    desc: "Integration of business success with a vibrant, purposeful life.",
+    href: "/podcast",
+  },
 ];
+
+function InlineLink({
+  href,
+  className,
+  children,
+  external = false,
+}: {
+  href: string;
+  className: string;
+  children: ReactNode;
+  external?: boolean;
+}) {
+  const linkClass = `${className} underline decoration-current/30 underline-offset-4 transition hover:decoration-current`;
+
+  if (external) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={linkClass}>
+      {children}
+    </Link>
+  );
+}
 
 export default function About() {
   return (
@@ -90,11 +144,26 @@ export default function About() {
               <div className="space-y-0">
                 {/* Intro */}
                 <p className="text-light/70 leading-relaxed">
-                  Dan Gentry is a TEDx speaker, podcast host, and the founder of Third Power
-                  Performance — a company built on one belief:{" "}
-                  <span className="text-white font-semibold">
+                  Dan Gentry is a{" "}
+                  <InlineLink
+                    href="https://www.youtube.com/watch?v=3GtpnqEbYRU"
+                    external
+                    className="text-white font-semibold"
+                  >
+                    TEDx speaker
+                  </InlineLink>
+                  ,{" "}
+                  <InlineLink href="/podcast" className="text-white font-semibold">
+                    podcast host
+                  </InlineLink>
+                  , and the founder of{" "}
+                  <InlineLink href="/consulting" className="text-white font-semibold">
+                    Third Power Performance
+                  </InlineLink>{" "}
+                  — a company built on one belief:{" "}
+                  <InlineLink href="/blog/ai-in-a-trust-recession" className="text-white font-semibold">
                     AI should protect your humanity, not consume it.
-                  </span>
+                  </InlineLink>
                 </p>
 
                 <div className="border-t border-white/10 my-8" />
@@ -102,11 +171,13 @@ export default function About() {
                 {/* Humanity Amplified */}
                 <p className="text-light/70 leading-relaxed">
                   His signature keynote,{" "}
-                  <span className="text-electric italic">Humanity Amplified</span>, reframes
-                  the entire AI conversation. While most speakers promise faster output and
-                  more automation, Dan asks the uncomfortable question: &ldquo;AI can save
-                  you 10 hours a week — but do you know what you&apos;d do with
-                  them?&rdquo;
+                  <InlineLink href="/speaking" className="text-electric italic">
+                    Humanity Amplified
+                  </InlineLink>
+                  , reframes the entire AI conversation. While most speakers promise
+                  faster output and more automation, Dan asks the uncomfortable question:
+                  &ldquo;AI can save you 10 hours a week — but do you know what you&apos;d
+                  do with them?&rdquo;
                 </p>
 
                 <div className="border-t border-white/10 my-8" />
@@ -114,10 +185,12 @@ export default function About() {
                 {/* The Success Trap */}
                 <p className="text-light/70 leading-relaxed">
                   The answer usually exposes what Dan calls{" "}
-                  <span className="text-white font-semibold">The Success Trap</span> —
-                  high-achieving professionals who&apos;ve built everything they thought
-                  they wanted and lost everything that actually matters: time, presence,
-                  health, family.
+                  <InlineLink href="/blog/the-success-trap" className="text-white font-semibold">
+                    The Success Trap
+                  </InlineLink>{" "}
+                  — high-achieving professionals who&apos;ve built everything they
+                  thought they wanted and lost everything that actually matters: time,
+                  presence, health, family.
                 </p>
 
                 <div className="border-t border-white/10 my-8" />
@@ -125,9 +198,12 @@ export default function About() {
                 {/* Machine Work vs. Meaning Work */}
                 <p className="text-light/70 leading-relaxed">
                   Dan&apos;s framework is built on a simple distinction:{" "}
-                  <span className="text-electric font-semibold">
+                  <InlineLink
+                    href="/blog/machine-work-vs-meaning-work"
+                    className="text-electric font-semibold"
+                  >
                     Machine Work vs. Meaning Work.
-                  </span>{" "}
+                  </InlineLink>{" "}
                   Machine Work — research, formatting, repetitive emails, meeting
                   summaries — is what AI should handle. Meaning Work — coaching,
                   vision-casting, mentoring, being present for your kids — is what humans
@@ -139,7 +215,9 @@ export default function About() {
                 {/* AI Ascension Model */}
                 <p className="text-light/70 leading-relaxed">
                   His{" "}
-                  <span className="text-electric font-semibold">AI Ascension model</span>{" "}
+                  <InlineLink href="/blog/ai-ascension-model" className="text-electric font-semibold">
+                    AI Ascension model
+                  </InlineLink>{" "}
                   (Explorer → Assistant → Agent → Commander) gives leaders a practical
                   roadmap from AI curiosity to reclaiming 30+ hours per week.
                 </p>
@@ -149,9 +227,9 @@ export default function About() {
                 {/* Commander vs. Drifter */}
                 <p className="text-light/70 leading-relaxed">
                   Before AI, Dan spent years coaching executives on his{" "}
-                  <span className="text-white font-semibold">
+                  <InlineLink href="/blog/commander-vs-drifter" className="text-white font-semibold">
                     Commander vs. Drifter
-                  </span>{" "}
+                  </InlineLink>{" "}
                   philosophy — the idea that most people don&apos;t fail at life, they
                   drift through it. AI became the first technology that could actually
                   deliver the escape from drift at scale.
@@ -162,13 +240,19 @@ export default function About() {
                 {/* Podcast & Community */}
                 <p className="text-light/70 leading-relaxed">
                   Dan hosts the{" "}
-                  <span className="text-white font-semibold">
+                  <InlineLink href="/podcast" className="text-white font-semibold">
                     Third Power Life podcast
-                  </span>{" "}
+                  </InlineLink>{" "}
                   (Season 3: &ldquo;Saving Our Humanity with AI&rdquo;), leads the{" "}
-                  <span className="text-white font-semibold">IMPACT AI community</span>,
-                  and publishes a weekly newsletter for professionals who want AI to serve
-                  their life — not replace it.
+                  <InlineLink
+                    href="https://www.skool.com/impact-ai"
+                    external
+                    className="text-white font-semibold"
+                  >
+                    IMPACT AI community
+                  </InlineLink>
+                  , and publishes a weekly newsletter for professionals who want AI to
+                  serve their life — not replace it.
                 </p>
               </div>
             </div>
@@ -253,13 +337,14 @@ export default function About() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {frameworks.map((f, i) => (
-              <div
+              <Link
                 key={i}
+                href={f.href}
                 className="bg-midnight/60 border border-white/10 rounded-xl p-6 hover:border-electric/30 hover:shadow-[0_0_20px_rgba(0,210,255,0.1)] transition-all duration-300"
               >
                 <h3 className="text-white font-heading font-bold mb-2">{f.title}</h3>
                 <p className="text-sm text-light/60">{f.desc}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
