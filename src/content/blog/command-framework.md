@@ -10,7 +10,7 @@ ogImage: "https://www.thirdpowerlife.ai/images/blog-og/command-framework.jpg"
 
 ![COMMAND framework: Build AI Organizations You Can Trust](/images/blog/command-framework/command-framework-infographic-wide.png)
 
-In the last post, I wrote about DEPLOY.
+In the last post, I wrote about [DEPLOY](/blog/your-ai-agent-needs-deploy-not-just-a-prompt).
 
 DEPLOY is the framework for building one useful AI agent.
 
