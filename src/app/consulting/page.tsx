@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { safeJsonLd } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
   title: "Fractional Chief AI Officer — Dan Gentry | Third Power Life",
@@ -18,8 +19,74 @@ export const metadata: Metadata = {
 };
 
 export default function Consulting() {
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://www.thirdpowerlife.ai/consulting#service",
+        name: "Fractional Chief AI Officer",
+        alternateName: ["Fractional CAIO", "AI Strategy Consulting"],
+        serviceType: "Executive AI strategy and implementation leadership",
+        provider: {
+          "@type": "Person",
+          "@id": "https://www.thirdpowerlife.ai/#person",
+          name: "Dan Gentry",
+          url: "https://www.thirdpowerlife.ai/about",
+        },
+        areaServed: "United States",
+        audience: {
+          "@type": "BusinessAudience",
+          audienceType: "Business leaders and teams implementing AI",
+        },
+        description:
+          "A fractional Chief AI Officer gives businesses executive-level AI strategy, implementation direction, team enablement, and governance without a full-time executive hire.",
+        offers: {
+          "@type": "Offer",
+          url: "https://www.thirdpowerlife.ai/schedule",
+          availability: "https://schema.org/InStock",
+        },
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.thirdpowerlife.ai/consulting#faq",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "What does a fractional Chief AI Officer do?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "A fractional Chief AI Officer provides part-time executive AI leadership: strategy, workflow prioritization, tool selection, governance, implementation planning, team training, and ROI reporting.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Who needs a fractional CAIO?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "A fractional CAIO is useful for organizations that know AI matters but do not yet have a clear owner, roadmap, governance model, or implementation plan.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How is this different from buying AI tools?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Tools do not create strategy by themselves. A fractional CAIO starts with business outcomes, identifies where AI should and should not be used, and helps the team implement sustainable systems.",
+            },
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(serviceJsonLd) }}
+      />
+
       {/* Hero */}
       <section className="bg-gradient-to-br from-navy via-midnight/50 to-navy min-h-[60vh] flex items-center py-24 relative overflow-hidden">
         {/* Subtle radial glow for visual interest */}
@@ -39,6 +106,17 @@ export default function Consulting() {
             A fractional Chief AI Officer gives your business executive-level AI leadership
             without the full-time hire. Strategy, implementation, and results.
           </p>
+          <div className="mb-8 max-w-2xl rounded-lg border border-electric/25 bg-midnight/60 p-5">
+            <h2 className="text-lg font-heading font-bold text-white">
+              What is a fractional Chief AI Officer?
+            </h2>
+            <p className="mt-2 text-light/70 leading-relaxed">
+              A fractional Chief AI Officer is a part-time executive AI leader who
+              helps a business choose the right AI priorities, build a practical
+              implementation roadmap, train the team, and measure results without
+              hiring a full-time CAIO.
+            </p>
+          </div>
           <a
             href="/schedule"
             className="inline-block bg-accent text-white px-8 py-4 rounded-lg font-heading font-semibold hover:shadow-[0_0_20px_rgba(0,210,255,0.3)] transition-all duration-300"
