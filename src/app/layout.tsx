@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { safeJsonLd } from "@/lib/jsonld";
 import "./globals.css";
 
 const GA_ID = "G-7189T07H60";
@@ -20,6 +21,61 @@ const openSans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-open-sans",
 });
+
+const siteIdentityJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.thirdpowerlife.ai/#website",
+      name: "Third Power Life",
+      url: "https://www.thirdpowerlife.ai",
+      description:
+        "Dan Gentry helps leaders leverage AI to grow their business without losing their humanity.",
+      publisher: {
+        "@id": "https://www.thirdpowerlife.ai/#organization",
+      },
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.thirdpowerlife.ai/#organization",
+      name: "Third Power Performance",
+      url: "https://www.thirdpowerlife.ai",
+      logo: "https://www.thirdpowerlife.ai/images/headshot.png",
+      founder: {
+        "@id": "https://www.thirdpowerlife.ai/#person",
+      },
+      sameAs: [
+        "https://www.linkedin.com/in/daniel-gentry/",
+        "https://www.youtube.com/channel/UCLoq_zdO_H37-VV2GttNP6g",
+        "https://www.skool.com/impact-ai",
+      ],
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.thirdpowerlife.ai/#person",
+      name: "Dan Gentry",
+      jobTitle: "Founder and AI Strategist",
+      url: "https://www.thirdpowerlife.ai/about",
+      image: "https://www.thirdpowerlife.ai/images/headshot.png",
+      worksFor: {
+        "@id": "https://www.thirdpowerlife.ai/#organization",
+      },
+      sameAs: [
+        "https://www.linkedin.com/in/daniel-gentry/",
+        "https://www.youtube.com/channel/UCLoq_zdO_H37-VV2GttNP6g",
+      ],
+      knowsAbout: [
+        "Artificial Intelligence",
+        "AI Strategy",
+        "Fractional Chief AI Officer",
+        "AI Leadership",
+        "Human-centered AI",
+      ],
+    },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.thirdpowerlife.ai"),
@@ -62,6 +118,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${openSans.variable}`}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: safeJsonLd(siteIdentityJsonLd) }}
+        />
+
         {/* Google Analytics */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
