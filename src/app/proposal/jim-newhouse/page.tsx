@@ -47,17 +47,17 @@ const sprintDeliverables = [
   {
     title: "Business operating map",
     detail:
-      "Inventory the business units, workflows, tools, open loops, handoffs, and recurring decisions that actually drive the business.",
+      "Inventory the business units, workflows, tools, open loops, handoffs, collaborators, and recurring decisions that actually drive the business.",
   },
   {
     title: "A ranked AI opportunity scorecard",
     detail:
-      "Separate useful AI leverage from distractions by scoring value, risk, complexity, data needs, and owner involvement.",
+      "Separate useful AI leverage from distractions by scoring value, risk, complexity, data needs, collaborator fit, and owner involvement.",
   },
   {
     title: "Build / buy / delegate / ignore decisions",
     detail:
-      "Decide what deserves custom development, what should stay in existing tools, what Jenn can own, and what should be left alone.",
+      "Decide what deserves custom development, what should stay in existing tools, what should be delegated to existing collaborators, and what should be left alone.",
   },
   {
     title: "Guardrails before automation",
@@ -67,12 +67,12 @@ const sprintDeliverables = [
   {
     title: "90-day implementation roadmap",
     detail:
-      "Turn the findings into a prioritized build plan with phases, owners, dependencies, and realistic implementation pricing.",
+      "Turn the findings into a prioritized action plan with phases, owners, dependencies, advisory cadence, and realistic pricing for any scoped build work.",
   },
   {
-    title: "Shared sprint workspace",
+    title: "Ongoing advisory path",
     detail:
-      "A private collaboration app captures interviews, workflow notes, documents, scoring, decisions, and open questions in one place.",
+      "Define how Dan can stay involved after the sprint as a strategic AI/systems advisor while side projects are scoped only when they are worth doing.",
   },
 ];
 
@@ -133,56 +133,53 @@ const sprintWorkspace = [
   "90-day implementation roadmap and budget path",
 ];
 
-const tiers = [
+const nextPaths = [
   {
-    name: "Lean Private Dashboard",
-    price: "$7,500-$12,500",
-    capacity: "0.25-0.5 FTE capacity equivalent",
-    timeline: "2-4 week build window after roadmap",
+    name: "Ongoing AI / systems advisory",
+    price: "Monthly advisory",
+    capacity: "Strategic guidance without adding another manager",
+    timeline: "Cadence set after the roadmap",
     description:
-      "One high-value workflow becomes visible, easier to run, and supported by a custom private dashboard.",
+      "Dan stays close to the business as the practical AI and systems advisor: helping sort ideas, pressure-test vendors, choose collaborators, and keep the work tied to profit and owner freedom.",
     includes: [
-      "One priority workflow rebuilt around practical AI support",
-      "Custom private dashboard or app with a clean working view",
-      "Lightweight backend or structured data layer",
-      "Manual or semi-automated data updates where appropriate",
-      "AI-assisted drafts, summaries, checklists, or research support",
+      "Regular strategy and prioritization sessions",
+      "AI use-case review before money or attention gets spent",
+      "Vendor, tool, and collaborator evaluation",
+      "Prompt, workflow, and decision-framework support",
+      "Ongoing guardrails for sensitive or regulated work",
+      "Clear next actions after each advisory cycle",
+    ],
+  },
+  {
+    name: "Scoped side-project builds",
+    price: "Priced project by project",
+    capacity: "Useful automation where the business case is clear",
+    timeline: "Only after priorities are validated",
+    description:
+      "When the roadmap exposes a real bottleneck, we scope that specific project instead of pretending every idea belongs in one giant build.",
+    includes: [
+      "CRM, website, intake, or reporting improvements",
+      "Small dashboards or private working views where useful",
+      "AI-assisted summaries, prep, drafts, or checklists",
       "Human approval before anything client-facing",
-      "Simple documentation and handoff",
+      "Lightweight documentation and handoff",
+      "Clear owner, budget, and success criteria before work starts",
     ],
   },
   {
-    name: "Standard AI Command Center",
-    price: "$18,000-$30,000",
-    capacity: "0.5-1.5 FTE capacity equivalent",
-    timeline: "6-10 week build window after roadmap",
+    name: "Collaborator operating model",
+    price: "Owner-approved scope",
+    capacity: "Better leverage from the people already around the business",
+    timeline: "Sequenced with advisory support",
     description:
-      "Multiple workflows connect into a command center you can use to see open loops, client needs, and next actions.",
+      "The roadmap also clarifies what Jenn, vendors, internal support, or future specialists should own so Jim is not forced to become the systems integrator.",
     includes: [
-      "Three to four connected workflows",
-      "Custom dashboard with workflow areas and operating views",
-      "CRM, email, calendar, task, or form integrations where feasible",
-      "AI-assisted summaries, reminders, drafts, and decision prep",
-      "Knowledge base for products, partners, SOPs, and client scenarios",
-      "Basic logging and approval checkpoints for AI-assisted work",
-      "Training, documentation, and operating cadence",
-    ],
-  },
-  {
-    name: "Full AI Operating System",
-    price: "$35,000-$60,000+",
-    capacity: "1.5-3 FTE capacity equivalent",
-    timeline: "10-16+ week build window after roadmap",
-    description:
-      "A deeper private operating layer across business units, workflows, dashboards, AI support, and governance.",
-    includes: [
-      "Multi-business-unit workflow architecture",
-      "Custom private portal or command center",
-      "Deeper integrations and structured data model",
-      "AI-assisted work queues and approval checkpoints",
-      "Knowledge retrieval layer for products, partners, and internal process",
-      "Access controls, monitoring, backups, and operating guardrails",
-      "Ongoing improvement path and support model",
+      "Role clarity for Dan, Jenn, vendors, and internal support",
+      "Decision rights for sensitive client or business judgment",
+      "Workflow ownership and escalation rules",
+      "Tool cleanup and usage standards",
+      "Sequenced improvements that do not overload the team",
+      "Advisory review as new needs emerge",
     ],
   },
 ];
@@ -555,8 +552,9 @@ export default function JimNewhouseProposal() {
                 Fixed-fee roadmap sprint
               </p>
               <p className="mt-2 text-sm leading-relaxed text-light/68">
-                Implementation pricing comes after the roadmap confirms what is
-                worth building.
+                Advisory and implementation pricing come after the roadmap
+                confirms what is worth doing, who should own it, and what can
+                wait.
               </p>
             </div>
             <div className="mt-5 font-heading text-4xl font-bold text-white md:mt-0 md:text-right">
@@ -577,7 +575,8 @@ export default function JimNewhouseProposal() {
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-light/70">
               These are not final recommendations. They are starting points for
-              the roadmap sprint to validate against your real workflows.
+              the roadmap sprint to validate against your real workflows,
+              current collaborators, and practical owner bandwidth.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -603,12 +602,12 @@ export default function JimNewhouseProposal() {
               After the roadmap
             </p>
             <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
-              Three possible build paths for adding capacity
+              Ongoing advisory first, scoped builds when they make sense
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-light/70">
-              Each path includes custom development. The difference is how many
-              workflows, integrations, guardrails, and operating responsibilities
-              are involved.
+              The roadmap is not meant to push you into one giant build. It is
+              meant to give you a trusted operating advisor, clear priorities,
+              and practical side projects only where the business case is real.
             </p>
           </div>
 
@@ -622,9 +621,10 @@ export default function JimNewhouseProposal() {
                   This is where the larger operating leverage appears.
                 </h3>
                 <p className="mt-4 leading-relaxed text-light/70">
-                  The roadmap sprint decides what is worth building. The build
-                  paths are where that decision can turn into measurable
-                  operating capacity.
+                  The roadmap sprint decides where Jim&apos;s attention is being
+                  consumed, where existing collaborators can take work off his
+                  plate, and where a small amount of AI or systems work could
+                  create measurable capacity.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -673,7 +673,7 @@ export default function JimNewhouseProposal() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-            {tiers.map((tier) => (
+            {nextPaths.map((tier) => (
               <article
                 key={tier.name}
                 className="flex h-full flex-col rounded-xl border border-white/10 bg-navy/70 p-6"
@@ -717,8 +717,8 @@ export default function JimNewhouseProposal() {
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-light/70">
             If the direction is right, Third Power Life will send an invoice for
-            the $4,500 roadmap sprint and begin with the business-unit and
-            workflow intake.
+            the $4,500 roadmap sprint and begin with the business-unit,
+            workflow, collaborator, and priority intake.
           </p>
           <a
             href="mailto:dan@thirdpowerperformance.com?subject=Approve%20AI%20Systems%20Roadmap%20Sprint"
