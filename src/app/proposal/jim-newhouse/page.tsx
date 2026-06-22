@@ -245,7 +245,7 @@ export default function JimNewhouseProposal() {
                 Where this gets exciting
               </p>
               <h2 className="font-heading text-3xl font-bold text-white md:text-5xl">
-                You are already making the right move.
+                We are not starting from zero.
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-light/76">
                 We are not starting from zero. You have already been thinking
@@ -262,60 +262,30 @@ export default function JimNewhouseProposal() {
                 capacity without adding payroll, benefits, management overhead,
                 or another person for you to supervise.
               </p>
+              <p className="mt-4 leading-relaxed text-light/70">
+                That is the seed we are planting: a small, focused first step
+                that points toward a much larger payoff in time, margin,
+                follow-through, and owner freedom. Here is how we get there.
+              </p>
             </div>
 
             <div className="rounded-xl border border-electric/25 bg-navy/72 p-6 shadow-[0_0_36px_rgba(0,87,255,0.18)]">
               <p className="font-heading text-sm uppercase tracking-widest text-light/50">
-                Capacity math
+                The practical promise
               </p>
-              <div className="mt-5 grid grid-cols-2 gap-4">
-                {[
-                  ["10 hrs/week", "0.25 FTE"],
-                  ["20 hrs/week", "0.5 FTE"],
-                  ["40 hrs/week", "1.0 FTE"],
-                  ["80 hrs/week", "2.0 FTE"],
-                ].map(([hours, fte]) => (
-                  <div
-                    key={hours}
-                    className="rounded-lg border border-white/10 bg-white/[0.08] p-4"
-                  >
-                    <p className="font-heading text-xl font-bold text-white">
-                      {hours}
-                    </p>
-                    <p className="mt-1 text-sm font-semibold text-electric">
-                      {fte}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-5 text-sm leading-relaxed text-light/68">
-                That is the seed we are planting here: a small roadmap sprint
-                that points toward a much larger payoff in time, margin,
-                follow-through, and owner freedom.
+              <h3 className="mt-4 font-heading text-2xl font-bold text-white">
+                Better leverage without another system to babysit.
+              </h3>
+              <p className="mt-4 leading-relaxed text-light/70">
+                The roadmap sprint turns the current AI noise into a clear set
+                of business decisions: what to use, what to ignore, what to
+                delegate, and what deserves a custom build.
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-light/64">
+                The capacity numbers come later, after we confirm which build
+                path is actually worth pursuing.
               </p>
             </div>
-          </div>
-
-          <div className="relative z-10 mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
-            {capacityCards.map((card) => (
-              <article
-                key={card.title}
-                className="rounded-xl border border-white/[0.12] bg-navy/68 p-6"
-              >
-                <p className="font-heading text-4xl font-bold text-electric">
-                  {card.value}
-                </p>
-                <p className="mt-1 font-heading text-sm uppercase tracking-widest text-periwinkle">
-                  {card.label}
-                </p>
-                <h3 className="mt-5 font-heading text-xl font-bold text-white">
-                  {card.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-light/68">
-                  {card.detail}
-                </p>
-              </article>
-            ))}
           </div>
         </div>
       </section>
@@ -640,6 +610,66 @@ export default function JimNewhouseProposal() {
               workflows, integrations, guardrails, and operating responsibilities
               are involved.
             </p>
+          </div>
+
+          <div className="mb-10 rounded-xl border border-electric/25 bg-navy/70 p-6 md:p-8">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+              <div>
+                <p className="font-heading text-sm uppercase tracking-widest text-light/45">
+                  Capacity math
+                </p>
+                <h3 className="mt-3 font-heading text-2xl font-bold text-white">
+                  This is where the larger operating leverage appears.
+                </h3>
+                <p className="mt-4 leading-relaxed text-light/70">
+                  The roadmap sprint decides what is worth building. The build
+                  paths are where that decision can turn into measurable
+                  operating capacity.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  ["10 hrs/week", "0.25 FTE"],
+                  ["20 hrs/week", "0.5 FTE"],
+                  ["40 hrs/week", "1.0 FTE"],
+                  ["80 hrs/week", "2.0 FTE"],
+                ].map(([hours, fte]) => (
+                  <div
+                    key={hours}
+                    className="rounded-lg border border-white/10 bg-white/[0.08] p-4"
+                  >
+                    <p className="font-heading text-xl font-bold text-white">
+                      {hours}
+                    </p>
+                    <p className="mt-1 text-sm font-semibold text-electric">
+                      {fte}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="mb-10 grid grid-cols-1 gap-5 md:grid-cols-3">
+            {capacityCards.map((card) => (
+              <article
+                key={card.title}
+                className="rounded-xl border border-white/[0.12] bg-navy/68 p-6"
+              >
+                <p className="font-heading text-4xl font-bold text-electric">
+                  {card.value}
+                </p>
+                <p className="mt-1 font-heading text-sm uppercase tracking-widest text-periwinkle">
+                  {card.label}
+                </p>
+                <h3 className="mt-5 font-heading text-xl font-bold text-white">
+                  {card.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-light/68">
+                  {card.detail}
+                </p>
+              </article>
+            ))}
           </div>
 
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
