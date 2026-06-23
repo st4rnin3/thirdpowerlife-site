@@ -209,7 +209,7 @@ export default function JimNewhouseProposal() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="#approve"
+                href="/order/jim-newhouse-roadmap-sprint"
                 className="rounded-lg bg-accent px-6 py-3 font-heading font-semibold text-white transition-all hover:shadow-[0_0_24px_rgba(0,210,255,0.28)]"
               >
                 Approve Roadmap Sprint
@@ -716,15 +716,15 @@ export default function JimNewhouseProposal() {
             Approve the 30-day AI Systems Roadmap Sprint.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-light/70">
-            If the direction is right, Third Power Life will send an invoice for
-            the $4,500 roadmap sprint and begin with the business-unit,
-            workflow, collaborator, and priority intake.
+            If the direction is right, secure the $4,500 roadmap sprint and
+            Third Power Life will begin with the business-unit, workflow,
+            collaborator, and priority intake.
           </p>
           <a
-            href="mailto:dan@thirdpowerperformance.com?subject=Approve%20AI%20Systems%20Roadmap%20Sprint"
+            href="/order/jim-newhouse-roadmap-sprint"
             className="mt-8 inline-block rounded-lg bg-accent px-8 py-4 font-heading font-semibold text-white transition-all hover:shadow-[0_0_24px_rgba(0,210,255,0.28)]"
           >
-            Approve and Request Invoice
+            Approve and Pay
           </a>
         </div>
       </section>

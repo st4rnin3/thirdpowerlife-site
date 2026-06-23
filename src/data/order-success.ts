@@ -73,6 +73,13 @@ const successContent: Record<string, SuccessContent> = {
     detail:
       "Step 1: complete your intake questionnaire. Step 2: book your 20-minute review call. Your 48-hour turnaround starts once the intake is submitted.",
   },
+  "jim-newhouse-roadmap-sprint": {
+    heading: "Roadmap Sprint Confirmed",
+    message:
+      "Your 30-day AI Systems Roadmap Sprint with Third Power Life is confirmed.",
+    detail:
+      "Dan will follow up with the kickoff details, shared sprint workspace, and the business-unit, workflow, collaborator, and priority intake.",
+  },
 };
 
 const defaultContent: SuccessContent = {
