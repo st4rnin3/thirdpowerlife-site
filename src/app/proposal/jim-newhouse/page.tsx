@@ -32,7 +32,7 @@ const capacityCards = [
     label: "FTE equivalent",
     title: "Multiple workflows start working together",
     detail:
-      "The business gets a private command center for reminders, summaries, handoffs, drafts, and next actions.",
+      "Reminders, summaries, handoffs, drafts, and next actions stop living only in your head.",
   },
   {
     value: "1.5-3",
@@ -133,6 +133,12 @@ const sprintWorkspace = [
   "90-day implementation roadmap and budget path",
 ];
 
+const sequencePrinciples = [
+  "Dan stays close to the strategic AI and systems decisions.",
+  "Implementation partners, vendors, and internal support get clear lanes only where they fit.",
+  "Website, CRM, prospecting, follow-up, and AI work move in a sane order instead of becoming parallel noise.",
+];
+
 const nextPaths = [
   {
     name: "Ongoing AI / systems advisory",
@@ -148,22 +154,6 @@ const nextPaths = [
       "Prompt, workflow, and decision-framework support",
       "Ongoing guardrails for sensitive or regulated work",
       "Clear next actions after each advisory cycle",
-    ],
-  },
-  {
-    name: "People and projects organized",
-    price: "Owner-approved sequence",
-    capacity: "Less noise from overlapping help",
-    timeline: "Clarified in the roadmap",
-    description:
-      "The roadmap clarifies what Dan owns, what existing specialists may own, what Jim keeps, and which work should wait so Jim is not forced to become the systems integrator.",
-    includes: [
-      "Clear lanes for Dan, implementation partners, vendors, and internal support",
-      "Decision rights for sensitive client or business judgment",
-      "Website, CRM, prospecting, and follow-up work put in a sane order",
-      "What to delegate, pause, replace, or ignore",
-      "No big project until owner time and ownership are clear",
-      "A practical next-step sequence instead of more moving parts",
     ],
   },
   {
@@ -187,7 +177,13 @@ const nextPaths = [
 export default function JimNewhouseProposal() {
   return (
     <>
+      <style>{`
+        body:has([data-private-proposal="jim-newhouse"]) > footer {
+          display: none;
+        }
+      `}</style>
       <section className="relative overflow-hidden bg-navy">
+        <div data-private-proposal="jim-newhouse" className="sr-only" />
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-cover bg-center opacity-30"
@@ -212,7 +208,7 @@ export default function JimNewhouseProposal() {
                 href="/order/jim-newhouse-roadmap-sprint"
                 className="rounded-lg bg-accent px-6 py-3 font-heading font-semibold text-white transition-all hover:shadow-[0_0_24px_rgba(0,210,255,0.28)]"
               >
-                Approve Roadmap Sprint
+                Approve the Sprint
               </a>
               <a
                 href="#roadmap"
@@ -683,7 +679,37 @@ export default function JimNewhouseProposal() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <div className="mb-10 rounded-xl border border-electric/25 bg-navy/70 p-6 md:p-8">
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+              <div>
+                <p className="font-heading text-sm uppercase tracking-widest text-light/45">
+                  People and project sequence
+                </p>
+                <h3 className="mt-3 font-heading text-2xl font-bold text-white">
+                  The work gets organized before anyone gets overloaded.
+                </h3>
+                <p className="mt-4 text-sm leading-relaxed text-light/68">
+                  The roadmap turns overlapping specialists, tools, and project
+                  ideas into a short sequence Jim can approve, delegate, pause,
+                  or ignore.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 gap-3">
+                {sequencePrinciples.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-lg border border-white/10 bg-white/[0.06] p-4"
+                  >
+                    <p className="text-sm leading-relaxed text-light/76">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             {nextPaths.map((tier) => (
               <article
                 key={tier.name}
@@ -736,7 +762,28 @@ export default function JimNewhouseProposal() {
             href="/order/jim-newhouse-roadmap-sprint"
             className="mt-8 inline-block rounded-lg bg-accent px-8 py-4 font-heading font-semibold text-white transition-all hover:shadow-[0_0_24px_rgba(0,210,255,0.28)]"
           >
-            Approve and Pay
+            Approve the Sprint
+          </a>
+        </div>
+      </section>
+
+      <section className="border-t border-white/10 bg-navy py-10">
+        <div className="mx-auto flex max-w-4xl flex-col items-center gap-5 px-4 text-center sm:px-6 lg:px-8">
+          <p className="text-sm leading-relaxed text-light/55">
+            Questions before you decide? Email Dan directly at{" "}
+            <a
+              href="mailto:dan@thirdpowerperformance.com"
+              className="font-semibold text-electric transition-colors hover:text-white"
+            >
+              dan@thirdpowerperformance.com
+            </a>
+            .
+          </p>
+          <a
+            href="/order/jim-newhouse-roadmap-sprint"
+            className="rounded-lg border border-electric/40 px-6 py-3 font-heading font-semibold text-electric transition-all hover:bg-electric/10"
+          >
+            Approve the Sprint
           </a>
         </div>
       </section>
