@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 };
 
 const workflowHypotheses = [
-  "Referral and lead intake: capture, qualify, and move opportunities without relying on memory.",
-  "Client gap review: surface blind spots, follow-up needs, and potential coverage conversations.",
-  "Partner handoff tracking: keep master general agency and referral partner work visible.",
-  "Follow-up and renewal radar: prevent valuable relationships from going quiet.",
-  "Executive command view: show what needs attention today without opening five systems.",
-  "AI-assisted drafting and prep: summarize context, draft next steps, and support your judgment.",
+  "Prospecting that runs without you: find and qualify the right local prospects and route each one to a single clear next action instead of leaning on referrals and Google luck.",
+  "The CRM you already own, finally working: turn it from a switched-off tool into where leads, follow-ups, and core products get tracked without making you the tracker.",
+  "Local and AI-search visibility: show up for insurance-near-me searches across the towns you serve and in the AI chat searches that are already creating prospects.",
+  "Who does what, and who you do not need: clarify which specialist owns which lane so overlapping help becomes leverage instead of noise and spend.",
+  "Follow-up and renewal radar: keep valuable relationships from going quiet without holding every detail in your head.",
+  "AI you can run yourself: prompt frameworks and cheat sheets so you get useful answers on your own, not only when someone is in the room.",
 ];
 
 const capacityCards = [
@@ -81,7 +81,7 @@ const sprintProcess = [
     week: "Week 1",
     title: "Monday kickoff and intake",
     detail:
-      "One 60-75 minute kickoff with Jim, Dan, and Jenn if useful. We confirm goals, business units, current tools, key workflows, and the decisions that need owner judgment.",
+      "One 60-75 minute kickoff with Jim, Dan, and implementation context only if useful. We confirm goals, business units, current tools, key workflows, and the decisions that need owner judgment.",
   },
   {
     week: "Week 2",
@@ -117,15 +117,15 @@ const timeCommitments = [
       "Interview prep, workflow analysis, AI opportunity scoring, roadmap writing, implementation planning, and final recommendation.",
   },
   {
-    role: "Jenn / ops support",
+    role: "Implementation context",
     time: "1-3 hours if needed",
     detail:
-      "Tool/process context, CRM or workflow clarification, and implementation feasibility input where it affects the roadmap.",
+      "CRM, website, workflow, or specialist context only where it helps confirm sequence, ownership, or implementation feasibility.",
   },
 ];
 
 const sprintWorkspace = [
-  "Owner goals and business-unit priorities",
+  "Owner goals and project priorities",
   "Current tools, handoffs, and recurring friction",
   "Workflow maps and opportunity notes",
   "AI use-case scorecards and risk flags",
@@ -151,35 +151,35 @@ const nextPaths = [
     ],
   },
   {
+    name: "People and projects organized",
+    price: "Owner-approved sequence",
+    capacity: "Less noise from overlapping help",
+    timeline: "Clarified in the roadmap",
+    description:
+      "The roadmap clarifies what Dan owns, what existing specialists may own, what Jim keeps, and which work should wait so Jim is not forced to become the systems integrator.",
+    includes: [
+      "Clear lanes for Dan, implementation partners, vendors, and internal support",
+      "Decision rights for sensitive client or business judgment",
+      "Website, CRM, prospecting, and follow-up work put in a sane order",
+      "What to delegate, pause, replace, or ignore",
+      "No big project until owner time and ownership are clear",
+      "A practical next-step sequence instead of more moving parts",
+    ],
+  },
+  {
     name: "Scoped side-project builds",
     price: "Priced project by project",
-    capacity: "Useful automation where the business case is clear",
+    capacity: "Useful work where the case is clear",
     timeline: "Only after priorities are validated",
     description:
       "When the roadmap exposes a real bottleneck, we scope that specific project instead of pretending every idea belongs in one giant build.",
     includes: [
       "CRM, website, intake, or reporting improvements",
-      "Small dashboards or private working views where useful",
+      "Small dashboards or private working views only where useful",
       "AI-assisted summaries, prep, drafts, or checklists",
       "Human approval before anything client-facing",
       "Lightweight documentation and handoff",
       "Clear owner, budget, and success criteria before work starts",
-    ],
-  },
-  {
-    name: "Collaborator operating model",
-    price: "Owner-approved scope",
-    capacity: "Better leverage from the people already around the business",
-    timeline: "Sequenced with advisory support",
-    description:
-      "The roadmap also clarifies what Jenn, vendors, internal support, or future specialists should own so Jim is not forced to become the systems integrator.",
-    includes: [
-      "Role clarity for Dan, Jenn, vendors, and internal support",
-      "Decision rights for sensitive client or business judgment",
-      "Workflow ownership and escalation rules",
-      "Tool cleanup and usage standards",
-      "Sequenced improvements that do not overload the team",
-      "Advisory review as new needs emerge",
     ],
   },
 ];
@@ -204,8 +204,8 @@ export default function JimNewhouseProposal() {
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-light/78 md:text-xl">
               A 30-day process to decide where AI belongs in your business,
-              what should stay human-approved, what should be delegated, and
-              what deserves a custom private dashboard or command center.
+              which projects should happen first, who should own each lane, and
+              what should stay human-approved.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -247,9 +247,10 @@ export default function JimNewhouseProposal() {
               <p className="mt-5 text-lg leading-relaxed text-light/76">
                 We are not starting from zero. You have already been thinking
                 about how AI could support the business, and we already have
-                enough context to turn that curiosity into a practical first
-                system. That is the fun part: we get to build something useful
-                together, not just talk about what AI might do someday.
+                enough context to turn that curiosity into a practical order of
+                operations. That is the useful part: we get to sort what should
+                happen first, what can wait, and where AI actually supports the
+                business instead of adding noise.
               </p>
               <p className="mt-4 leading-relaxed text-light/70">
                 The win is not a shiny dashboard. The win is a business that
@@ -276,11 +277,12 @@ export default function JimNewhouseProposal() {
               <p className="mt-4 leading-relaxed text-light/70">
                 The roadmap sprint turns the current AI noise into a clear set
                 of business decisions: what to use, what to ignore, what to
-                delegate, and what deserves a custom build.
+                delegate, who should own each lane, and what deserves a scoped
+                project later.
               </p>
               <p className="mt-4 text-sm leading-relaxed text-light/64">
-                The capacity numbers come later, after we confirm which build
-                path is actually worth pursuing.
+                The capacity numbers come later, after we confirm the order,
+                owners, and business case.
               </p>
             </div>
           </div>
@@ -307,10 +309,12 @@ export default function JimNewhouseProposal() {
                 without a clear operating model.
               </p>
               <p className="leading-relaxed">
-                From our conversations, the work is bigger than picking a tool:
-                your insurance practice has referral flow, client follow-up,
-                partner handoffs, business-unit priorities, and sensitive
-                decisions that need structure before they need automation.
+                From our conversations, the work is bigger than picking a tool.
+                You have prospecting that still leans on referrals and luck, a
+                CRM you pay for but have not switched on, local and AI search
+                you depend on to get found, and a cluster of overlapping
+                specialists you are trying to sort out. Those need structure and
+                an order before they need automation.
               </p>
               <p className="leading-relaxed">
                 The smarter path is to start with the business: what must happen
@@ -392,11 +396,11 @@ export default function JimNewhouseProposal() {
             {[
               [
                 "Dan / Third Power Life",
-                "AI strategy, workflow prioritization, roadmap, governance, executive decision support, and custom dashboard architecture.",
+                "AI strategy, workflow prioritization, roadmap, governance, executive decision support, and the operating model for what should happen next.",
               ],
               [
-                "Jenn Mullen / BBS",
-                "Systems implementation support where appropriate: CRM, workflows, SOPs, automations, project management, and operational cleanup.",
+                "Implementation partner",
+                "Systems implementation support where it fits, such as CRM, workflows, SOPs, automations, and operational cleanup. Part of the roadmap is confirming whether that is Jen Mullen / BBS, another specialist, or staged for later.",
               ],
               [
                 "Jim Newhouse",
@@ -454,6 +458,13 @@ export default function JimNewhouseProposal() {
                   If something is blocked, unclear, or needs a fast owner
                   decision, we can add a short Thursday or Friday checkpoint.
                   Otherwise, the workspace handles progress between calls.
+                </p>
+                <p className="mt-4 leading-relaxed text-light/70">
+                  You mentioned the website and CRM are already ahead of this in
+                  your queue. That is exactly why the sprint goes first: in four
+                  to six hours of your time, it tells you the order to tackle
+                  them in, so it organizes the projects you already have instead
+                  of competing with them.
                 </p>
               </div>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -717,8 +728,9 @@ export default function JimNewhouseProposal() {
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-light/70">
             If the direction is right, secure the $4,500 roadmap sprint and
-            Third Power Life will begin with the business-unit, workflow,
-            collaborator, and priority intake.
+            Third Power Life will use it to organize the website, CRM,
+            prospecting, follow-up, specialist, and AI decisions already in
+            motion.
           </p>
           <a
             href="/order/jim-newhouse-roadmap-sprint"
