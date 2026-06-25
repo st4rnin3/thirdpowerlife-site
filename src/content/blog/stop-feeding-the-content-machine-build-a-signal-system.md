@@ -75,7 +75,7 @@ If you can't answer those, don't ask AI for thirty posts yet. You'll just get th
 
 ## The Operating Move
 
-The move isn't *post more.* It's building an operating system that turns true insight into trusted visibility, and it can start small. One idea a week. One blog draft, one article, one newsletter, three to five social posts, one clear next step, one approval checkpoint, and one honest look at what created conversation and what didn't.
+The move is not "post more." It is building an operating system that turns true insight into trusted visibility, and it can start small. One idea a week. One blog draft, one article, one newsletter, three to five social posts, one clear next step, one approval checkpoint, and one honest look at what created conversation and what didn't.
 
 Do that every week and something compounds. Your thinking gets sharper because you're forced to decide what you actually believe. Your audience starts recognizing the pattern. Your best ideas stop dying in private notes. And you get real visibility without turning yourself into a content factory.
 
