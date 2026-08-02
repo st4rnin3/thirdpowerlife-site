@@ -2,10 +2,15 @@
 
 import { useState, useEffect, useRef } from "react";
 import { getConnectData } from "@/lib/connect-autofill";
+import TurnstileWidget from "@/components/TurnstileWidget";
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const formRef = useRef<HTMLFormElement>(null);
+  const startedAt = useRef(Date.now());
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   // Pre-fill email/phone from CONNECT survey data if fields are empty
   useEffect(() => {
@@ -32,6 +37,9 @@ export default function ContactForm() {
       challenge: (form.elements.namedItem("challenge") as HTMLTextAreaElement).value,
       why_dan: (form.elements.namedItem("why_dan") as HTMLTextAreaElement).value,
       budget: (form.elements.namedItem("budget") as HTMLSelectElement).value,
+      website: (form.elements.namedItem("website") as HTMLInputElement).value,
+      started_at: startedAt.current,
+      turnstile_token: turnstileToken,
     };
 
     try {
@@ -73,6 +81,15 @@ export default function ContactForm() {
   return (
     <div className="glass rounded-2xl p-8">
       <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
+
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="absolute -left-[10000px] h-px w-px overflow-hidden opacity-0"
+        />
 
         {/* Name */}
         <div>
@@ -191,9 +208,11 @@ export default function ContactForm() {
           </select>
         </div>
 
+        <TurnstileWidget siteKey={TURNSTILE_SITE_KEY} onToken={setTurnstileToken} />
+
         <button
           type="submit"
-          disabled={status === "sending"}
+          disabled={status === "sending" || !turnstileToken}
           className="w-full bg-accent text-white px-6 py-3 rounded-lg font-heading font-semibold hover:shadow-[0_0_20px_rgba(0,210,255,0.3)] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {status === "sending" ? "Sending..." : "Send Message"}

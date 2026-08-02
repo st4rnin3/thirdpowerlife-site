@@ -160,6 +160,8 @@ To verify locally:
 |----------|-----------|-------------|
 | `STRIPE_SECRET_KEY` | Server-side only (API routes) | Stripe secret key — set in Vercel, never expose to client |
 | `NEXT_PUBLIC_SITE_URL` | API routes (redirect URLs) | Base URL for Stripe success/cancel redirects, e.g. `https://www.thirdpowerlife.ai` or the Vercel preview URL |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Contact form (client) | Cloudflare Turnstile widget site key |
+| `TURNSTILE_SECRET_KEY` | Contact API (server) | Cloudflare Turnstile secret key; never expose to the client |
 
 `STRIPE_SECRET_KEY` and `NEXT_PUBLIC_SITE_URL` must be set in Vercel → Project Settings → Environment Variables before the Stripe order system will function.
 
