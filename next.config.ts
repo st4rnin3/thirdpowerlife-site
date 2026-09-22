@@ -12,7 +12,9 @@ const nextConfig: NextConfig = {
   async headers() {
     return socialMedia.prefixes.map((prefix) => ({
       source: `/${prefix}/:path*`,
-      headers: [{ key: "x-vercel-enable-rewrite-caching", value: "1" }],
+      // Vercel cached a 206 response as the full object during live verification.
+      // Bypass rewrite caching so Range and full GET cannot share a partial body.
+      headers: [{ key: "x-vercel-enable-rewrite-caching", value: "0" }],
     }));
   },
   async redirects() {

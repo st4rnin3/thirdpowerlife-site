@@ -30,8 +30,12 @@ still rewrites to it.
 
 The current origin uses independently served storage on the existing operations
 server. Origin availability depends on that server and its internet connection.
-External rewrite caching is enabled explicitly for this older Vercel project,
-but an uncached request still requires the origin to be available.
+External rewrite caching is explicitly disabled: live verification found that
+a cached 206 byte-range response could be returned to a subsequent full GET.
+The compatibility proxy therefore requires the origin to be available; new
+social posts should use the direct origin. When testing any routing/cache change,
+issue a Range GET and then a full GET to the identical URL and verify the full
+file SHA-256. HEAD checks alone are insufficient.
 
 Removing files from a new deployment does not delete previous Vercel deployments
 or immediately reset storage usage. Retention cleanup is a separate operation.
