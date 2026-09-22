@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "node --test --experimental-strip-types tests/*.test.ts",
-    "audit:seo-geo": "node scripts/seo_geo_audit.mjs"
+    "audit:seo-geo": "node scripts/seo_geo_audit.mjs",
+    "prebuild": "node scripts/check-social-media.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",

@@ -1,6 +1,20 @@
 import type { NextConfig } from "next";
+import socialMedia from "./social-media.config.json";
 
 const nextConfig: NextConfig = {
+  // Keep existing Buffer/Instagram URLs working without bundling social media.
+  async rewrites() {
+    return socialMedia.prefixes.map((prefix) => ({
+      source: `/${prefix}/:path*`,
+      destination: `${socialMedia.origin}/${prefix}/:path*`,
+    }));
+  },
+  async headers() {
+    return socialMedia.prefixes.map((prefix) => ({
+      source: `/${prefix}/:path*`,
+      headers: [{ key: "x-vercel-enable-rewrite-caching", value: "1" }],
+    }));
+  },
   async redirects() {
     return [
       {

@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Social media is hosted separately, never bundled into website deployments.
+/public/videos/social-clips/
+/public/videos/social/
+/public/images/instagram-blog/
+/public/images/instagram-formats/
+/public/images/quote-graphics/
+/public/images/social-support/
