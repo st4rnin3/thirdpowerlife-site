@@ -4,6 +4,17 @@ All notable changes to the ThirdPowerLife.ai site are recorded here. Newest entr
 
 ---
 
+## [Unreleased] - 2026-10-30
+
+### CONNECT 2026 speaker reel
+
+Added the approved 80-second speaker reel near the top of `/speaking`, with native
+playback controls, a poster, burned-in captions, a text transcript, and an intro-call
+booking link. The reel uses the existing external media origin; the full keynote
+is not included in the website.
+
+---
+
 ## [Unreleased] - 2026-04-23
 
 ### Domain Redirect Consolidation to Canonical www.thirdpowerlife.ai

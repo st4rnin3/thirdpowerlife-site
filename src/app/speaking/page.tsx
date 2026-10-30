@@ -81,6 +81,57 @@ export default function Speaking() {
         </div>
       </section>
 
+      {/* Speaker Reel */}
+      <section aria-labelledby="speaker-reel-heading" className="bg-midnight/30 py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-electric font-heading text-sm uppercase tracking-widest mb-3">
+            CONNECT 2026 · Dallas · 80-second speaker reel
+          </p>
+          <h2 id="speaker-reel-heading" className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+            Watch Dan in Action
+          </h2>
+          <p id="speaker-reel-description" className="text-lg text-light/70 leading-relaxed max-w-3xl mb-8">
+            Practical AI insights, real stories, and a little humor. See how Dan
+            helps leaders make room for the work — and the people — that matter.
+          </p>
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            poster="/images/speaking/connect-2026-reel-poster.jpg"
+            aria-label="Dan Gentry speaker reel from CONNECT 2026 in Dallas"
+            aria-describedby="speaker-reel-description speaker-reel-captions"
+            className="w-full aspect-video rounded-xl bg-black border border-white/10"
+          >
+            <source
+              src="https://openclaw.thirdpowerperformance.com/social-media/videos/social/dan-gentry-connect-2026-speaker-reel-v2.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support embedded video.{" "}
+            <a href="https://openclaw.thirdpowerperformance.com/social-media/videos/social/dan-gentry-connect-2026-speaker-reel-v2.mp4">
+              Watch the speaker reel.
+            </a>
+          </video>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mt-6">
+            <p id="speaker-reel-captions" className="text-light/70 text-sm">
+              Captions are included in the video.{" "}
+              <a
+                href="/transcripts/connect-2026-speaker-reel-v2.txt"
+                className="text-electric underline underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric"
+              >
+                Read the reel transcript
+              </a>
+            </p>
+            <a
+              href="/schedule"
+              className="inline-block self-start sm:shrink-0 bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:shadow-[0_0_20px_rgba(0,210,255,0.3)] transition-all duration-300"
+            >
+              Book an Intro Call
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Signature Keynote */}
       <section className="bg-navy py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -15,7 +15,7 @@ Professional website for Dan Gentry — TEDx Speaker, AI Strategist, and Your Pe
 |-------|-------------|
 | `/` | Homepage — hero, frameworks, testimonials, podcast, newsletter signup (section variant) |
 | `/about` | Bio, key frameworks, dual CTA |
-| `/speaking` | Keynote details, additional talks, testimonials, booking CTA |
+| `/speaking` | CONNECT 2026 speaker reel with captions and transcript, keynote details, additional talks, testimonials, booking CTA |
 | `/consulting` | Fractional Chief AI Officer services |
 | `/podcast` | Third Power Life podcast — Spotify, Apple, YouTube links |
 | `/contact` | Inquiry form with qualifying questions |
