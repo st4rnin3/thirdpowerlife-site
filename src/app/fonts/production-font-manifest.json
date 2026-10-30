@@ -1,0 +1,96 @@
+{
+  "retrieved": "2026-10-30",
+  "cssSource": "https://www.thirdpowerlife.ai/_next/static/css/e155428e8917b72e.css",
+  "files": [
+    {
+      "source": "https://www.thirdpowerlife.ai/_next/static/media/b1f344208eb4edfe-s.woff2",
+      "file": "b1f344208eb4edfe-s.woff2",
+      "bytes": 24072,
+      "sha256": "744830a0e77dd14dd543a4230d6e3ce67ca961634074b5d536ebafc66c732301"
+    },
+    {
+      "source": "https://www.thirdpowerlife.ai/_next/static/media/48e2044251ef3125-s.woff2",
+      "file": "48e2044251ef3125-s.woff2",
+      "bytes": 21492,
+      "sha256": "0b00fbd6edcc84cd5f77364bbeb06b75ed263c740061eba34511f1e2ac1a82d3"
+    },
+    {
+      "source": "https://www.thirdpowerlife.ai/_next/static/media/bf24a9759715e608-s.woff2",
+      "file": "bf24a9759715e608-s.woff2",
+      "bytes": 10620,
+      "sha256": "9e2672d100bc36a37073fb250abfaa7394f5151bf5dda3f4d5fc281345eb391b"
+    },
+    {
+      "source": "https://www.thirdpowerlife.ai/_next/static/media/1f173e5e25f3efee-s.woff2",
+      "file": "1f173e5e25f3efee-s.woff2",
+      "bytes": 68224,
+      "sha256": "920711de9ae96c18970fa4faca73cd302b93ac5ed57ebeb6bfec2ddeff930082"
+    },
+    {
+      "source": "https://www.thirdpowerlife.ai/_next/static/media/904be59b21bd51cb-s.p.woff2",
+      "file": "904be59b21bd51cb-s.p.woff2",
+      "bytes": 35508,
+      "sha256": "6438d7b8ea9c7c3992d5e2fd2afdb1ff948570a3ef0bedae76247b51632960ba"
+    },
+    {
+      "source": "https://www.thirdpowerlife.ai/_next/static/media/d6fc113833db48fe-s.woff2",
+      "file": "d6fc113833db48fe-s.woff2",
+      "bytes": 44028,
+      "sha256": "d0edd1c6d7e0e0cd8b9146888db311e0472e09be88faf70bb01ad57e17316551"
+    },
+    {
+      "source": "https://www.thirdpowerlife.ai/_next/static/media/e1df014bb05b8510-s.woff2",
+      "file": "e1df014bb05b8510-s.woff2",
+      "bytes": 22836,
+      "sha256": "01978402fabbdca7d046ebda60da8bae6ea9b5420e58af6350bcbeffc74af097"
+    },
+    {
+      "source": "https://www.thirdpowerlife.ai/_next/static/media/13a314e63820922b-s.woff2",
+      "file": "13a314e63820922b-s.woff2",
+      "bytes": 1768,
+      "sha256": "d68a324be8ffcb8b21734398f8419885b526a3cc8443786dcdacff5fb0560727"
+    },
+    {
+      "source": "https://www.thirdpowerlife.ai/_next/static/media/04c24f78ad5a47d8-s.woff2",
+      "file": "04c24f78ad5a47d8-s.woff2",
+      "bytes": 17708,
+      "sha256": "206b8987ebc5510c1f3add37d9dd1f308559224fa9b45805d024eebf7425e90c"
+    },
+    {
+      "source": "https://www.thirdpowerlife.ai/_next/static/media/c1a1fe1e2bf9b2ee-s.woff2",
+      "file": "c1a1fe1e2bf9b2ee-s.woff2",
+      "bytes": 13608,
+      "sha256": "3e8f4b311fef0dc52856f9bee03af7ef4f8bdaa26e4bfb8a0a766b79e5351bc4"
+    },
+    {
+      "source": "https://www.thirdpowerlife.ai/_next/static/media/9e769f40faa52555-s.woff2",
+      "file": "9e769f40faa52555-s.woff2",
+      "bytes": 46884,
+      "sha256": "4f0cad5800eed7600b524be7d5b99a5510a792ba8f83427a4a2c553fc49164ec"
+    },
+    {
+      "source": "https://www.thirdpowerlife.ai/_next/static/media/37da3febcafd463e-s.woff2",
+      "file": "37da3febcafd463e-s.woff2",
+      "bytes": 22680,
+      "sha256": "c9d43888d70004923f98079bd0e68cabec6275d22829ef4fe9c12a71b4c336a4"
+    },
+    {
+      "source": "https://www.thirdpowerlife.ai/_next/static/media/51f6eedf9be77cd7-s.woff2",
+      "file": "51f6eedf9be77cd7-s.woff2",
+      "bytes": 12960,
+      "sha256": "f49cd0972b92df6ad4d34589333df653d9fcedcf3ecb71cf8191441b4e1a6081"
+    },
+    {
+      "source": "https://www.thirdpowerlife.ai/_next/static/media/403511e41efd5e81-s.woff2",
+      "file": "403511e41efd5e81-s.woff2",
+      "bytes": 30624,
+      "sha256": "2d4c25a2a206d16537302b054f6a3b847ff79175207963a5fed6e12af26dd8e0"
+    },
+    {
+      "source": "https://www.thirdpowerlife.ai/_next/static/media/e807dee2426166ad-s.p.woff2",
+      "file": "e807dee2426166ad-s.p.woff2",
+      "bytes": 42964,
+      "sha256": "441af0def989ebfdbd6ad85ffaed85e967ab21a05f1dd342f16259464a206dd0"
+    }
+  ]
+}

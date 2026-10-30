@@ -1,26 +1,15 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Montserrat, Open_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { safeJsonLd } from "@/lib/jsonld";
 import "./globals.css";
+import "./fonts/fonts.css";
 
 const GA_ID = "G-7189T07H60";
 const FB_PIXEL_ID = "193078867851800";
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
-
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  variable: "--font-open-sans",
-});
 
 const siteIdentityJsonLd = {
   "@context": "https://schema.org",
@@ -116,8 +105,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${openSans.variable}`}>
+    <html lang="en" className="site-fonts">
       <head>
+        <link rel="preload" href="/fonts/904be59b21bd51cb-s.p.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/e807dee2426166ad-s.p.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: safeJsonLd(siteIdentityJsonLd) }}

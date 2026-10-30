@@ -29,3 +29,22 @@ changes. These checks do not test playback. Build, independent review, media upl
 integrity/range checks, desktop/mobile playback and layout checks, deployment, and
 live verification remain pending with the coordinating agent. This checkpoint
 does not establish publication or successful playback.
+
+## Build-enabling font fix
+
+Both local Windows and Vercel builds failed in the installed `next/font/google`
+loader's extension parser. The release now bundles the exact 15 existing
+production font files and 42 font-face rules rather than requesting Google font
+CSS during builds. Only font source URL prefixes change. All existing weights,
+Unicode subsets, fallback metrics, CSS variables, and the two Latin preloads are
+preserved. Provenance, SHA-256 hashes, and licensing are recorded in
+`src/app/fonts/README.md` and `production-font-manifest.json`.
+
+The root layout change is limited to its font import/configuration and preloads.
+Scoped ESLint on `src/app/layout.tsx` passed with zero errors and the existing
+tracking-pixel `no-img-element` warning. `git diff --check` passed. Direct
+comparison against the source production stylesheet confirmed all 42 font-face
+rules match exactly except source URL prefixes. All 15 font binaries passed
+manifest byte-length/SHA-256 and WOFF2-signature checks.
+The authoritative build, independent review, and rendered comparison are pending
+with the coordinating agent after this fix.

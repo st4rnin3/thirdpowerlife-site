@@ -13,6 +13,10 @@ playback controls, a poster, burned-in captions, a text transcript, and an intro
 booking link. The reel uses the existing external media origin; the full keynote
 is not included in the website.
 
+Bundled the existing production Montserrat and Open Sans font files and exact
+font-face rules to fix a build-time Google Fonts URL parsing failure. Font weights,
+Unicode coverage, fallback metrics, and the two Latin preloads are preserved.
+
 ---
 
 ## [Unreleased] - 2026-04-23
